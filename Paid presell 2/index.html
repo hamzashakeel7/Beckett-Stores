@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which Dropshipping Store Suits You? — Beckett</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;background:#08090B">
+
+<!-- ================================================================
+     BECKETT — PAID PRESELL 2  /  PAGE A : THE QUIZ
+     Paste everything between <QZ-START> and <QZ-END> into the
+     Shopify page editor (Pages > new page > the <> HTML button).
+     All CSS + JS is inline and scoped to .qz so it cannot collide
+     with the theme.
+     ----------------------------------------------------------------
+     Set the Page B URL in QZ_CONFIG at the bottom of this file.
+     ================================================================ -->
+
+<!-- <QZ-START> -->
+<div class="qz">
+<style>
+/* ======================= TOKENS ======================= */
+.qz{
+  --void:#08090B;
+  --ink:#0D0F13;
+  --surf:#14171C;
+  --surf-2:#1A1E25;
+  --surf-3:#222730;
+  --hair:rgba(255,255,255,.08);
+  --hair-2:rgba(255,255,255,.15);
+
+  --lime:#C9F24D;
+  --lime-2:#ADDC2C;
+  --lime-dim:rgba(201,242,77,.13);
+  --lime-ink:#0B1103;
+
+  --amber:#FFC368;
+  --sky:#6FD7F5;
+
+  --txt:#F4F6F8;
+  --txt-2:#98A2AF;
+  --txt-3:#626C78;
+
+  --r-sm:12px; --r-md:18px; --r-lg:24px; --r-xl:32px;
+  --wrap:760px;
+
+  position:relative;
+  min-height:100vh;min-height:100svh;
+  font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  background:var(--void);
+  color:var(--txt);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+.qz::after{content:"";position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");background-size:180px 180px}
+.qz *,.qz *::before,.qz *::after{box-sizing:border-box}
+.qz img{max-width:100%;display:block}
+.qz p{margin:0 0 1em}
+.qz h1,.qz h2,.qz h3{margin:0 0 .5em;font-weight:400}
+.qz ul{margin:0;padding:0;list-style:none}
+.qz button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;
+  -webkit-tap-highlight-color:transparent}
+
+/* ======================= TYPE ======================= */
+.qz .qz-d1,.qz .qz-d2,.qz .qz-d3{
+  font-family:'Space Grotesk','Plus Jakarta Sans',sans-serif;
+  font-weight:700;line-height:1.06;letter-spacing:-.03em;text-wrap:balance;
+}
+.qz .qz-d1{font-size:clamp(30px,6.4vw,48px)}
+.qz .qz-d2{font-size:clamp(25px,5.2vw,38px)}
+.qz .qz-d3{font-size:clamp(20px,4vw,27px);letter-spacing:-.02em}
+.qz .qz-lime{color:var(--lime)}
+.qz .qz-amber{color:var(--amber)}
+.qz b,.qz strong{font-weight:700;color:var(--txt)}
+
+.qz .qz-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--lime);background:var(--lime-dim);
+  border:1px solid rgba(201,242,77,.22);
+  padding:7px 14px;border-radius:999px;margin:0 0 20px;
+}
+.qz .qz-lede{font-size:clamp(15px,2.6vw,17.5px);color:var(--txt-2);line-height:1.6}
+
+/* ======================= BACKDROP ======================= */
+.qz .qz-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.qz .qz-bg::before{ /* cold 6am loading-bay light */
+  content:"";position:absolute;inset:-10%;
+  background:
+    radial-gradient(48% 34% at 78% 6%, rgba(111,215,245,.10) 0%, transparent 62%),
+    radial-gradient(52% 40% at 14% 92%, rgba(201,242,77,.09) 0%, transparent 62%);
+  animation:qz-breathe 14s ease-in-out infinite;
+}
+@keyframes qz-breathe{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+.qz .qz-bg::after{ /* faint technical grid */
+  content:"";position:absolute;inset:0;opacity:.30;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size:62px 62px;
+  -webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000 0%,transparent 78%);
+  mask-image:radial-gradient(70% 60% at 50% 40%,#000 0%,transparent 78%);
+}
+
+/* ======================= SHELL ======================= */
+.qz .qz-wrap{position:relative;z-index:2;width:100%;max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.qz .qz-stage{
+  position:relative;z-index:2;
+  min-height:clamp(560px,74svh,780px);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:30px 0 40px;
+}
+
+/* ---- progress rail ---- */
+.qz .qz-rail{
+  position:sticky;top:0;z-index:20;
+  background:linear-gradient(180deg,rgba(8,9,11,.96),rgba(8,9,11,.82));
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--hair);
+}
+.qz .qz-rail-in{max-width:var(--wrap);margin:0 auto;padding:12px 20px 11px}
+.qz .qz-rail-top{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px;
+}
+.qz .qz-step{
+  font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--txt-2);
+}
+.qz .qz-step b{color:var(--lime);font-weight:700}
+.qz .qz-mark{
+  display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--txt-3);
+}
+.qz .qz-mark i{
+  width:6px;height:6px;border-radius:50%;background:var(--lime);flex:none;
+  box-shadow:0 0 0 0 rgba(201,242,77,.7);animation:qz-pulse 2.4s ease-out infinite;
+}
+@keyframes qz-pulse{
+  0%{box-shadow:0 0 0 0 rgba(201,242,77,.55)}
+  70%{box-shadow:0 0 0 8px rgba(201,242,77,0)}
+  100%{box-shadow:0 0 0 0 rgba(201,242,77,0)}
+}
+.qz .qz-track{height:4px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden}
+.qz .qz-fill{
+  display:block;height:100%;width:8%;border-radius:99px;
+  background:linear-gradient(90deg,var(--lime-2),var(--lime));
+  box-shadow:0 0 14px rgba(201,242,77,.55);
+  transition:width .58s cubic-bezier(.35,.02,.2,1);
+}
+
+/* ======================= SCREENS ======================= */
+.qz .qz-screen{display:none}
+.qz .qz-screen.qz-on{display:block;animation:qz-in .46s cubic-bezier(.22,.9,.28,1) both}
+@keyframes qz-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.qz .qz-screen.qz-out{display:block;animation:qz-out .26s cubic-bezier(.4,0,.9,.4) both}
+@keyframes qz-out{from{opacity:1;transform:none}to{opacity:0;transform:translateY(-12px)}}
+
+/* ======================= QUESTION ======================= */
+.qz .qz-qhead{margin-bottom:26px}
+.qz .qz-qnum{
+  display:inline-block;font-family:'Space Grotesk',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--txt-3);margin-bottom:14px;
+}
+.qz .qz-q{margin:0}
+.qz .qz-answers{display:flex;flex-direction:column;gap:11px}
+.qz .qz-a{
+  position:relative;display:flex;align-items:center;gap:14px;width:100%;
+  padding:19px 20px;text-align:left;overflow:hidden;
+  background:linear-gradient(180deg,#171A20,var(--surf));border:1px solid var(--hair);border-radius:var(--r-md);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045);
+  font-size:16.5px;font-weight:600;color:var(--txt);
+  transition:border-color .2s ease, background .2s ease, transform .16s cubic-bezier(.2,.8,.3,1);
+}
+.qz .qz-a::after{ /* lime wash on select */
+  content:"";position:absolute;inset:0;background:var(--lime);
+  transform:scaleX(0);transform-origin:left;opacity:.14;
+  transition:transform .42s cubic-bezier(.3,.9,.3,1);
+}
+.qz .qz-a:hover{border-color:var(--hair-2);background:var(--surf-2);transform:translateY(-1px)}
+.qz .qz-a:active{transform:translateY(0)}
+.qz .qz-a .qz-key{
+  width:30px;height:30px;border-radius:9px;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--surf-3);border:1px solid var(--hair);
+  font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;color:var(--txt-2);
+  transition:all .22s ease;
+}
+.qz .qz-a .qz-atx{flex:1;min-width:0;position:relative;z-index:2}
+.qz .qz-a .qz-go{
+  width:22px;height:22px;flex:none;border-radius:50%;position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--surf-3);color:var(--txt-3);opacity:0;transform:translateX(-6px);
+  transition:all .22s ease;
+}
+.qz .qz-a .qz-go svg{width:11px;height:11px}
+.qz .qz-a:hover .qz-go{opacity:1;transform:translateX(0)}
+.qz .qz-a.qz-picked{border-color:var(--lime);background:var(--surf-2)}
+.qz .qz-a.qz-picked::after{transform:scaleX(1)}
+.qz .qz-a.qz-picked .qz-key{background:var(--lime);border-color:var(--lime);color:var(--lime-ink)}
+.qz .qz-a.qz-picked .qz-go{opacity:1;transform:translateX(0);background:var(--lime);color:var(--lime-ink)}
+.qz .qz-helper{
+  margin:18px 0 0;font-size:13.5px;color:var(--txt-3);line-height:1.55;text-align:center;
+}
+
+/* ======================= BUTTON ======================= */
+.qz .qz-cta{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;max-width:400px;padding:18px 30px;overflow:hidden;isolation:isolate;
+  font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;letter-spacing:-.01em;
+  color:var(--lime-ink);text-decoration:none;border-radius:999px;
+  background:linear-gradient(180deg,#D8FA68 0%,var(--lime) 46%,var(--lime-2) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.5),
+    inset 0 -2px 0 rgba(60,90,0,.22),
+    0 4px 14px rgba(201,242,77,.22),
+    0 16px 40px rgba(201,242,77,.18);
+  transition:transform .22s cubic-bezier(.2,.8,.3,1), box-shadow .22s ease;
+}
+.qz .qz-cta::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(104deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);
+  transform:translateX(-120%);animation:qz-sheen 5s ease-in-out infinite;
+}
+@keyframes qz-sheen{0%,64%{transform:translateX(-120%)}88%,100%{transform:translateX(120%)}}
+.qz .qz-cta:hover{transform:translateY(-2px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(60,90,0,.22),
+             0 6px 18px rgba(201,242,77,.3),0 22px 50px rgba(201,242,77,.24)}
+.qz .qz-cta .qz-arw{display:inline-block;animation:qz-nudge 2.6s ease-in-out infinite}
+@keyframes qz-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+.qz .qz-ctawrap{text-align:center;margin-top:28px}
+
+/* ======================= TRUST STRIP ======================= */
+.qz .qz-trust{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+  margin:30px auto 0;padding-top:24px;border-top:1px solid var(--hair);
+}
+.qz .qz-trust li{
+  display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;color:var(--txt-3);
+}
+.qz .qz-trust li + li::before{content:"";width:3px;height:3px;border-radius:50%;
+  background:var(--txt-3);opacity:.5;margin-right:8px}
+.qz .qz-trust svg{width:12px;height:12px;flex:none;color:var(--lime)}
+</style>
+<style>
+/* ============ START: LIVE ORDER FEED (floating card stack) ============ */
+.qz .qz-feed{
+  position:relative;height:208px;margin:0 auto 30px;max-width:410px;
+  perspective:900px;
+}
+.qz .qz-feed::before{ /* lime pool */
+  content:"";position:absolute;left:50%;top:38%;transform:translateX(-50%);
+  width:120%;height:70%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(201,242,77,.20),transparent 72%);
+  filter:blur(30px);animation:qz-breathe 9s ease-in-out infinite;
+}
+.qz .qz-ncard{
+  position:absolute;left:0;right:0;top:6px;
+  display:flex;align-items:center;gap:13px;
+  background:linear-gradient(180deg,#212630,#14171C);
+  border:1px solid var(--hair-2);border-radius:var(--r-md);
+  padding:15px 16px;opacity:0;
+  box-shadow:0 18px 44px rgba(0,0,0,.55);
+  animation:qz-nstack 9s cubic-bezier(.25,.9,.3,1) infinite;
+}
+.qz .qz-ncard:nth-child(2){animation-delay:3s}
+.qz .qz-ncard:nth-child(3){animation-delay:6s}
+@keyframes qz-nstack{
+  0%  {transform:translateY(-30px) scale(.90);opacity:0;z-index:3}
+  7%  {transform:translateY(0) scale(1);opacity:1;z-index:3}
+  31% {transform:translateY(0) scale(1);opacity:1;z-index:3}
+  38% {transform:translateY(70px) scale(.95);opacity:.72;z-index:2}
+  64% {transform:translateY(70px) scale(.95);opacity:.72;z-index:2}
+  71% {transform:translateY(138px) scale(.90);opacity:.34;z-index:1}
+  97% {transform:translateY(138px) scale(.90);opacity:0;z-index:1}
+  100%{transform:translateY(-30px) scale(.90);opacity:0;z-index:1}
+}
+.qz .qz-nic{
+  width:36px;height:36px;border-radius:11px;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,#95BF47,#5E8E3E);
+  box-shadow:0 3px 10px rgba(94,142,62,.4);
+}
+.qz .qz-nic svg{width:20px;height:20px}
+.qz .qz-ntx{flex:1;min-width:0}
+.qz .qz-ntop{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.qz .qz-napp{font-size:12px;font-weight:700;color:var(--txt)}
+.qz .qz-ntime{font-size:11px;color:var(--txt-3);font-weight:600;flex:none}
+.qz .qz-nbody{font-size:13.5px;color:var(--txt-2);font-weight:500;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.qz .qz-nbody b{color:var(--lime);font-weight:700}
+
+/* ============ Q5: CATEGORY ANSWER CARDS ============ */
+.qz .qz-a-thumb{
+  width:44px;height:44px;border-radius:12px;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--hair);position:relative;z-index:2;
+}
+.qz .qz-a-thumb svg{width:22px;height:22px}
+.qz .qz-t-mix{background:linear-gradient(160deg,#2B3140,#1C212A);color:var(--sky)}
+.qz .qz-t-hb{background:linear-gradient(160deg,#3A2733,#231A20);color:#F2A0C4}
+.qz .qz-t-el{background:linear-gradient(160deg,#233240,#18222B);color:#7FC7F0}
+.qz .qz-t-pet{background:linear-gradient(160deg,#3A3324,#231F18);color:var(--amber)}
+.qz .qz-t-one{background:linear-gradient(160deg,#2C3A22,#1B2318);color:var(--lime)}
+.qz .qz-a.qz-picked .qz-a-thumb{border-color:rgba(201,242,77,.45)}
+
+/* ============ PROOF SCREENS ============ */
+.qz .qz-proof-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--sky);background:rgba(111,215,245,.10);
+  border:1px solid rgba(111,215,245,.22);padding:7px 14px;border-radius:999px;margin-bottom:18px;
+}
+.qz .qz-card{
+  background:linear-gradient(180deg,var(--surf),var(--ink));
+  border:1px solid var(--hair);border-radius:var(--r-lg);padding:22px;
+  box-shadow:0 24px 60px rgba(0,0,0,.42);
+}
+/* proof 1 — customer */
+.qz .qz-cust{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.qz .qz-face{
+  width:56px;height:56px;border-radius:50%;flex:none;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:#2A1F00;
+  background:linear-gradient(155deg,#FFD873,#E8A020);
+  box-shadow:0 0 0 2px rgba(201,242,77,.30), 0 6px 18px rgba(0,0,0,.4);
+}
+.qz .qz-face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.qz .qz-face.qz-has-img img{display:block}
+.qz .qz-face.qz-has-img .qz-face-tx{display:none}
+.qz .qz-cname{font-size:15.5px;font-weight:700;color:var(--txt);line-height:1.3}
+.qz .qz-cmeta{font-size:12.5px;color:var(--txt-3);font-weight:500}
+.qz .qz-stars{display:flex;gap:2px;margin-top:5px}
+.qz .qz-stars svg{width:13px;height:13px;color:var(--amber)}
+.qz .qz-quote{
+  font-size:16px;line-height:1.6;color:var(--txt);margin:0 0 18px;
+  padding-left:15px;border-left:2px solid var(--lime);
+}
+/* dashboard crop */
+.qz .qz-crop{
+  background:var(--surf-2);border:1px solid var(--hair);border-radius:var(--r-sm);padding:15px 16px;
+}
+.qz .qz-crop-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.qz .qz-crop-k{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-3)}
+.qz .qz-crop-v{
+  font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--txt);
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.2;margin-top:3px;
+}
+.qz .qz-crop-up{
+  font-size:11px;font-weight:700;color:var(--lime);background:var(--lime-dim);
+  padding:4px 9px;border-radius:7px;white-space:nowrap;flex:none;
+}
+.qz .qz-spark{width:100%;height:46px;display:block;margin-top:10px;overflow:visible}
+.qz .qz-spark .qz-line{
+  fill:none;stroke:var(--lime);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:360;stroke-dashoffset:360;
+  animation:qz-draw 5.6s cubic-bezier(.45,.05,.35,1) infinite;
+  filter:drop-shadow(0 0 6px rgba(201,242,77,.5));
+}
+@keyframes qz-draw{0%{stroke-dashoffset:360}44%,78%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
+.qz .qz-spark .qz-farea{opacity:0;animation:qz-fade 5.6s ease-in-out infinite}
+@keyframes qz-fade{0%,22%{opacity:0}54%,78%{opacity:.9}100%{opacity:0}}
+.qz .qz-stat-row{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px;
+  padding-top:18px;border-top:1px solid var(--hair);
+}
+.qz .qz-stat{
+  font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--txt-2);
+}
+.qz .qz-stat b{color:var(--lime);font-weight:700}
+
+/* proof 2 — the money flow */
+.qz .qz-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:8px}
+@media(max-width:560px){
+  /* stacked, reads top to bottom:  £39.99  /  − £9.99  /  = £30.00 */
+  .qz .qz-flow{grid-template-columns:1fr;gap:0}
+  .qz .qz-node{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    text-align:left;padding:14px 16px}
+  .qz .qz-node .qz-nk{margin:0;font-size:11px}
+  .qz .qz-node .qz-nv{font-size:22px}
+  .qz .qz-op{width:auto;height:30px;display:flex;align-items:center;justify-content:center;
+    font-size:16px;color:var(--txt-3)}
+  .qz .qz-op::after{display:none}
+}
+.qz .qz-node{
+  text-align:center;border-radius:var(--r-sm);padding:16px 10px;
+  background:var(--surf-2);border:1px solid var(--hair);
+}
+.qz .qz-node .qz-nk{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--txt-3);margin-bottom:6px}
+.qz .qz-node .qz-nv{
+  font-family:'Space Grotesk',sans-serif;font-size:clamp(19px,4.6vw,24px);font-weight:700;
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums;
+}
+.qz .qz-n-in .qz-nv{color:var(--txt)}
+.qz .qz-n-out .qz-nv{color:#FF9C8A}
+.qz .qz-n-keep{background:linear-gradient(170deg,rgba(201,242,77,.16),rgba(201,242,77,.05));
+  border-color:rgba(201,242,77,.36)}
+.qz .qz-n-keep .qz-nv{color:var(--lime);animation:qz-thump 4.6s ease-in-out infinite}
+@keyframes qz-thump{0%,84%,100%{transform:scale(1)}90%{transform:scale(1.09)}}
+.qz .qz-op{
+  font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:var(--txt-3);
+  position:relative;width:26px;text-align:center;
+}
+.qz .qz-op::after{ /* travelling pulse */
+  content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;border-radius:50%;
+  background:var(--lime);transform:translate(-50%,-50%);opacity:0;
+  box-shadow:0 0 10px rgba(201,242,77,.9);
+  animation:qz-travel 4.4s ease-in-out infinite;
+}
+.qz .qz-op:nth-of-type(2)::after{animation-delay:.5s}
+@keyframes qz-travel{0%,58%{opacity:0;transform:translate(-190%,-50%)}
+  68%{opacity:1}78%{opacity:1;transform:translate(90%,-50%)}86%,100%{opacity:0;transform:translate(190%,-50%)}}
+.qz .qz-flow-note{
+  display:grid;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid var(--hair);
+}
+.qz .qz-flow-note li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--txt-2)}
+.qz .qz-flow-note svg{width:17px;height:17px;flex:none;margin-top:2px;color:var(--lime)}
+.qz .qz-flow-note b{color:var(--txt)}
+
+/* ============ LOADING SCREEN ============ */
+.qz .qz-load{text-align:center;max-width:430px;margin:0 auto}
+.qz .qz-ring{width:96px;height:96px;margin:0 auto 26px;display:block;transform:rotate(-90deg)}
+.qz .qz-ring .qz-r-bg{fill:none;stroke:rgba(255,255,255,.09);stroke-width:5}
+.qz .qz-ring .qz-r-fg{
+  fill:none;stroke:var(--lime);stroke-width:5;stroke-linecap:round;
+  stroke-dasharray:264;stroke-dashoffset:264;
+  filter:drop-shadow(0 0 8px rgba(201,242,77,.6));
+  animation:qz-ring 2.1s cubic-bezier(.4,.05,.25,1) forwards;
+}
+@keyframes qz-ring{to{stroke-dashoffset:10}}
+.qz .qz-lsteps{display:flex;flex-direction:column;gap:13px;margin-top:28px;text-align:left}
+.qz .qz-lstep{
+  display:flex;align-items:center;gap:13px;font-size:15.5px;color:var(--txt-3);
+  background:var(--surf);border:1px solid var(--hair);border-radius:var(--r-sm);padding:14px 16px;
+  opacity:.45;transition:opacity .4s ease, color .4s ease, border-color .4s ease;
+}
+.qz .qz-lstep.qz-done{opacity:1;color:var(--txt);border-color:rgba(201,242,77,.28)}
+.qz .qz-lbox{
+  width:24px;height:24px;border-radius:50%;flex:none;position:relative;
+  border:2px solid var(--hair-2);display:flex;align-items:center;justify-content:center;
+  transition:all .35s ease;
+}
+.qz .qz-lstep.qz-done .qz-lbox{background:var(--lime);border-color:var(--lime)}
+.qz .qz-lbox svg{width:12px;height:12px;color:var(--lime-ink);opacity:0;transform:scale(.4);
+  transition:all .3s cubic-bezier(.2,.9,.3,1)}
+.qz .qz-lstep.qz-done .qz-lbox svg{opacity:1;transform:scale(1)}
+
+/* ============ REDUCED MOTION ============ */
+@media(prefers-reduced-motion:reduce){
+  .qz *,.qz *::before,.qz *::after{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+  }
+  .qz .qz-ncard{opacity:1;position:relative;top:auto;margin-bottom:10px;transform:none}
+  .qz .qz-feed{height:auto;perspective:none}
+  .qz .qz-spark .qz-line{stroke-dashoffset:0}
+  .qz .qz-spark .qz-farea{opacity:.9}
+  .qz .qz-ring .qz-r-fg{stroke-dashoffset:10}
+}
+</style>
+
+<div class="qz-bg"></div>
+
+<!-- ================= PROGRESS RAIL ================= -->
+<div class="qz-rail">
+  <div class="qz-rail-in">
+    <div class="qz-rail-top">
+      <span class="qz-step" id="qz-step">Question <b>1</b> of 7</span>
+      <span class="qz-mark"><i></i>30 seconds</span>
+    </div>
+    <div class="qz-track"><span class="qz-fill" id="qz-fill"></span></div>
+  </div>
+</div>
+
+<div class="qz-wrap">
+  <div class="qz-stage" id="qz-stage">
+      <section class="qz-screen" data-screen="q1" data-q="1">
+        <div class="qz-hero">
+          <span class="qz-eyebrow">For people with full-time jobs</span>
+          <h1 class="qz-d1">Answer 7 quick questions.</h1>
+          <p class="qz-hero-sub">We&rsquo;ll tell you which dropshipping store can make you <span class="qz-lime">&pound;3,000 to &pound;5,000 a month</span>.</p>
+          <p class="qz-lede qz-hero-micro">Takes 30 seconds &middot; No credit card needed &middot; 20,000+ stores already built</p>
+        </div>
+        <div class="qz-feed">
+          <div class="qz-ncard">
+            <span class="qz-nic" data-qz-mark></span>
+            <span class="qz-ntx">
+              <span class="qz-ntop"><span class="qz-napp">Shopify</span><span class="qz-ntime">06:12</span></span>
+              <span class="qz-nbody">New order &middot; <b>&pound;34.49</b> &middot; #1043</span>
+            </span>
+          </div>
+          <div class="qz-ncard">
+            <span class="qz-nic" data-qz-mark></span>
+            <span class="qz-ntx">
+              <span class="qz-ntop"><span class="qz-napp">Shopify</span><span class="qz-ntime">06:38</span></span>
+              <span class="qz-nbody">New order &middot; <b>&pound;39.99</b> &middot; #1044</span>
+            </span>
+          </div>
+          <div class="qz-ncard">
+            <span class="qz-nic" data-qz-mark></span>
+            <span class="qz-ntx">
+              <span class="qz-ntop"><span class="qz-napp">Shopify</span><span class="qz-ntime">06:51</span></span>
+              <span class="qz-nbody">New order &middot; <b>&pound;39.99</b> &middot; #1045</span>
+            </span>
+          </div>
+        </div>
+        <div class="qz-qhead">
+          <span class="qz-qnum">Question 1 of 7</span>
+          <h2 class="qz-q qz-d3">How much extra do you want to make every month?</h2>
+        </div>
+        <div class="qz-answers">
+          <button class="qz-a" type="button" data-q="q1" data-v="500-1000"><span class="qz-key">A</span><span class="qz-atx">&pound;500 to &pound;1,000</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q1" data-v="1000-3000"><span class="qz-key">B</span><span class="qz-atx">&pound;1,000 to &pound;3,000</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q1" data-v="3000-5000"><span class="qz-key">C</span><span class="qz-atx">&pound;3,000 to &pound;5,000</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q1" data-v="10000+"><span class="qz-key">D</span><span class="qz-atx">&pound;10,000+</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+        </div>
+        <ul class="qz-trust">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Official Shopify Partners</li>
+          <li>20,000+ customers</li>
+          <li>Store ready in 24 hours</li>
+          <li>90-day refund guarantee</li>
+        </ul>
+      </section>
+
+      <section class="qz-screen" data-screen="q2" data-q="2">
+        <div class="qz-qhead">
+          <span class="qz-qnum">Question 2 of 7</span>
+          <h2 class="qz-q qz-d3">How many hours a week could you realistically work on the side hustle?</h2>
+        </div>
+        <div class="qz-answers">
+          <button class="qz-a" type="button" data-q="q2" data-v="under-5"><span class="qz-key">A</span><span class="qz-atx">Under 5 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q2" data-v="5-10"><span class="qz-key">B</span><span class="qz-atx">5 to 10 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q2" data-v="10-plus"><span class="qz-key">C</span><span class="qz-atx">More than 10 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q2" data-v="unsure"><span class="qz-key">D</span><span class="qz-atx">Honestly, I don&rsquo;t know yet</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+        </div>
+        <p class="qz-helper">Most of our customers run their store in about 5 hours a week. Whatever you picked, it&rsquo;s enough.</p>
+      </section>
+
+      <section class="qz-screen" data-screen="q3" data-q="3">
+        <div class="qz-qhead">
+          <span class="qz-qnum">Question 3 of 7</span>
+          <h2 class="qz-q qz-d3">Have you ever sold anything online before?</h2>
+        </div>
+        <div class="qz-answers">
+          <button class="qz-a" type="button" data-q="q3" data-v="never"><span class="qz-key">A</span><span class="qz-atx">Never</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q3" data-v="looked"><span class="qz-key">B</span><span class="qz-atx">I&rsquo;ve had a look into it</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q3" data-v="a-bit"><span class="qz-key">C</span><span class="qz-atx">Yes, a bit</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+        </div>
+      </section>
+
+      <section class="qz-screen" data-screen="proof1">
+        <span class="qz-proof-tag">You&rsquo;re in good company</span>
+        <div class="qz-card">
+          <div class="qz-cust">
+            <span class="qz-face" id="qz-liam">
+              <i class="qz-face-tx" style="font-style:normal">LB</i>
+              <img alt="Liam B.">
+            </span>
+            <span>
+              <span class="qz-cname">Liam B.</span>
+              <span class="qz-cmeta">19 &middot; brickie, Manchester</span>
+              <span class="qz-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            </span>
+          </div>
+          <p class="qz-quote">&ldquo;made &pound;239 my first week and i was on site the whole time lol lads didnt believe me till i showed them&rdquo;</p>
+          <div class="qz-crop">
+            <div class="qz-crop-top">
+              <div>
+                <div class="qz-crop-k">Liam&rsquo;s first week</div>
+                <div class="qz-crop-v" id="qz-liam-total">&pound;239.40</div>
+              </div>
+              <span class="qz-crop-up">6 orders</span>
+            </div>
+            <svg class="qz-spark" viewBox="0 0 220 46" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="qzG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#C9F24D" stop-opacity=".34"/>
+                <stop offset="100%" stop-color="#C9F24D" stop-opacity="0"/>
+              </linearGradient></defs>
+              <path class="qz-farea" fill="url(#qzG)" d="M2,40 L2,36 L38,33 L74,34 L110,22 L146,18 L182,10 L218,4 L218,46 L2,46 Z"/>
+              <path class="qz-line" d="M2,36 L38,33 L74,34 L110,22 L146,18 L182,10 L218,4"/>
+            </svg>
+          </div>
+          <div class="qz-stat-row">
+            <span class="qz-stat"><b>20,000+</b> stores built</span>
+            <span class="qz-stat"><b>&pound;2.5 million+</b> generated</span>
+          </div>
+        </div>
+        <div class="qz-ctawrap">
+          <button class="qz-cta" type="button" data-qz-next>Continue <span class="qz-arw">&rarr;</span></button>
+        </div>
+      </section>
+
+      <section class="qz-screen" data-screen="q4" data-q="4">
+        <div class="qz-qhead">
+          <span class="qz-qnum">Question 4 of 7</span>
+          <h2 class="qz-q qz-d3">What&rsquo;s stopped you from starting something like this before?</h2>
+        </div>
+        <div class="qz-answers">
+          <button class="qz-a" type="button" data-q="q4" data-v="time"><span class="qz-key">A</span><span class="qz-atx">I don&rsquo;t have the time</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q4" data-v="what-to-sell"><span class="qz-key">B</span><span class="qz-atx">I don&rsquo;t know what to sell</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q4" data-v="not-techy"><span class="qz-key">C</span><span class="qz-atx">I&rsquo;m not techy</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q4" data-v="tried-before"><span class="qz-key">D</span><span class="qz-atx">I&rsquo;ve tried before and got nowhere</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+        </div>
+        <p class="qz-helper">Whatever you picked, that&rsquo;s the part we do for you.</p>
+      </section>
+
+      <section class="qz-screen" data-screen="q5" data-q="5">
+        <div class="qz-qhead">
+          <span class="qz-qnum">Question 5 of 7</span>
+          <h2 class="qz-q qz-d3">Which of these would you rather sell?</h2>
+        </div>
+        <div class="qz-answers">
+          <button class="qz-a" type="button" data-q="q5" data-v="general"><span class="qz-a-thumb qz-t-mix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg></span><span class="qz-atx">A general store, a bit of everything</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q5" data-v="health-beauty"><span class="qz-a-thumb qz-t-hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 10.6A6 6 0 0 1 6 13.6C6 9.4 12 3 12 3Z"/></svg></span><span class="qz-atx">Health and beauty</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q5" data-v="electronics"><span class="qz-a-thumb qz-t-el"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg></span><span class="qz-atx">Electronics and gadgets</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q5" data-v="pet"><span class="qz-a-thumb qz-t-pet"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="7" cy="8.5" rx="2.1" ry="2.7"/><ellipse cx="12" cy="6.6" rx="2.1" ry="2.9"/><ellipse cx="17" cy="8.5" rx="2.1" ry="2.7"/><path d="M12 12c3 0 5.2 2.3 5.2 4.6 0 1.9-1.5 3-3.4 3-.9 0-1.3-.3-1.8-.3s-.9.3-1.8.3c-1.9 0-3.4-1.1-3.4-3C6.8 14.3 9 12 12 12Z"/></svg></span><span class="qz-atx">Pet accessories</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q5" data-v="one-product"><span class="qz-a-thumb qz-t-one"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.7l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/></svg></span><span class="qz-atx">One product, built as a brand</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+        </div>
+        <p class="qz-helper">Our product research team picks the winners inside whichever you choose.</p>
+      </section>
+
+      <section class="qz-screen" data-screen="proof2">
+        <span class="qz-proof-tag">The maths</span>
+        <h2 class="qz-d3" style="margin-bottom:22px">Here&rsquo;s how the money actually works.</h2>
+        <div class="qz-card">
+          <div class="qz-flow">
+            <div class="qz-node qz-n-in"><div class="qz-nk">Customer pays</div><div class="qz-nv">&pound;39.99</div></div>
+            <div class="qz-op">&minus;</div>
+            <div class="qz-node qz-n-out"><div class="qz-nk">Supplier</div><div class="qz-nv">&pound;9.99</div></div>
+            <div class="qz-op">=</div>
+            <div class="qz-node qz-n-keep"><div class="qz-nk">You keep</div><div class="qz-nv">&pound;30.00</div></div>
+          </div>
+          <ul class="qz-flow-note">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>1 sale a day</b> is about &pound;900 a month.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>3 sales a day</b> is about &pound;2,700 a month.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>You never pack, post or touch a parcel. <b>The supplier ships every order automatically.</b></span></li>
+          </ul>
+        </div>
+        <div class="qz-ctawrap">
+          <button class="qz-cta" type="button" data-qz-next>Continue <span class="qz-arw">&rarr;</span></button>
+        </div>
+      </section>
+
+      <section class="qz-screen" data-screen="q6" data-q="6">
+        <div class="qz-qhead">
+          <span class="qz-qnum">Question 6 of 7</span>
+          <h2 class="qz-q qz-d3">When do you want your store ready &amp; start making sales?</h2>
+        </div>
+        <div class="qz-answers">
+          <button class="qz-a" type="button" data-q="q6" data-v="24-hours"><span class="qz-key">A</span><span class="qz-atx">In the next 24 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q6" data-v="this-week"><span class="qz-key">B</span><span class="qz-atx">Sometime this week</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q6" data-v="looking"><span class="qz-key">C</span><span class="qz-atx">Just having a look for now</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+        </div>
+      </section>
+
+      <section class="qz-screen" data-screen="q7" data-q="7">
+        <div class="qz-qhead">
+          <span class="qz-qnum">Question 7 of 7</span>
+          <h2 class="qz-q qz-d3">Last one. If our team built the whole thing and linked your suppliers, could you work on it for 5 hours a week?</h2>
+        </div>
+        <div class="qz-answers">
+          <button class="qz-a" type="button" data-q="q7" data-v="yes-easily"><span class="qz-key">A</span><span class="qz-atx">Yes, easily</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+          <button class="qz-a" type="button" data-q="q7" data-v="probably"><span class="qz-key">B</span><span class="qz-atx">Probably, yes</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
+        </div>
+      </section>
+
+      <section class="qz-screen" data-screen="loading">
+        <div class="qz-load">
+          <svg class="qz-ring" viewBox="0 0 96 96" aria-hidden="true">
+            <circle class="qz-r-bg" cx="48" cy="48" r="42"/>
+            <circle class="qz-r-fg" cx="48" cy="48" r="42"/>
+          </svg>
+          <h2 class="qz-d3">Building your recommendation</h2>
+          <ul class="qz-lsteps">
+            <li class="qz-lstep"><span class="qz-lbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Matching winning products to your answers</li>
+            <li class="qz-lstep"><span class="qz-lbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Checking supplier availability</li>
+            <li class="qz-lstep"><span class="qz-lbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Locking in your store type</li>
+          </ul>
+        </div>
+      </section>
+  </div>
+</div>
+
+<style>
+  .qz .qz-hero{text-align:center;margin-bottom:30px}
+  .qz .qz-hero h1{margin-bottom:14px}
+  .qz .qz-hero-sub{
+    font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em;
+    font-size:clamp(17px,3.2vw,23px);line-height:1.3;color:var(--txt);
+    max-width:560px;margin:0 auto 14px;text-wrap:balance;
+  }
+  .qz .qz-hero-micro{font-size:13.5px;color:var(--txt-3);margin:0}
+  @media(min-width:760px){ .qz .qz-feed{margin-bottom:38px} }
+</style>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ==========================================================
+     QZ_CONFIG — the only things you normally change.
+     ========================================================== */
+  var QZ_CONFIG = {
+    // Page B (the result page). The quiz redirects here when it finishes.
+    // On Shopify: the handle of the page you pasted page-b-result into.
+    resultUrlShopify : "/pages/your-store-result",
+    // Anywhere else (local preview, GitHub Pages): the file next to this one.
+    resultUrlPreview : "page-b-result.html",
+
+    // How long the selected answer is shown before advancing (ms)
+    advanceDelay : 330,
+
+    // Loading screen: each line ticks off, then it redirects
+    stepEvery : 620,
+    redirectAfter : 2200,
+
+    // Optional photo for the customer on proof screen 1 ("" = initials)
+    liamPhotoUrl : ""
+  };
+
+  var QZ_MARK =
+    '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+      '<path d="M5.6 7.3h12.8a.95.95 0 0 1 .95 1.04l-1.16 11.7a1.5 1.5 0 0 1-1.5 1.36H7.31' +
+      'a1.5 1.5 0 0 1-1.5-1.36L4.65 8.34A.95.95 0 0 1 5.6 7.3Z" fill="#fff" fill-opacity=".95"/>' +
+      '<path d="M8.85 8.4V6.75a3.15 3.15 0 0 1 6.3 0V8.4" stroke="#fff" stroke-width="1.5" ' +
+      'stroke-linecap="round" fill="none" opacity=".95"/>' +
+      '<text x="12" y="17.6" text-anchor="middle" font-family="Plus Jakarta Sans,Helvetica,Arial,sans-serif" ' +
+      'font-size="9.2" font-weight="700" fill="#5E8E3E">S</text>' +
+    '</svg>';
+
+  var root = document.querySelector(".qz");
+  if(!root) return;
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Shopify storefronts expose window.Shopify, so the same file picks the
+     right destination on the live store and in a local / GitHub preview. */
+  function resultUrl(){
+    return (window.Shopify && window.Shopify.shop) ? QZ_CONFIG.resultUrlShopify
+                                                   : QZ_CONFIG.resultUrlPreview;
+  }
+
+  /* Answers are only kept in this browser tab (sessionStorage) so the result
+     page can echo them. To actually SEE what people answer, each tap is also
+     sent to the Meta Pixel / Google Tag if the store has them installed.
+     If neither is installed these calls do nothing. */
+  function track(name, data){
+    try{ if(typeof window.fbq === "function") window.fbq("trackCustom", name, data); }catch(e){}
+    try{ if(window.dataLayer && window.dataLayer.push)
+           window.dataLayer.push(Object.assign({ event: name }, data)); }catch(e){}
+  }
+
+  /* ---------- safe storage ---------- */
+  function save(k,v){ try{ sessionStorage.setItem(k,v); }catch(e){} }
+
+  /* ---------- Shopify mark ---------- */
+  root.querySelectorAll("[data-qz-mark]").forEach(function(el){ el.innerHTML = QZ_MARK; });
+
+  /* ---------- optional customer photo ---------- */
+  var face = document.getElementById("qz-liam");
+  if(face && QZ_CONFIG.liamPhotoUrl){
+    var img = face.querySelector("img");
+    img.onload  = function(){ face.classList.add("qz-has-img"); };
+    img.onerror = function(){ face.classList.remove("qz-has-img"); };
+    img.src = QZ_CONFIG.liamPhotoUrl;
+  }
+
+  /* ---------- screens ---------- */
+  var stage   = document.getElementById("qz-stage");
+  var screens = Array.prototype.slice.call(stage.querySelectorAll(".qz-screen"));
+  var fill    = document.getElementById("qz-fill");
+  var stepEl  = document.getElementById("qz-step");
+  var rail    = root.querySelector(".qz-rail");
+  var idx = 0, busy = false;
+
+  function label(sc){
+    var q = sc.getAttribute("data-q");
+    if(q) return "Question <b>" + q + "</b> of 7";
+    if(sc.getAttribute("data-screen") === "loading") return "Building your result";
+    return "Quick look";
+  }
+
+  function paint(){
+    var sc = screens[idx];
+    fill.style.width = Math.round(((idx + 1) / screens.length) * 100) + "%";
+    stepEl.innerHTML = label(sc);
+  }
+
+  function nudgeScroll(){
+    if(!rail) return;
+    var r = stage.getBoundingClientRect();
+    if(r.top < 0){
+      var y = window.pageYOffset + r.top - rail.offsetHeight - 10;
+      window.scrollTo({ top: Math.max(0, y), behavior: reduced ? "auto" : "smooth" });
+    }
+  }
+
+  function go(next){
+    if(busy || next < 0 || next >= screens.length) return;
+    busy = true;
+    var from = screens[idx], to = screens[next];
+
+    var swap = function(){
+      from.classList.remove("qz-on","qz-out");
+      to.classList.add("qz-on");
+      idx = next;
+      paint();
+      nudgeScroll();
+      busy = false;
+      if(to.getAttribute("data-screen") === "loading") runLoading();
+    };
+
+    if(reduced){ swap(); return; }
+    from.classList.add("qz-out");
+    setTimeout(swap, 250);
+  }
+
+  /* ---------- answers ---------- */
+  root.querySelectorAll(".qz-a").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      if(busy) return;
+      var sc = btn.closest(".qz-screen");
+      sc.querySelectorAll(".qz-a").forEach(function(b){ b.classList.remove("qz-picked"); });
+      btn.classList.add("qz-picked");
+      save("bk_" + btn.dataset.q, btn.dataset.v);
+      track("QuizAnswer", { quiz_question: btn.dataset.q, quiz_answer: btn.dataset.v });
+      setTimeout(function(){ go(idx + 1); }, QZ_CONFIG.advanceDelay);
+    });
+  });
+
+  /* ---------- proof-screen continue ---------- */
+  root.querySelectorAll("[data-qz-next]").forEach(function(btn){
+    btn.addEventListener("click", function(){ go(idx + 1); });
+  });
+
+  /* ---------- loading -> redirect ---------- */
+  var loadingRan = false;
+  function runLoading(){
+    if(loadingRan) return;
+    loadingRan = true;
+    var steps = root.querySelectorAll(".qz-lstep");
+    steps.forEach(function(s,i){
+      setTimeout(function(){ s.classList.add("qz-done"); }, QZ_CONFIG.stepEvery * (i + 1));
+    });
+    save("bk_done", "1");
+    track("QuizComplete", {});
+    setTimeout(function(){ window.location.href = resultUrl(); }, QZ_CONFIG.redirectAfter);
+  }
+
+  /* ---------- count-up on proof 1 ---------- */
+  var total = document.getElementById("qz-liam-total");
+  if(total && !reduced && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if(!e.isIntersecting) return;
+        io.unobserve(e.target);
+        var start = null;
+        function step(ts){
+          if(start === null) start = ts;
+          var p = Math.min((ts - start) / 1400, 1);
+          var k = 1 - Math.pow(1 - p, 3);
+          total.textContent = "£" + (239.40 * k).toLocaleString("en-GB",
+            { minimumFractionDigits:2, maximumFractionDigits:2 });
+          if(p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: .5 });
+    io.observe(total);
+  }
+
+  /* ---------- start ---------- */
+  screens[0].classList.add("qz-on");
+  paint();
+
+})();
+</script>
+
+</div><!-- /.qz -->
+<!-- <QZ-END> -->
+
+</body>
+</html>
