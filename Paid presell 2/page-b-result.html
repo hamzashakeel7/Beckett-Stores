@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Result: The Exclusive Multi-Product Store — Beckett</title>
+<title>Your Result: The Exclusive General Store — Beckett</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -113,10 +113,6 @@
 }
 .rz .rz-hero-in{position:relative;z-index:2;text-align:center}
 .rz .rz-hero h1{margin-bottom:16px}
-.rz .rz-kind{
-  display:block;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--txt-3);margin-bottom:12px;
-}
 .rz .rz-hero .rz-lede{max-width:540px;margin:0 auto}
 @media(min-width:900px){.rz .rz-hero{padding:58px 0 60px}}
 </style>
@@ -161,12 +157,6 @@
   background:linear-gradient(180deg,rgba(0,0,0,.10) 0%,transparent 22%,transparent 62%,rgba(0,0,0,.30) 100%);
 }
 /* story-style progress */
-.rz .rz-prog{position:absolute;z-index:4;top:16px;left:18px;right:18px;display:flex;gap:6px}
-.rz .rz-prog span{flex:1;height:3px;border-radius:3px;background:rgba(20,23,28,.20);overflow:hidden}
-.rz .rz-prog span i{display:block;height:100%;width:0;border-radius:3px;background:#14171C}
-.rz .rz-prog span.rz-done i{width:100%}
-.rz .rz-prog span.rz-now i{animation:rz-prog var(--rz-dur,5.2s) linear forwards}
-@keyframes rz-prog{to{width:100%}}
 /* caption */
 .rz .rz-cap{
   position:absolute;z-index:4;left:16px;right:16px;bottom:16px;
@@ -224,28 +214,6 @@
 .rz .rz-ttx b{display:block;font-size:13.5px;font-weight:700;color:#14171C;white-space:nowrap}
 .rz .rz-ttx i{display:block;font-style:normal;font-size:11px;color:#7A828D;white-space:nowrap}
 
-.rz .rz-ctrl{
-  position:relative;z-index:8;display:flex;align-items:center;justify-content:center;gap:6px;
-  width:-moz-fit-content;width:fit-content;margin:30px auto 0;padding:5px;border-radius:99px;
-  background:rgba(20,23,28,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
-  border:1px solid var(--hair-2);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 14px 34px rgba(0,0,0,.4);
-}
-.rz .rz-arrow{
-  width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;flex:none;padding:0;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.07);color:var(--txt);
-  transition:background .2s ease, color .2s ease, transform .15s ease;
-  -webkit-tap-highlight-color:transparent;
-}
-.rz .rz-arrow svg{width:16px;height:16px}
-.rz .rz-arrow:hover{background:var(--lime);color:var(--lime-ink)}
-.rz .rz-arrow:active{transform:scale(.92)}
-.rz .rz-arrow:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
-.rz .rz-count{
-  min-width:74px;text-align:center;font-family:'Space Grotesk',sans-serif;font-size:13px;
-  font-weight:600;letter-spacing:.06em;color:var(--txt-2);font-variant-numeric:tabular-nums;
-}
-.rz .rz-count b{color:var(--txt);font-weight:700}
 .rz .rz-reel{touch-action:pan-y}
 
 @media(max-width:760px){
@@ -253,8 +221,6 @@
   .rz .rz-reel,.rz .rz-ghost{border-radius:20px}
   .rz .rz-ghost-l{transform:translate(-5%,3%) rotate(-4deg) scale(.92)}
   .rz .rz-ghost-r{transform:translate(5%,3%) rotate(4deg) scale(.92)}
-  .rz .rz-prog{top:9px;left:11px;right:11px;gap:3px}
-  .rz .rz-prog span{height:2px}
   /* caption: one slim line tucked in the corner instead of a full-width bar */
   .rz .rz-cap{left:8px;right:auto;bottom:8px;padding:5px 9px;border-radius:9px;gap:7px}
   .rz .rz-cap-k{display:none}
@@ -275,8 +241,6 @@
   .rz .rz-tic svg{width:12px;height:12px}
   .rz .rz-ttx b{font-size:10px}
   .rz .rz-ttx i{display:none}
-  .rz .rz-ctrl{margin-top:22px}
-  .rz .rz-arrow{width:36px;height:36px}
 }
 
 /* ============ BASED ON YOUR ANSWERS (profile report) ============ */
@@ -514,7 +478,8 @@
 .rz .rz-q[open] summary::after{transform:translateY(-20%) rotate(-135deg)}
 .rz .rz-a{padding:0 20px 20px;font-size:15.5px;line-height:1.62;color:var(--txt-2)}
 
-/* ============ FOOTER + STICKY ============ */
+/* ============ STICKY ============ */
+.rz .rz-legal{max-width:600px;margin:18px auto 0;font-size:11px;line-height:1.6;color:var(--txt-3);text-align:center}
 .rz .rz-footer{background:#060708;color:var(--txt-3);padding:30px 0 84px;
   border-top:1px solid var(--hair)}
 .rz .rz-footer .rz-wrap{max-width:840px}
@@ -551,10 +516,9 @@
 <!-- ================= RESULT HERO ================= -->
 <section class="rz-hero">
   <div class="rz-wrap rz-hero-in">
-    <span class="rz-eyebrow"><i></i>Your result</span>
-    <span class="rz-kind">Your store type</span>
-    <h1 class="rz-d1">The Exclusive<br>Multi-Product Store</h1>
-    <p class="rz-lede"><b>45+ winning products</b>, built by Shopify Partners, in your inbox within 24 hours.</p>
+    <span class="rz-eyebrow"><i></i>Your store type we recommend</span>
+    <h1 class="rz-d1">The Exclusive<br>General Store</h1>
+    <p class="rz-lede">A complete store, <b>built by official Shopify Partners</b>, in your inbox within 24 hours.</p>
     <div class="rz-ctablock">
       <a class="rz-cta" href="#" data-rz-cta>Get My Store Built for &pound;20 <span class="rz-arw">&rarr;</span></a>
       <p class="rz-join">Join 20,000+ people who stopped waiting for a pay rise.</p>
@@ -562,18 +526,13 @@
 
     <div class="rz-stage" id="rz-stage">
       <div class="rz-deck">
-        <div class="rz-ghost rz-ghost-l"><img id="rz-gl" src="https://storesbybeckett.com/cdn/shop/files/mousematt.jpg?v=1754000260&amp;width=1000" alt=""></div>
-        <div class="rz-ghost rz-ghost-r"><img id="rz-gr" src="https://storesbybeckett.com/cdn/shop/files/blender.jpg?v=1754000260&amp;width=1000" alt=""></div>
+        <div class="rz-ghost rz-ghost-l"><img id="rz-gl" src="https://storesbybeckett.com/cdn/shop/files/electronics.jpg?v=1754000260&amp;width=1000" alt=""></div>
+        <div class="rz-ghost rz-ghost-r"><img id="rz-gr" src="https://storesbybeckett.com/cdn/shop/files/electronics.jpg?v=1754000260&amp;width=1000" alt=""></div>
 
         <div class="rz-reel" id="rz-reel">
-            <img src="https://storesbybeckett.com/cdn/shop/files/HandB.jpg?v=1754000260&amp;width=1000" alt="Health &amp; Beauty store built by the Beckett team" class="rz-on">
-            <img src="https://storesbybeckett.com/cdn/shop/files/blender.jpg?v=1754000260&amp;width=1000" alt="Kitchen &amp; Home store built by the Beckett team">
-            <img src="https://storesbybeckett.com/cdn/shop/files/electronics3.jpg?v=1754000260&amp;width=1000" alt="Tech &amp; Gadgets store built by the Beckett team">
-            <img src="https://storesbybeckett.com/cdn/shop/files/pet2.jpg?v=1754000260&amp;width=1000" alt="Pet Accessories store built by the Beckett team">
-            <img src="https://storesbybeckett.com/cdn/shop/files/mousematt.jpg?v=1754000260&amp;width=1000" alt="Gaming &amp; Desk store built by the Beckett team">
-          <div class="rz-prog" id="rz-prog"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
+            <img id="rz-store" src="https://storesbybeckett.com/cdn/shop/files/electronics.jpg?v=1754000260&amp;width=1000" alt="A store built by the Beckett team" class="rz-on">
           <div class="rz-cap">
-            <span class="rz-cap-l"><span class="rz-cap-k">Built by our team</span><b id="rz-niche">Health &amp; Beauty store</b></span>
+            <span class="rz-cap-l"><span class="rz-cap-k">Built by our team</span><b>Your store</b></span>
             <span class="rz-cap-r">Live in 24h</span>
           </div>
         </div>
@@ -592,15 +551,6 @@
           <span class="rz-ttx"><b id="rz-sale">New order &middot; &pound;34.99</b><i>Just now &middot; sent to supplier</i></span>
         </div>
       </div>
-      <div class="rz-ctrl">
-        <button class="rz-arrow" id="rz-prev" type="button" aria-label="Previous store">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>
-        </button>
-        <span class="rz-count"><b id="rz-cur">01</b> / 05</span>
-        <button class="rz-arrow" id="rz-next" type="button" aria-label="Next store">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
-        </button>
-      </div>
     </div>
   </div>
 </section>
@@ -618,11 +568,11 @@
       </div>
       <div class="rz-chips">
         <div class="rz-chip" data-rz-recap="goal"><span class="rz-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You want <b>&pound;3,000 to &pound;5,000 a month</b></span></div>
-        <div class="rz-chip" data-rz-recap="hours"><span class="rz-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You&rsquo;ve got about <b>5&ndash;10 hours a week</b></span></div>
-        <div class="rz-chip" data-rz-recap="exp"><span class="rz-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You have <b>little to no experience</b> selling stuff online</span></div>
-        <div class="rz-chip" data-rz-recap="when"><span class="rz-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You want it live <b>in the next 24 hours</b></span></div>
+        <div class="rz-chip" data-rz-recap="hours"><span class="rz-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You&rsquo;ve got about <b>5 hours a week</b></span></div>
+        <div class="rz-chip" data-rz-recap="exp"><span class="rz-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You&rsquo;ve <b>never sold online before</b></span></div>
+        <div class="rz-chip" data-rz-recap="change"><span class="rz-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You want to <b>stop working 40+ hours a week</b></span></div>
       </div>
-      <div class="rz-prof-f"><span>Best fit</span><b>The Exclusive Multi-Product Store</b></div>
+      <div class="rz-prof-f"><span>Best fit</span><b>The Exclusive General Store</b></div>
     </div>
     <p class="rz-recap-foot">That&rsquo;s exactly who this store is built for.</p>
     <div class="rz-ctablock">
@@ -657,7 +607,7 @@
       </div>
       <div class="rz-feat">
         <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="14" rx="2.6"/><path d="M10.5 9.2l4.4 2.6-4.4 2.6z"/></svg></span>
-        <span class="rz-ftx"><b>&ldquo;40 Days to 5 Figures&rdquo; + a 1-to-1 call</b>With our success team. You always know what to do next, with no YouTube rabbit holes.</span>
+        <span class="rz-ftx"><b>A 1-to-1 call with the success team</b>You always know what to do next, with no YouTube rabbit holes.</span>
       </div>
       <div class="rz-feat">
         <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"/><path d="M21 3.4V8h-4.6"/><path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"/><path d="M3 20.6V16h4.6"/></svg></span>
@@ -692,7 +642,7 @@
         <p class="rz-stepbody">Takes 20 seconds, from your sofa.</p>
         <div class="rz-mk">
           <div class="rz-mkh"><span>Order summary</span><span class="rz-paid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Paid</span></div>
-          <div class="rz-mrow"><span>Exclusive Multi-Product Store</span><b>&pound;20.00</b></div>
+          <div class="rz-mrow"><span>Exclusive General Store</span><b>&pound;20.00</b></div>
           <div class="rz-mrow"><span class="rz-card4"><i></i>Visa &middot;&middot;&middot;&middot; 4417</span><b>One payment</b></div>
           <div class="rz-mrow"><span>Recurring fees</span><b class="rz-lime">&pound;0.00</b></div>
         </div>
@@ -774,23 +724,11 @@
     <div class="rz-ctablock">
       <a class="rz-cta" href="#" data-rz-cta>Get My Store Built for &pound;20 <span class="rz-arw">&rarr;</span></a>
       <p class="rz-join">Join 20,000+ people who stopped waiting for a pay rise.</p>
+      <p class="rz-legal">Results are illustrative and not typical or guaranteed. Your results depend on your own effort.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="rz-footer">
-  <div class="rz-wrap">
-    <p class="rz-fc">Copyright &copy; 2026 Beckett | Digital Branding Solutions LTD</p>
-    <p>DISCLAIMER: The monetary results shown on this website are for illustrative purpose only and should not be interpreted as a guarantee of income or a promise of quick and easy wealth. You recognise and agree that we, &ldquo;Digital Branding Solutions LTD&rdquo; &amp; storesbybeckett.com, have made no implications, warranties, promises, suggestions, projections, representations, or guarantees whatsoever to you about future sales or results, or that you will earn any money, and that we have not authorised any such projection, promise, or representation by others. This is NOT financial advice. The sales figures stated above are personal sales figures. Please understand our results are not typical, we are not implying you&rsquo;ll duplicate them (or do anything for that matter). Your results will vary and depend on many factors&hellip; including but not limited to your background, experience, and work ethic. All business entails risk as well as massive and consistent effort and action. You may make more, less, or the same. You accept that although you use our services &amp; products, you may not receive the sales or income desired. We are not responsible for your well-being or your income. Please be aware of this. | Powered by Shopify | Powered by Debutify</p>
-    <div class="rz-flinks">
-      <a href="/search">Search</a>
-      <a href="/policies/privacy-policy">Privacy Policy</a>
-      <a href="/policies/refund-policy">Refund Policy</a>
-      <a href="/policies/terms-of-service">Terms of Service</a>
-    </div>
-  </div>
-</footer>
 
 <div class="rz-sticky" id="rz-sticky">
   <div class="rz-stx">&pound;20 one payment &middot; delivered in 24 hours</div>
@@ -805,7 +743,7 @@
      RZ_CONFIG — the only things you normally change.
      ========================================================== */
   var RZ_CONFIG = {
-    // The product page, with the £20 Multi-Product Standard variant preselected.
+    // The product page.
     productUrl : "https://storesbybeckett.com/products/dropshipping-store",
 
     // Echo the visitor's quiz answers back in "Based on what you told us".
@@ -813,8 +751,12 @@
     // answers were stored) the page shows the written defaults instead.
     personalise : true,
 
-    // Result hero: how long each real store shows before the next (ms)
-    reelEvery : 5200,
+    // Result hero: the store screenshot shown in the mockup.
+    // Swap this for the client's own General Store screenshot when they send one.
+    storeImage : "https://storesbybeckett.com/cdn/shop/files/electronics.jpg?v=1754000260&width=1000",
+
+    // How often the "new order" toast pops again (ms)
+    toastEvery : 6200,
 
     stickyAfter : 640
   };
@@ -850,13 +792,14 @@
         vals:{ "500-1000":"£500 to £1,000", "1000-3000":"£1,000 to £3,000",
                "3000-5000":"£3,000 to £5,000", "10000+":"£10,000+" } },
       hours:{ key:"bk_q2", tpl:function(v){ return "You&rsquo;ve got <b>" + v + "</b>"; },
-        vals:{ "under-5":"under 5 hours a week", "5-10":"about 5–10 hours a week",
-               "10-plus":"more than 10 hours a week", "unsure":"about 5–10 hours a week" } },
-      exp:  { key:"bk_q3", tpl:function(v){ return "You have <b>" + v + "</b> selling stuff online"; },
-        vals:{ "never":"little to no experience", "looked":"little to no experience", "a-bit":"little to no experience" } },
-      when: { key:"bk_q6", tpl:function(v){ return "You want it live <b>" + v + "</b>"; },
-        vals:{ "24-hours":"in the next 24 hours", "this-week":"sometime this week",
-               "looking":"as soon as you&rsquo;re ready" } }
+        vals:{ "under-5":"under 5 hours a week", "5-10":"about 5 hours a week",
+               "10-plus":"more than 10 hours a week", "unsure":"about 5 hours a week" } },
+      exp:  { key:"bk_q3", tpl:function(v){ return "You&rsquo;ve <b>" + v + "</b>"; },
+        vals:{ "never":"never sold online before", "looked":"little to no experience selling online",
+               "a-bit":"a little experience selling online" } },
+      change:{ key:"bk_q5", tpl:function(v){ return "You want to <b>" + v + "</b>"; },
+        vals:{ "hours":"stop working 40+ hours a week", "travel":"travel more",
+               "spend":"buy things without checking the price", "family":"look after the people you love" } }
     };
     Object.keys(MAP).forEach(function(slot){
       var cfg = MAP[slot];
@@ -869,29 +812,24 @@
     });
   }
 
-  /* ---------- store reel: real stores crossfade, stats follow ---------- */
+  /* ---------- the store mockup: one general store, stats count up, order toast ---------- */
   (function(){
     var reel = document.getElementById("rz-reel");
     if(!reel) return;
-    var imgs  = Array.prototype.slice.call(reel.querySelectorAll("img"));
-    var segs  = Array.prototype.slice.call(document.querySelectorAll("#rz-prog span"));
+    var img   = document.getElementById("rz-store");
     var gl = document.getElementById("rz-gl"), gr = document.getElementById("rz-gr");
-    var niche = document.getElementById("rz-niche");
-    var rev = document.getElementById("rz-rev"), revd = document.getElementById("rz-revd");
-    var ord = document.getElementById("rz-ord"), ordd = document.getElementById("rz-ordd");
+    var rev = document.getElementById("rz-rev"), ord = document.getElementById("rz-ord");
     var sale = document.getElementById("rz-sale"), toast = document.getElementById("rz-toast");
     var spark = document.getElementById("rz-spark");
 
-    // the figures shown for each store, in image order
-    var DATA = [
-      { niche:"Health & Beauty",  rev:8320,  revd:"+19%", ord:24, ordd:"+23%", sale:"34.99"  },
-      { niche:"Kitchen & Home",   rev:12640, revd:"+31%", ord:38, ordd:"+31%", sale:"149.99" },
-      { niche:"Tech & Gadgets",   rev:6890,  revd:"+42%", ord:12, ordd:"+18%", sale:"24.99"  },
-      { niche:"Pet Accessories",  rev:9150,  revd:"+27%", ord:26, ordd:"+29%", sale:"59.99"  },
-      { niche:"Gaming & Desk",    rev:5470,  revd:"+15%", ord:18, ordd:"+12%", sale:"44.99"  }
-    ];
-    var n = imgs.length, cur = 0, timer = null;
-    var shown = { rev: DATA[0].rev, ord: DATA[0].ord };
+    // one set of figures for the store shown
+    var STORE = { rev:8320, ord:24, sale:"34.99" };
+
+    if(img && RZ_CONFIG.storeImage){
+      img.src = RZ_CONFIG.storeImage;
+      if(gl) gl.src = RZ_CONFIG.storeImage;
+      if(gr) gr.src = RZ_CONFIG.storeImage;
+    }
 
     function tween(from, to, ms, draw){
       if(reduced){ draw(to); return; }
@@ -904,62 +842,18 @@
       }
       requestAnimationFrame(step);
     }
-    function restart(el, cls){ el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+    function restart(el, cls){ if(!el) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
 
-    function paintProgress(){
-      segs.forEach(function(s, k){
-        s.classList.remove("rz-now");
-        s.classList.toggle("rz-done", k < cur);
-      });
-      if(segs[cur]){ void segs[cur].offsetWidth; segs[cur].classList.add("rz-now"); }
-    }
+    if(rev) tween(0, STORE.rev, 1200, function(v){ rev.textContent = "\u00A3" + Math.round(v).toLocaleString("en-GB"); });
+    if(ord) tween(0, STORE.ord, 1200, function(v){ ord.textContent = Math.round(v); });
+    if(sale) sale.textContent = "New order \u00B7 \u00A3" + STORE.sale;
+    restart(spark, "rz-draw");
+    restart(toast, "rz-pop");
 
-    function show(k){
-      var d = DATA[k];
-      imgs.forEach(function(im, x){ im.classList.toggle("rz-on", x === k); });
-      if(gl) gl.src = imgs[(k - 1 + n) % n].getAttribute("src");
-      if(gr) gr.src = imgs[(k + 1) % n].getAttribute("src");
-      niche.textContent = d.niche + " store";
-      revd.textContent = d.revd; ordd.textContent = d.ordd;
-      tween(shown.rev, d.rev, 900, function(v){ rev.textContent = "£" + Math.round(v).toLocaleString("en-GB"); });
-      tween(shown.ord, d.ord, 900, function(v){ ord.textContent = Math.round(v); });
-      shown.rev = d.rev; shown.ord = d.ord;
-      sale.textContent = "New order · £" + d.sale;
-      restart(spark, "rz-draw");
-      restart(toast, "rz-pop");
-      paintProgress();
-    }
-
-    var curEl = document.getElementById("rz-cur");
-    function go(k){
-      cur = (k + n) % n;
-      show(cur);
-      if(curEl) curEl.textContent = (cur < 9 ? "0" : "") + (cur + 1);
-    }
-    function next(){ go(cur + 1); }
-    function start(){ if(reduced || timer) return; timer = setInterval(next, RZ_CONFIG.reelEvery); }
+    // the order toast pops again every so often so the mockup stays alive
+    var timer = null;
+    function start(){ if(reduced || timer) return; timer = setInterval(function(){ restart(toast, "rz-pop"); }, RZ_CONFIG.toastEvery); }
     function stop(){ if(timer){ clearInterval(timer); timer = null; } }
-    // a manual change shows the new store instantly and gives it a full turn
-    function manual(step){ stop(); go(cur + step); start(); }
-
-    var pb = document.getElementById("rz-prev"), nb = document.getElementById("rz-next");
-    if(pb) pb.addEventListener("click", function(){ manual(-1); });
-    if(nb) nb.addEventListener("click", function(){ manual(1); });
-
-    // swipe on phones
-    var x0 = null, y0 = null;
-    reel.addEventListener("touchstart", function(e){
-      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
-    }, { passive:true });
-    reel.addEventListener("touchend", function(e){
-      if(x0 === null) return;
-      var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-      if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) manual(dx < 0 ? 1 : -1);
-      x0 = y0 = null;
-    }, { passive:true });
-
-    reel.style.setProperty("--rz-dur", (RZ_CONFIG.reelEvery / 1000) + "s");
-    show(0);
     start();
     document.addEventListener("visibilitychange", function(){ document.hidden ? stop() : start(); });
   })();
