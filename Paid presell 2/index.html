@@ -1,888 +1,4065 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Which Dropshipping Store Suits You? — Beckett</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Which Dropshipping Store Suits You? — Beckett</title>
 </head>
+
 <body style="margin:0;background:#08090B">
 
-<!-- ================================================================
-     BECKETT — PAID PRESELL 2  /  PAGE A : THE QUIZ
-     Paste everything between <QZ-START> and <QZ-END> into the
-     Shopify page editor (Pages > new page > the <> HTML button).
-     All CSS + JS is inline and scoped to .qz so it cannot collide
-     with the theme.
+  <!-- ================================================================
+     BECKETT — PAID PRESELL 2  /  SINGLE-FILE VERSION
+     Quiz (Page A) + Result (Page B) merged into ONE file so it can
+     be pasted into one GemPages / Shopify custom-HTML block.
+     Paste everything between <BK-START> and <BK-END>.
+     The result section starts hidden; when the quiz loading screen
+     finishes it reveals in place (no redirect, nothing changes).
+     All CSS + JS is inline and scoped to .qz / .rz so it cannot
+     collide with the theme.
      ----------------------------------------------------------------
-     Set the Page B URL in QZ_CONFIG at the bottom of this file.
+     Set the product URL in RZ_CONFIG (second script, bottom of file).
      ================================================================ -->
 
-<!-- <QZ-START> -->
-<div class="qz">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-/* ======================= TOKENS ======================= */
-.qz{
-  --void:#08090B;
-  --ink:#0D0F13;
-  --surf:#14171C;
-  --surf-2:#1A1E25;
-  --surf-3:#222730;
-  --hair:rgba(255,255,255,.08);
-  --hair-2:rgba(255,255,255,.15);
+  <!-- <BK-START> -->
+  <div class="qz">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+    <style>
+      /* ======================= TOKENS ======================= */
+      .qz {
+        --void: #08090B;
+        --ink: #0D0F13;
+        --surf: #14171C;
+        --surf-2: #1A1E25;
+        --surf-3: #222730;
+        --hair: rgba(255, 255, 255, .08);
+        --hair-2: rgba(255, 255, 255, .15);
 
-  --lime:#C9F24D;
-  --lime-2:#ADDC2C;
-  --lime-dim:rgba(201,242,77,.13);
-  --lime-ink:#0B1103;
+        --lime: #C9F24D;
+        --lime-2: #ADDC2C;
+        --lime-dim: rgba(201, 242, 77, .13);
+        --lime-ink: #0B1103;
 
-  --amber:#FFC368;
-  --sky:#6FD7F5;
+        --amber: #FFC368;
+        --sky: #6FD7F5;
 
-  --txt:#F4F6F8;
-  --txt-2:#98A2AF;
-  --txt-3:#626C78;
+        --txt: #F4F6F8;
+        --txt-2: #98A2AF;
+        --txt-3: #626C78;
 
-  --r-sm:12px; --r-md:18px; --r-lg:24px; --r-xl:32px;
-  --wrap:760px;
+        --r-sm: 12px;
+        --r-md: 18px;
+        --r-lg: 24px;
+        --r-xl: 32px;
+        --wrap: 760px;
 
-  position:relative;
-  min-height:100vh;min-height:100svh;
-  font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  background:var(--void);
-  color:var(--txt);
-  font-size:16px;
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  overflow-x:hidden;
-}
-.qz::after{content:"";position:absolute;inset:0;z-index:40;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");background-size:180px 180px}
-.qz *,.qz *::before,.qz *::after{box-sizing:border-box}
-.qz img{max-width:100%;display:block}
-.qz p{margin:0 0 1em}
-.qz h1,.qz h2,.qz h3{margin:0 0 .5em;font-weight:400}
-.qz ul{margin:0;padding:0;list-style:none}
-.qz button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;
-  -webkit-tap-highlight-color:transparent}
+        position: relative;
+        min-height: 100vh;
+        min-height: 100svh;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: var(--void);
+        color: var(--txt);
+        font-size: 16px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
 
-/* ======================= TYPE ======================= */
-.qz .qz-d1,.qz .qz-d2,.qz .qz-d3{
-  font-family:'Space Grotesk','Plus Jakarta Sans',sans-serif;
-  font-weight:700;line-height:1.06;letter-spacing:-.03em;text-wrap:balance;
-}
-.qz .qz-d1{font-size:clamp(30px,6.4vw,48px)}
-.qz .qz-d2{font-size:clamp(25px,5.2vw,38px)}
-.qz .qz-d3{font-size:clamp(20px,4vw,27px);letter-spacing:-.02em}
-.qz .qz-lime{color:var(--lime)}
-.qz .qz-amber{color:var(--amber)}
-.qz b,.qz strong{font-weight:700;color:var(--txt)}
+      .qz::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 40;
+        pointer-events: none;
+        opacity: .04;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        background-size: 180px 180px
+      }
 
-.qz .qz-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--lime);background:var(--lime-dim);
-  border:1px solid rgba(201,242,77,.22);
-  padding:7px 14px;border-radius:999px;margin:0 0 20px;
-}
-.qz .qz-lede{font-size:clamp(15px,2.6vw,17.5px);color:var(--txt-2);line-height:1.6}
+      .qz *,
+      .qz *::before,
+      .qz *::after {
+        box-sizing: border-box
+      }
 
-/* ======================= BACKDROP ======================= */
-.qz .qz-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.qz .qz-bg::before{ /* cold 6am loading-bay light */
-  content:"";position:absolute;inset:-10%;
-  background:
-    radial-gradient(48% 34% at 78% 6%, rgba(111,215,245,.10) 0%, transparent 62%),
-    radial-gradient(52% 40% at 14% 92%, rgba(201,242,77,.09) 0%, transparent 62%);
-  animation:qz-breathe 14s ease-in-out infinite;
-}
-@keyframes qz-breathe{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
-.qz .qz-bg::after{ /* faint technical grid */
-  content:"";position:absolute;inset:0;opacity:.30;
-  background-image:
-    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
-  background-size:62px 62px;
-  -webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000 0%,transparent 78%);
-  mask-image:radial-gradient(70% 60% at 50% 40%,#000 0%,transparent 78%);
-}
+      .qz img {
+        max-width: 100%;
+        display: block
+      }
 
-/* ======================= SHELL ======================= */
-.qz .qz-wrap{position:relative;z-index:2;width:100%;max-width:var(--wrap);margin:0 auto;padding:0 20px}
-.qz .qz-stage{
-  position:relative;z-index:2;
-  min-height:clamp(560px,74svh,780px);
-  display:flex;flex-direction:column;justify-content:center;
-  padding:30px 0 40px;
-}
+      .qz p {
+        margin: 0 0 1em
+      }
 
-/* ---- progress rail ---- */
-.qz .qz-rail{
-  position:sticky;top:0;z-index:20;
-  background:linear-gradient(180deg,rgba(8,9,11,.96),rgba(8,9,11,.82));
-  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--hair);
-}
-.qz .qz-rail-in{max-width:var(--wrap);margin:0 auto;padding:12px 20px 11px}
-.qz .qz-rail-top{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px;
-}
-.qz .qz-step{
-  font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--txt-2);
-}
-.qz .qz-step b{color:var(--lime);font-weight:700}
-.qz .qz-mark{
-  display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;
-  letter-spacing:.06em;text-transform:uppercase;color:var(--txt-3);
-}
-.qz .qz-mark i{
-  width:6px;height:6px;border-radius:50%;background:var(--lime);flex:none;
-  box-shadow:0 0 0 0 rgba(201,242,77,.7);animation:qz-pulse 2.4s ease-out infinite;
-}
-@keyframes qz-pulse{
-  0%{box-shadow:0 0 0 0 rgba(201,242,77,.55)}
-  70%{box-shadow:0 0 0 8px rgba(201,242,77,0)}
-  100%{box-shadow:0 0 0 0 rgba(201,242,77,0)}
-}
-.qz .qz-track{height:4px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden}
-.qz .qz-fill{
-  display:block;height:100%;width:8%;border-radius:99px;
-  background:linear-gradient(90deg,var(--lime-2),var(--lime));
-  box-shadow:0 0 14px rgba(201,242,77,.55);
-  transition:width .58s cubic-bezier(.35,.02,.2,1);
-}
+      .qz h1,
+      .qz h2,
+      .qz h3 {
+        margin: 0 0 .5em;
+        font-weight: 400
+      }
 
-/* ======================= SCREENS ======================= */
-.qz .qz-screen{display:none}
-.qz .qz-screen.qz-on{display:block;animation:qz-in .46s cubic-bezier(.22,.9,.28,1) both}
-@keyframes qz-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.qz .qz-screen.qz-out{display:block;animation:qz-out .26s cubic-bezier(.4,0,.9,.4) both}
-@keyframes qz-out{from{opacity:1;transform:none}to{opacity:0;transform:translateY(-12px)}}
+      .qz ul {
+        margin: 0;
+        padding: 0;
+        list-style: none
+      }
 
-/* ======================= QUESTION ======================= */
-.qz .qz-qhead{margin-bottom:26px}
-.qz .qz-qnum{
-  display:inline-block;font-family:'Space Grotesk',sans-serif;
-  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--txt-3);margin-bottom:14px;
-}
-.qz .qz-q{margin:0}
-.qz .qz-answers{display:flex;flex-direction:column;gap:11px}
-.qz .qz-a{
-  position:relative;display:flex;align-items:center;gap:14px;width:100%;
-  padding:19px 20px;text-align:left;overflow:hidden;
-  background:linear-gradient(180deg,#171A20,var(--surf));border:1px solid var(--hair);border-radius:var(--r-md);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.045);
-  font-size:16.5px;font-weight:600;color:var(--txt);
-  transition:border-color .2s ease, background .2s ease, transform .16s cubic-bezier(.2,.8,.3,1);
-}
-.qz .qz-a::after{ /* lime wash on select */
-  content:"";position:absolute;inset:0;background:var(--lime);
-  transform:scaleX(0);transform-origin:left;opacity:.14;
-  transition:transform .42s cubic-bezier(.3,.9,.3,1);
-}
-.qz .qz-a:hover{border-color:var(--hair-2);background:var(--surf-2);transform:translateY(-1px)}
-.qz .qz-a:active{transform:translateY(0)}
-.qz .qz-a .qz-key{
-  width:30px;height:30px;border-radius:9px;flex:none;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--surf-3);border:1px solid var(--hair);
-  font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;color:var(--txt-2);
-  transition:all .22s ease;
-}
-.qz .qz-a .qz-atx{flex:1;min-width:0;position:relative;z-index:2}
-.qz .qz-a .qz-go{
-  width:22px;height:22px;flex:none;border-radius:50%;position:relative;z-index:2;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--surf-3);color:var(--txt-3);opacity:0;transform:translateX(-6px);
-  transition:all .22s ease;
-}
-.qz .qz-a .qz-go svg{width:11px;height:11px}
-.qz .qz-a:hover .qz-go{opacity:1;transform:translateX(0)}
-.qz .qz-a.qz-picked{border-color:var(--lime);background:var(--surf-2)}
-.qz .qz-a.qz-picked::after{transform:scaleX(1)}
-.qz .qz-a.qz-picked .qz-key{background:var(--lime);border-color:var(--lime);color:var(--lime-ink)}
-.qz .qz-a.qz-picked .qz-go{opacity:1;transform:translateX(0);background:var(--lime);color:var(--lime-ink)}
-.qz .qz-helper{
-  margin:18px 0 0;font-size:13.5px;color:var(--txt-3);line-height:1.55;text-align:center;
-}
+      .qz button {
+        font: inherit;
+        color: inherit;
+        border: 0;
+        background: none;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent
+      }
 
-/* ======================= BUTTON ======================= */
-.qz .qz-cta{
-  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;max-width:400px;padding:18px 30px;overflow:hidden;isolation:isolate;
-  font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;letter-spacing:-.01em;
-  color:var(--lime-ink);text-decoration:none;border-radius:999px;
-  background:linear-gradient(180deg,#D8FA68 0%,var(--lime) 46%,var(--lime-2) 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.5),
-    inset 0 -2px 0 rgba(60,90,0,.22),
-    0 4px 14px rgba(201,242,77,.22),
-    0 16px 40px rgba(201,242,77,.18);
-  transition:transform .22s cubic-bezier(.2,.8,.3,1), box-shadow .22s ease;
-}
-.qz .qz-cta::after{
-  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:linear-gradient(104deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);
-  transform:translateX(-120%);animation:qz-sheen 5s ease-in-out infinite;
-}
-@keyframes qz-sheen{0%,64%{transform:translateX(-120%)}88%,100%{transform:translateX(120%)}}
-.qz .qz-cta:hover{transform:translateY(-2px);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(60,90,0,.22),
-             0 6px 18px rgba(201,242,77,.3),0 22px 50px rgba(201,242,77,.24)}
-.qz .qz-cta .qz-arw{display:inline-block;animation:qz-nudge 2.6s ease-in-out infinite}
-@keyframes qz-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
-.qz .qz-ctawrap{text-align:center;margin-top:28px}
+      /* ======================= TYPE ======================= */
+      .qz .qz-d1,
+      .qz .qz-d2,
+      .qz .qz-d3 {
+        font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        line-height: 1.06;
+        letter-spacing: -.03em;
+        text-wrap: balance;
+      }
 
-/* ======================= TRUST STRIP ======================= */
-.qz .qz-trust{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
-  margin:30px auto 0;padding-top:24px;border-top:1px solid var(--hair);
-}
-.qz .qz-trust li{
-  display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;color:var(--txt-3);
-}
-.qz .qz-trust li + li::before{content:"";width:3px;height:3px;border-radius:50%;
-  background:var(--txt-3);opacity:.5;margin-right:8px}
-.qz .qz-trust svg{width:12px;height:12px;flex:none;color:var(--lime)}
-</style>
-<style>
-/* ============ START: LIVE ORDER FEED (floating card stack) ============ */
-.qz .qz-feed{
-  position:relative;height:208px;margin:34px auto 0;max-width:410px;
-  perspective:900px;
-}
-.qz .qz-feed::before{ /* lime pool */
-  content:"";position:absolute;left:50%;top:38%;transform:translateX(-50%);
-  width:120%;height:70%;border-radius:50%;pointer-events:none;
-  background:radial-gradient(closest-side,rgba(201,242,77,.20),transparent 72%);
-  filter:blur(30px);animation:qz-breathe 9s ease-in-out infinite;
-}
-.qz .qz-ncard{
-  position:absolute;left:0;right:0;top:6px;
-  display:flex;align-items:center;gap:13px;
-  background:linear-gradient(180deg,#212630,#14171C);
-  border:1px solid var(--hair-2);border-radius:var(--r-md);
-  padding:15px 16px;opacity:0;
-  box-shadow:0 18px 44px rgba(0,0,0,.55);
-  animation:qz-nstack 9s cubic-bezier(.25,.9,.3,1) infinite;
-}
-.qz .qz-ncard:nth-child(2){animation-delay:3s}
-.qz .qz-ncard:nth-child(3){animation-delay:6s}
-@keyframes qz-nstack{
-  0%  {transform:translateY(-30px) scale(.90);opacity:0;z-index:3}
-  7%  {transform:translateY(0) scale(1);opacity:1;z-index:3}
-  31% {transform:translateY(0) scale(1);opacity:1;z-index:3}
-  38% {transform:translateY(70px) scale(.95);opacity:.72;z-index:2}
-  64% {transform:translateY(70px) scale(.95);opacity:.72;z-index:2}
-  71% {transform:translateY(138px) scale(.90);opacity:.34;z-index:1}
-  97% {transform:translateY(138px) scale(.90);opacity:0;z-index:1}
-  100%{transform:translateY(-30px) scale(.90);opacity:0;z-index:1}
-}
-.qz .qz-nic{
-  width:36px;height:36px;border-radius:11px;flex:none;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(160deg,#95BF47,#5E8E3E);
-  box-shadow:0 3px 10px rgba(94,142,62,.4);
-}
-.qz .qz-nic svg{width:20px;height:20px}
-.qz .qz-ntx{flex:1;min-width:0}
-.qz .qz-ntop{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.qz .qz-napp{font-size:12px;font-weight:700;color:var(--txt)}
-.qz .qz-ntime{font-size:11px;color:var(--txt-3);font-weight:600;flex:none}
-.qz .qz-nbody{font-size:13.5px;color:var(--txt-2);font-weight:500;white-space:nowrap;
-  overflow:hidden;text-overflow:ellipsis;margin-top:1px}
-.qz .qz-nbody b{color:var(--lime);font-weight:700}
+      .qz .qz-d1 {
+        font-size: clamp(30px, 6.4vw, 48px)
+      }
 
-/* ============ PROOF SCREENS ============ */
-.qz .qz-proof-tag{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--sky);background:rgba(111,215,245,.10);
-  border:1px solid rgba(111,215,245,.22);padding:7px 14px;border-radius:999px;margin-bottom:18px;
-}
-.qz .qz-card{
-  background:linear-gradient(180deg,var(--surf),var(--ink));
-  border:1px solid var(--hair);border-radius:var(--r-lg);padding:22px;
-  box-shadow:0 24px 60px rgba(0,0,0,.42);
-}
-/* proof 1 — customer */
-.qz .qz-cust{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.qz .qz-face{
-  width:56px;height:56px;border-radius:50%;flex:none;position:relative;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:#2A1F00;
-  background:linear-gradient(155deg,#FFD873,#E8A020);
-  box-shadow:0 0 0 2px rgba(201,242,77,.30), 0 6px 18px rgba(0,0,0,.4);
-}
-.qz .qz-face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
-.qz .qz-face.qz-has-img img{display:block}
-.qz .qz-face.qz-has-img .qz-face-tx{display:none}
-.qz .qz-cname{font-size:15.5px;font-weight:700;color:var(--txt);line-height:1.3}
-.qz .qz-cmeta{font-size:12.5px;color:var(--txt-3);font-weight:500}
-.qz .qz-stars{display:flex;gap:2px;margin-top:5px}
-.qz .qz-stars svg{width:13px;height:13px;color:var(--amber)}
-.qz .qz-quote{
-  font-size:16px;line-height:1.6;color:var(--txt);margin:0 0 18px;
-  padding-left:15px;border-left:2px solid var(--lime);
-}
-/* dashboard crop */
-.qz .qz-crop{
-  background:var(--surf-2);border:1px solid var(--hair);border-radius:var(--r-sm);padding:15px 16px;
-}
-.qz .qz-crop-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.qz .qz-crop-k{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-3)}
-.qz .qz-crop-v{
-  font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--txt);
-  letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.2;margin-top:3px;
-}
-.qz .qz-crop-up{
-  font-size:11px;font-weight:700;color:var(--lime);background:var(--lime-dim);
-  padding:4px 9px;border-radius:7px;white-space:nowrap;flex:none;
-}
-.qz .qz-spark{width:100%;height:46px;display:block;margin-top:10px;overflow:visible}
-.qz .qz-spark .qz-line{
-  fill:none;stroke:var(--lime);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
-  stroke-dasharray:360;stroke-dashoffset:360;
-  animation:qz-draw 5.6s cubic-bezier(.45,.05,.35,1) infinite;
-  filter:drop-shadow(0 0 6px rgba(201,242,77,.5));
-}
-@keyframes qz-draw{0%{stroke-dashoffset:360}44%,78%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
-.qz .qz-spark .qz-farea{opacity:0;animation:qz-fade 5.6s ease-in-out infinite}
-@keyframes qz-fade{0%,22%{opacity:0}54%,78%{opacity:.9}100%{opacity:0}}
-.qz .qz-stat-row{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px;
-  padding-top:18px;border-top:1px solid var(--hair);
-}
-.qz .qz-stat{
-  font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--txt-2);
-}
-.qz .qz-stat b{color:var(--lime);font-weight:700}
+      .qz .qz-d2 {
+        font-size: clamp(25px, 5.2vw, 38px)
+      }
 
-/* proof 2 — the money flow */
-.qz .qz-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:8px}
-@media(max-width:560px){
-  /* stacked, reads top to bottom:  £39.99  /  − £9.99  /  = £30.00 */
-  .qz .qz-flow{grid-template-columns:1fr;gap:0}
-  .qz .qz-node{display:flex;align-items:center;justify-content:space-between;gap:12px;
-    text-align:left;padding:14px 16px}
-  .qz .qz-node .qz-nk{margin:0;font-size:11px}
-  .qz .qz-node .qz-nv{font-size:22px}
-  .qz .qz-op{width:auto;height:30px;display:flex;align-items:center;justify-content:center;
-    font-size:16px;color:var(--txt-3)}
-  .qz .qz-op::after{display:none}
-}
-.qz .qz-node{
-  text-align:center;border-radius:var(--r-sm);padding:16px 10px;
-  background:var(--surf-2);border:1px solid var(--hair);
-}
-.qz .qz-node .qz-nk{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--txt-3);margin-bottom:6px}
-.qz .qz-node .qz-nv{
-  font-family:'Space Grotesk',sans-serif;font-size:clamp(19px,4.6vw,24px);font-weight:700;
-  letter-spacing:-.02em;font-variant-numeric:tabular-nums;
-}
-.qz .qz-n-in .qz-nv{color:var(--txt)}
-.qz .qz-n-out .qz-nv{color:#FF9C8A}
-.qz .qz-n-keep{background:linear-gradient(170deg,rgba(201,242,77,.16),rgba(201,242,77,.05));
-  border-color:rgba(201,242,77,.36)}
-.qz .qz-n-keep .qz-nv{color:var(--lime);animation:qz-thump 4.6s ease-in-out infinite}
-@keyframes qz-thump{0%,84%,100%{transform:scale(1)}90%{transform:scale(1.09)}}
-.qz .qz-op{
-  font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:var(--txt-3);
-  position:relative;width:26px;text-align:center;
-}
-.qz .qz-op::after{ /* travelling pulse */
-  content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;border-radius:50%;
-  background:var(--lime);transform:translate(-50%,-50%);opacity:0;
-  box-shadow:0 0 10px rgba(201,242,77,.9);
-  animation:qz-travel 4.4s ease-in-out infinite;
-}
-.qz .qz-op:nth-of-type(2)::after{animation-delay:.5s}
-@keyframes qz-travel{0%,58%{opacity:0;transform:translate(-190%,-50%)}
-  68%{opacity:1}78%{opacity:1;transform:translate(90%,-50%)}86%,100%{opacity:0;transform:translate(190%,-50%)}}
-.qz .qz-flow-note{
-  display:grid;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid var(--hair);
-}
-.qz .qz-flow-note li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--txt-2)}
-.qz .qz-flow-note svg{width:17px;height:17px;flex:none;margin-top:2px;color:var(--lime)}
-.qz .qz-flow-note b{color:var(--txt)}
+      .qz .qz-d3 {
+        font-size: clamp(20px, 4vw, 27px);
+        letter-spacing: -.02em
+      }
 
-/* ============ LOADING SCREEN ============ */
-.qz .qz-load{text-align:center;max-width:430px;margin:0 auto}
-.qz .qz-ring{width:96px;height:96px;margin:0 auto 26px;display:block;transform:rotate(-90deg)}
-.qz .qz-ring .qz-r-bg{fill:none;stroke:rgba(255,255,255,.09);stroke-width:5}
-.qz .qz-ring .qz-r-fg{
-  fill:none;stroke:var(--lime);stroke-width:5;stroke-linecap:round;
-  stroke-dasharray:264;stroke-dashoffset:264;
-  filter:drop-shadow(0 0 8px rgba(201,242,77,.6));
-  animation:qz-ring 2.1s cubic-bezier(.4,.05,.25,1) forwards;
-}
-@keyframes qz-ring{to{stroke-dashoffset:10}}
-.qz .qz-lsteps{display:flex;flex-direction:column;gap:13px;margin-top:28px;text-align:left}
-.qz .qz-lstep{
-  display:flex;align-items:center;gap:13px;font-size:15.5px;color:var(--txt-3);
-  background:var(--surf);border:1px solid var(--hair);border-radius:var(--r-sm);padding:14px 16px;
-  opacity:.45;transition:opacity .4s ease, color .4s ease, border-color .4s ease;
-}
-.qz .qz-lstep.qz-done{opacity:1;color:var(--txt);border-color:rgba(201,242,77,.28)}
-.qz .qz-lbox{
-  width:24px;height:24px;border-radius:50%;flex:none;position:relative;
-  border:2px solid var(--hair-2);display:flex;align-items:center;justify-content:center;
-  transition:all .35s ease;
-}
-.qz .qz-lstep.qz-done .qz-lbox{background:var(--lime);border-color:var(--lime)}
-.qz .qz-lbox svg{width:12px;height:12px;color:var(--lime-ink);opacity:0;transform:scale(.4);
-  transition:all .3s cubic-bezier(.2,.9,.3,1)}
-.qz .qz-lstep.qz-done .qz-lbox svg{opacity:1;transform:scale(1)}
+      .qz .qz-lime {
+        color: var(--lime)
+      }
 
-/* ============ REDUCED MOTION ============ */
-@media(prefers-reduced-motion:reduce){
-  .qz *,.qz *::before,.qz *::after{
-    animation-duration:.001ms!important;animation-iteration-count:1!important;
-    transition-duration:.001ms!important;
-  }
-  .qz .qz-ncard{opacity:1;position:relative;top:auto;margin-bottom:10px;transform:none}
-  .qz .qz-feed{height:auto;perspective:none}
-  .qz .qz-spark .qz-line{stroke-dashoffset:0}
-  .qz .qz-spark .qz-farea{opacity:.9}
-  .qz .qz-ring .qz-r-fg{stroke-dashoffset:10}
-}
-</style>
+      .qz .qz-amber {
+        color: var(--amber)
+      }
 
-<div class="qz-bg"></div>
+      .qz b,
+      .qz strong {
+        font-weight: 700;
+        color: var(--txt)
+      }
 
-<!-- ================= PROGRESS RAIL ================= -->
-<div class="qz-rail">
-  <div class="qz-rail-in">
-    <div class="qz-rail-top">
-      <span class="qz-step" id="qz-step">Question <b>1</b> of 6</span>
-      <span class="qz-mark"><i></i>30 seconds</span>
-    </div>
-    <div class="qz-track"><span class="qz-fill" id="qz-fill"></span></div>
-  </div>
-</div>
+      .qz .qz-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: var(--lime);
+        background: var(--lime-dim);
+        border: 1px solid rgba(201, 242, 77, .22);
+        padding: 7px 14px;
+        border-radius: 999px;
+        margin: 0 0 20px;
+      }
 
-<div class="qz-wrap">
-  <div class="qz-stage" id="qz-stage">
-      <section class="qz-screen" data-screen="q1" data-q="1">
-        <div class="qz-hero">
-          <span class="qz-eyebrow">Answer 6 quick questions</span>
-          <h1 class="qz-d1">Answer 6 quick questions.</h1>
-          <p class="qz-hero-sub">We&rsquo;ll show you the <span class="qz-lime">fastest entry point to &pound;3,000 to &pound;5,000 a month</span>.</p>
-          <p class="qz-lede qz-hero-micro">Takes 30 seconds &middot; No email needed &middot; 20,000+ stores already built</p>
-        </div>
-        <div class="qz-qhead">
-          <span class="qz-qnum">Question 1 of 6</span>
-          <h2 class="qz-q qz-d3">How much extra do you want to make every month?</h2>
-        </div>
-        <div class="qz-answers">
-          <button class="qz-a" type="button" data-q="q1" data-v="500-1000"><span class="qz-key">A</span><span class="qz-atx">&pound;500 to &pound;1,000</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q1" data-v="1000-3000"><span class="qz-key">B</span><span class="qz-atx">&pound;1,000 to &pound;3,000</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q1" data-v="3000-5000"><span class="qz-key">C</span><span class="qz-atx">&pound;3,000 to &pound;5,000</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q1" data-v="10000+"><span class="qz-key">D</span><span class="qz-atx">&pound;10,000+</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-        </div>
-        <div class="qz-feed" aria-hidden="true">
-          <div class="qz-ncard">
-            <span class="qz-nic" data-qz-mark></span>
-            <span class="qz-ntx">
-              <span class="qz-ntop"><span class="qz-napp">Shopify</span><span class="qz-ntime">06:12</span></span>
-              <span class="qz-nbody">New order &middot; <b>&pound;34.49</b> &middot; #1043</span>
-            </span>
-          </div>
-          <div class="qz-ncard">
-            <span class="qz-nic" data-qz-mark></span>
-            <span class="qz-ntx">
-              <span class="qz-ntop"><span class="qz-napp">Shopify</span><span class="qz-ntime">06:38</span></span>
-              <span class="qz-nbody">New order &middot; <b>&pound;39.99</b> &middot; #1044</span>
-            </span>
-          </div>
-          <div class="qz-ncard">
-            <span class="qz-nic" data-qz-mark></span>
-            <span class="qz-ntx">
-              <span class="qz-ntop"><span class="qz-napp">Shopify</span><span class="qz-ntime">06:51</span></span>
-              <span class="qz-nbody">New order &middot; <b>&pound;39.99</b> &middot; #1045</span>
-            </span>
-          </div>
-        </div>
-        <ul class="qz-trust">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Official Shopify Partners</li>
-          <li>20,000+ customers</li>
-          <li>Store ready in 24 hours</li>
-          <li>90-day refund guarantee</li>
-        </ul>
-      </section>
+      .qz .qz-lede {
+        font-size: clamp(15px, 2.6vw, 17.5px);
+        color: var(--txt-2);
+        line-height: 1.6
+      }
 
-      <section class="qz-screen" data-screen="q2" data-q="2">
-        <div class="qz-qhead">
-          <span class="qz-qnum">Question 2 of 6</span>
-          <h2 class="qz-q qz-d3">How many hours do you have to spare a week?</h2>
-        </div>
-        <div class="qz-answers">
-          <button class="qz-a" type="button" data-q="q2" data-v="under-5"><span class="qz-key">A</span><span class="qz-atx">Under 5 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q2" data-v="5-10"><span class="qz-key">B</span><span class="qz-atx">5 to 10 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q2" data-v="10-plus"><span class="qz-key">C</span><span class="qz-atx">More than 10 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q2" data-v="unsure"><span class="qz-key">D</span><span class="qz-atx">Honestly, I don&rsquo;t know yet</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-        </div>
-        <p class="qz-helper">Most people run their store in about 5 hours a week. Whatever you picked, it&rsquo;s enough.</p>
-      </section>
+      /* ======================= BACKDROP ======================= */
+      .qz .qz-bg {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0
+      }
 
-      <section class="qz-screen" data-screen="q3" data-q="3">
-        <div class="qz-qhead">
-          <span class="qz-qnum">Question 3 of 6</span>
-          <h2 class="qz-q qz-d3">Have you ever sold anything online before?</h2>
-        </div>
-        <div class="qz-answers">
-          <button class="qz-a" type="button" data-q="q3" data-v="never"><span class="qz-key">A</span><span class="qz-atx">Never</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q3" data-v="looked"><span class="qz-key">B</span><span class="qz-atx">I&rsquo;ve had a look into it</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q3" data-v="a-bit"><span class="qz-key">C</span><span class="qz-atx">Yes, a bit</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q3" data-v="other-sites"><span class="qz-key">D</span><span class="qz-atx">I&rsquo;ve sold on eBay, Vinted or Depop</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-        </div>
-        <p class="qz-helper">&ldquo;Never&rdquo; is the most common answer on this page.</p>
-      </section>
+      .qz .qz-bg::before {
+        /* cold 6am loading-bay light */
+        content: "";
+        position: absolute;
+        inset: -10%;
+        background:
+          radial-gradient(48% 34% at 78% 6%, rgba(111, 215, 245, .10) 0%, transparent 62%),
+          radial-gradient(52% 40% at 14% 92%, rgba(201, 242, 77, .09) 0%, transparent 62%);
+        animation: qz-breathe 14s ease-in-out infinite;
+      }
 
-      <section class="qz-screen" data-screen="proof1">
-        <span class="qz-proof-tag">You&rsquo;re in good company</span>
-        <div class="qz-card">
-          <div class="qz-cust">
-            <span class="qz-face" id="qz-liam">
-              <i class="qz-face-tx" style="font-style:normal">LB</i>
-              <img alt="Liam B.">
-            </span>
-            <span>
-              <span class="qz-cname">Liam B.</span>
-              <span class="qz-cmeta">19 &middot; brickie, Manchester</span>
-              <span class="qz-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
-            </span>
-          </div>
-          <p class="qz-quote">&ldquo;made &pound;239 my first week and i was on site the whole time lol lads didnt believe me till i showed them&rdquo;</p>
-          <div class="qz-crop">
-            <div class="qz-crop-top">
-              <div>
-                <div class="qz-crop-k">Liam&rsquo;s first week</div>
-                <div class="qz-crop-v" id="qz-liam-total">&pound;239.40</div>
-              </div>
-              <span class="qz-crop-up">6 orders</span>
-            </div>
-            <svg class="qz-spark" viewBox="0 0 220 46" preserveAspectRatio="none" aria-hidden="true">
-              <defs><linearGradient id="qzG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#C9F24D" stop-opacity=".34"/>
-                <stop offset="100%" stop-color="#C9F24D" stop-opacity="0"/>
-              </linearGradient></defs>
-              <path class="qz-farea" fill="url(#qzG)" d="M2,40 L2,36 L38,33 L74,34 L110,22 L146,18 L182,10 L218,4 L218,46 L2,46 Z"/>
-              <path class="qz-line" d="M2,36 L38,33 L74,34 L110,22 L146,18 L182,10 L218,4"/>
-            </svg>
-          </div>
-          <div class="qz-stat-row">
-            <span class="qz-stat"><b>20,000+</b> stores built</span>
-            <span class="qz-stat"><b>&pound;2.5 million+</b> generated</span>
-          </div>
-        </div>
-        <div class="qz-ctawrap">
-          <button class="qz-cta" type="button" data-qz-next>Continue <span class="qz-arw">&rarr;</span></button>
-        </div>
-      </section>
+      @keyframes qz-breathe {
 
-      <section class="qz-screen" data-screen="q4" data-q="4">
-        <div class="qz-qhead">
-          <span class="qz-qnum">Question 4 of 6</span>
-          <h2 class="qz-q qz-d3">What&rsquo;s stopped you from starting something online before?</h2>
-        </div>
-        <div class="qz-answers">
-          <button class="qz-a" type="button" data-q="q4" data-v="time"><span class="qz-key">A</span><span class="qz-atx">I don&rsquo;t have the time</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q4" data-v="what-to-sell"><span class="qz-key">B</span><span class="qz-atx">I don&rsquo;t know what to sell</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q4" data-v="not-techy"><span class="qz-key">C</span><span class="qz-atx">I&rsquo;m not techy</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q4" data-v="tried-before"><span class="qz-key">D</span><span class="qz-atx">I&rsquo;ve tried before and got nowhere</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q4" data-v="all-of-the-above"><span class="qz-key">E</span><span class="qz-atx">All of the above</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-        </div>
-        <p class="qz-helper">Whatever you picked, that&rsquo;s the part we do for you.</p>
-      </section>
-
-      <section class="qz-screen" data-screen="proof2">
-        <span class="qz-proof-tag">The maths</span>
-        <h2 class="qz-d3 qz-proof-h">Here&rsquo;s how the money actually works.</h2>
-        <div class="qz-card">
-          <div class="qz-flow">
-            <div class="qz-node qz-n-in"><div class="qz-nk">Customer pays</div><div class="qz-nv">&pound;39.99</div></div>
-            <div class="qz-op">&minus;</div>
-            <div class="qz-node qz-n-out"><div class="qz-nk">Supplier</div><div class="qz-nv">&pound;9.99</div></div>
-            <div class="qz-op">=</div>
-            <div class="qz-node qz-n-keep"><div class="qz-nk">You keep</div><div class="qz-nv">&pound;30.00</div></div>
-          </div>
-          <ul class="qz-flow-note">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>1 sale a day</b> is about &pound;900 a month.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>3 sales a day</b> is about &pound;2,700 a month.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>You never pack, post or touch a parcel. <b>The supplier ships every order automatically.</b></span></li>
-          </ul>
-        </div>
-        <div class="qz-ctawrap">
-          <button class="qz-cta" type="button" data-qz-next>Continue <span class="qz-arw">&rarr;</span></button>
-        </div>
-      </section>
-
-      <section class="qz-screen" data-screen="q5" data-q="5">
-        <div class="qz-qhead">
-          <span class="qz-qnum">Question 5 of 6</span>
-          <h2 class="qz-q qz-d3">When the money starts coming in, what&rsquo;s the first thing it goes on?</h2>
-        </div>
-        <div class="qz-answers">
-          <button class="qz-a" type="button" data-q="q5" data-v="hours"><span class="qz-key">A</span><span class="qz-atx">Dropping to fewer hours at work</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q5" data-v="travel"><span class="qz-key">B</span><span class="qz-atx">A holiday somewhere warm</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q5" data-v="spend"><span class="qz-key">C</span><span class="qz-atx">The things I&rsquo;d never normally buy myself</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q5" data-v="family"><span class="qz-key">D</span><span class="qz-atx">Looking after the people I love</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-        </div>
-      </section>
-
-      <section class="qz-screen" data-screen="q6" data-q="6">
-        <div class="qz-qhead">
-          <span class="qz-qnum">Question 6 of 6</span>
-          <h2 class="qz-q qz-d3">Two months from now, will you be glad you started, or will you still be thinking about it?</h2>
-        </div>
-        <div class="qz-answers">
-          <button class="qz-a" type="button" data-q="q6" data-v="glad-i-started"><span class="qz-key">A</span><span class="qz-atx">I&rsquo;ll be glad I started making &pound;3,000 to &pound;5,000 a month</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-          <button class="qz-a" type="button" data-q="q6" data-v="still-thinking"><span class="qz-key">B</span><span class="qz-atx">I&rsquo;d probably still be thinking about it</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></button>
-        </div>
-      </section>
-
-      <section class="qz-screen" data-screen="loading">
-        <div class="qz-load">
-          <svg class="qz-ring" viewBox="0 0 96 96" aria-hidden="true">
-            <circle class="qz-r-bg" cx="48" cy="48" r="42"/>
-            <circle class="qz-r-fg" cx="48" cy="48" r="42"/>
-          </svg>
-          <h2 class="qz-d3">Building your recommendation</h2>
-          <ul class="qz-lsteps">
-            <li class="qz-lstep"><span class="qz-lbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Matching winning products to your answers</li>
-            <li class="qz-lstep"><span class="qz-lbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Checking supplier availability</li>
-            <li class="qz-lstep"><span class="qz-lbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Locking in your store type</li>
-          </ul>
-        </div>
-      </section>
-  </div>
-</div>
-
-<style>
-  .qz .qz-hero{text-align:center;margin-bottom:30px}
-  .qz .qz-hero h1{margin-bottom:14px}
-  .qz .qz-hero-sub{
-    font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em;
-    font-size:clamp(17px,3.2vw,23px);line-height:1.3;color:var(--txt);
-    max-width:560px;margin:0 auto 14px;text-wrap:balance;
-  }
-  .qz .qz-hero-micro{font-size:13.5px;color:var(--txt-3);margin:0}
-  .qz .qz-proof-h{margin-bottom:22px}
-  @media(max-width:560px){
-    /* mobile: the question and every Continue button sit on the first screen */
-    .qz .qz-stage{padding-top:18px}
-    .qz .qz-hero{margin-bottom:24px}
-    .qz .qz-hero h1{margin-bottom:10px}
-    .qz .qz-hero-sub{margin-bottom:10px}
-    .qz .qz-qhead{margin-bottom:18px}
-    .qz .qz-qnum{margin-bottom:10px}
-    .qz .qz-proof-tag{margin-bottom:12px;padding:6px 12px}
-    .qz .qz-proof-h{margin-bottom:14px}
-    .qz .qz-card{padding:16px}
-    .qz .qz-ctawrap{margin-top:16px}
-    .qz .qz-cust{margin-bottom:12px}
-    /* the maths, compact */
-    .qz [data-screen="proof2"] .qz-card{padding:14px}
-    .qz .qz-node{padding:9px 14px}
-    .qz .qz-node .qz-nv{font-size:19px}
-    .qz .qz-op{height:16px;font-size:13px}
-    .qz .qz-flow-note{gap:6px;margin-top:12px;padding-top:12px}
-    .qz .qz-flow-note li{font-size:14px;line-height:1.4}
-    .qz .qz-flow-note svg{width:15px;height:15px}
-  }
-  @media(min-width:760px){ .qz .qz-feed{margin-top:40px} }
-</style>
-
-<script>
-(function(){
-  "use strict";
-
-  /* ==========================================================
-     QZ_CONFIG — the only things you normally change.
-     ========================================================== */
-  var QZ_CONFIG = {
-    // Page B (the result page). The quiz redirects here when it finishes.
-    // On Shopify: the handle of the page you pasted page-b-result into.
-    resultUrlShopify : "/pages/your-store-result",
-    // Anywhere else (local preview, GitHub Pages): the file next to this one.
-    resultUrlPreview : "page-b-result.html",
-
-    // How long the selected answer is shown before advancing (ms)
-    advanceDelay : 330,
-
-    // Loading screen: each line ticks off, then it redirects
-    stepEvery : 620,
-    redirectAfter : 2200,
-
-    // Optional photo for the customer on proof screen 1 ("" = initials)
-    liamPhotoUrl : ""
-  };
-
-  var QZ_MARK =
-    '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
-      '<path d="M5.6 7.3h12.8a.95.95 0 0 1 .95 1.04l-1.16 11.7a1.5 1.5 0 0 1-1.5 1.36H7.31' +
-      'a1.5 1.5 0 0 1-1.5-1.36L4.65 8.34A.95.95 0 0 1 5.6 7.3Z" fill="#fff" fill-opacity=".95"/>' +
-      '<path d="M8.85 8.4V6.75a3.15 3.15 0 0 1 6.3 0V8.4" stroke="#fff" stroke-width="1.5" ' +
-      'stroke-linecap="round" fill="none" opacity=".95"/>' +
-      '<text x="12" y="17.6" text-anchor="middle" font-family="Plus Jakarta Sans,Helvetica,Arial,sans-serif" ' +
-      'font-size="9.2" font-weight="700" fill="#5E8E3E">S</text>' +
-    '</svg>';
-
-  var root = document.querySelector(".qz");
-  if(!root) return;
-  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* Shopify storefronts expose window.Shopify, so the same file picks the
-     right destination on the live store and in a local / GitHub preview. */
-  function resultUrl(){
-    return (window.Shopify && window.Shopify.shop) ? QZ_CONFIG.resultUrlShopify
-                                                   : QZ_CONFIG.resultUrlPreview;
-  }
-
-  /* Answers are only kept in this browser tab (sessionStorage) so the result
-     page can echo them. To actually SEE what people answer, each tap is also
-     sent to the Meta Pixel / Google Tag if the store has them installed.
-     If neither is installed these calls do nothing. */
-  function track(name, data){
-    try{ if(typeof window.fbq === "function") window.fbq("trackCustom", name, data); }catch(e){}
-    try{ if(window.dataLayer && window.dataLayer.push)
-           window.dataLayer.push(Object.assign({ event: name }, data)); }catch(e){}
-  }
-
-  /* ---------- safe storage ---------- */
-  function save(k,v){ try{ sessionStorage.setItem(k,v); }catch(e){} }
-
-  /* ---------- Shopify mark ---------- */
-  root.querySelectorAll("[data-qz-mark]").forEach(function(el){ el.innerHTML = QZ_MARK; });
-
-  /* ---------- optional customer photo ---------- */
-  var face = document.getElementById("qz-liam");
-  if(face && QZ_CONFIG.liamPhotoUrl){
-    var img = face.querySelector("img");
-    img.onload  = function(){ face.classList.add("qz-has-img"); };
-    img.onerror = function(){ face.classList.remove("qz-has-img"); };
-    img.src = QZ_CONFIG.liamPhotoUrl;
-  }
-
-  /* ---------- screens ---------- */
-  var stage   = document.getElementById("qz-stage");
-  var screens = Array.prototype.slice.call(stage.querySelectorAll(".qz-screen"));
-  var fill    = document.getElementById("qz-fill");
-  var stepEl  = document.getElementById("qz-step");
-  var rail    = root.querySelector(".qz-rail");
-  var idx = 0, busy = false;
-
-  function label(sc){
-    var q = sc.getAttribute("data-q");
-    if(q) return "Question <b>" + q + "</b> of 6";
-    if(sc.getAttribute("data-screen") === "loading") return "Building your result";
-    return "Quick look";
-  }
-
-  function paint(){
-    var sc = screens[idx];
-    fill.style.width = Math.round(((idx + 1) / screens.length) * 100) + "%";
-    stepEl.innerHTML = label(sc);
-  }
-
-  function nudgeScroll(){
-    if(!rail) return;
-    var r = stage.getBoundingClientRect();
-    if(r.top < 0){
-      var y = window.pageYOffset + r.top - rail.offsetHeight - 10;
-      window.scrollTo({ top: Math.max(0, y), behavior: reduced ? "auto" : "smooth" });
-    }
-  }
-
-  function go(next){
-    if(busy || next < 0 || next >= screens.length) return;
-    busy = true;
-    var from = screens[idx], to = screens[next];
-
-    var swap = function(){
-      from.classList.remove("qz-on","qz-out");
-      to.classList.add("qz-on");
-      idx = next;
-      paint();
-      nudgeScroll();
-      busy = false;
-      if(to.getAttribute("data-screen") === "loading") runLoading();
-    };
-
-    if(reduced){ swap(); return; }
-    from.classList.add("qz-out");
-    setTimeout(swap, 250);
-  }
-
-  /* ---------- answers ---------- */
-  root.querySelectorAll(".qz-a").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      if(busy) return;
-      var sc = btn.closest(".qz-screen");
-      sc.querySelectorAll(".qz-a").forEach(function(b){ b.classList.remove("qz-picked"); });
-      btn.classList.add("qz-picked");
-      save("bk_" + btn.dataset.q, btn.dataset.v);
-      track("QuizAnswer", { quiz_question: btn.dataset.q, quiz_answer: btn.dataset.v });
-      setTimeout(function(){ go(idx + 1); }, QZ_CONFIG.advanceDelay);
-    });
-  });
-
-  /* ---------- proof-screen continue ---------- */
-  root.querySelectorAll("[data-qz-next]").forEach(function(btn){
-    btn.addEventListener("click", function(){ go(idx + 1); });
-  });
-
-  /* ---------- loading -> redirect ---------- */
-  var loadingRan = false;
-  function runLoading(){
-    if(loadingRan) return;
-    loadingRan = true;
-    var steps = root.querySelectorAll(".qz-lstep");
-    steps.forEach(function(s,i){
-      setTimeout(function(){ s.classList.add("qz-done"); }, QZ_CONFIG.stepEvery * (i + 1));
-    });
-    save("bk_done", "1");
-    track("QuizComplete", {});
-    setTimeout(function(){ window.location.href = resultUrl(); }, QZ_CONFIG.redirectAfter);
-  }
-
-  /* ---------- count-up on proof 1 ---------- */
-  var total = document.getElementById("qz-liam-total");
-  if(total && !reduced && "IntersectionObserver" in window){
-    var io = new IntersectionObserver(function(en){
-      en.forEach(function(e){
-        if(!e.isIntersecting) return;
-        io.unobserve(e.target);
-        var start = null;
-        function step(ts){
-          if(start === null) start = ts;
-          var p = Math.min((ts - start) / 1400, 1);
-          var k = 1 - Math.pow(1 - p, 3);
-          total.textContent = "£" + (239.40 * k).toLocaleString("en-GB",
-            { minimumFractionDigits:2, maximumFractionDigits:2 });
-          if(p < 1) requestAnimationFrame(step);
+        0%,
+        100% {
+          opacity: .7;
+          transform: scale(1)
         }
-        requestAnimationFrame(step);
-      });
-    }, { threshold: .5 });
-    io.observe(total);
-  }
 
-  /* ---------- start ---------- */
-  screens[0].classList.add("qz-on");
-  paint();
+        50% {
+          opacity: 1;
+          transform: scale(1.06)
+        }
+      }
 
-})();
-</script>
+      .qz .qz-bg::after {
+        /* faint technical grid */
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: .30;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px);
+        background-size: 62px 62px;
+        -webkit-mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 78%);
+        mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 78%);
+      }
 
-</div><!-- /.qz -->
-<!-- <QZ-END> -->
+      /* ======================= SHELL ======================= */
+      .qz .qz-wrap {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: var(--wrap);
+        margin: 0 auto;
+        padding: 0 20px
+      }
+
+      .qz .qz-stage {
+        position: relative;
+        z-index: 2;
+        min-height: clamp(560px, 74svh, 780px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 0 40px;
+      }
+
+      /* ---- progress rail ---- */
+      .qz .qz-rail {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: linear-gradient(180deg, rgba(8, 9, 11, .96), rgba(8, 9, 11, .82));
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--hair);
+      }
+
+      .qz .qz-rail-in {
+        max-width: var(--wrap);
+        margin: 0 auto;
+        padding: 12px 20px 11px
+      }
+
+      .qz .qz-rail-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 9px;
+      }
+
+      .qz .qz-step {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--txt-2);
+      }
+
+      .qz .qz-step b {
+        color: var(--lime);
+        font-weight: 700
+      }
+
+      .qz .qz-mark {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: var(--txt-3);
+      }
+
+      .qz .qz-mark i {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--lime);
+        flex: none;
+        box-shadow: 0 0 0 0 rgba(201, 242, 77, .7);
+        animation: qz-pulse 2.4s ease-out infinite;
+      }
+
+      @keyframes qz-pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(201, 242, 77, .55)
+        }
+
+        70% {
+          box-shadow: 0 0 0 8px rgba(201, 242, 77, 0)
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(201, 242, 77, 0)
+        }
+      }
+
+      .qz .qz-track {
+        height: 4px;
+        border-radius: 99px;
+        background: rgba(255, 255, 255, .09);
+        overflow: hidden
+      }
+
+      .qz .qz-fill {
+        display: block;
+        height: 100%;
+        width: 8%;
+        border-radius: 99px;
+        background: linear-gradient(90deg, var(--lime-2), var(--lime));
+        box-shadow: 0 0 14px rgba(201, 242, 77, .55);
+        transition: width .58s cubic-bezier(.35, .02, .2, 1);
+      }
+
+      /* ======================= SCREENS ======================= */
+      .qz .qz-screen {
+        display: none
+      }
+
+      .qz .qz-screen.qz-on {
+        display: block;
+        animation: qz-in .46s cubic-bezier(.22, .9, .28, 1) both
+      }
+
+      @keyframes qz-in {
+        from {
+          opacity: 0;
+          transform: translateY(14px)
+        }
+
+        to {
+          opacity: 1;
+          transform: none
+        }
+      }
+
+      .qz .qz-screen.qz-out {
+        display: block;
+        animation: qz-out .26s cubic-bezier(.4, 0, .9, .4) both
+      }
+
+      @keyframes qz-out {
+        from {
+          opacity: 1;
+          transform: none
+        }
+
+        to {
+          opacity: 0;
+          transform: translateY(-12px)
+        }
+      }
+
+      /* ======================= QUESTION ======================= */
+      .qz .qz-qhead {
+        margin-bottom: 26px
+      }
+
+      .qz .qz-qnum {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: var(--txt-3);
+        margin-bottom: 14px;
+      }
+
+      .qz .qz-q {
+        margin: 0
+      }
+
+      .qz .qz-answers {
+        display: flex;
+        flex-direction: column;
+        gap: 11px
+      }
+
+      .qz .qz-a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        padding: 19px 20px;
+        text-align: left;
+        overflow: hidden;
+        background: linear-gradient(180deg, #171A20, var(--surf));
+        border: 1px solid var(--hair);
+        border-radius: var(--r-md);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .045);
+        font-size: 16.5px;
+        font-weight: 600;
+        color: var(--txt);
+        transition: border-color .2s ease, background .2s ease, transform .16s cubic-bezier(.2, .8, .3, 1);
+      }
+
+      .qz .qz-a::after {
+        /* lime wash on select */
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--lime);
+        transform: scaleX(0);
+        transform-origin: left;
+        opacity: .14;
+        transition: transform .42s cubic-bezier(.3, .9, .3, 1);
+      }
+
+      .qz .qz-a:hover {
+        border-color: var(--hair-2);
+        background: var(--surf-2);
+        transform: translateY(-1px)
+      }
+
+      .qz .qz-a:active {
+        transform: translateY(0)
+      }
+
+      .qz .qz-a .qz-key {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--surf-3);
+        border: 1px solid var(--hair);
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--txt-2);
+        transition: all .22s ease;
+      }
+
+      .qz .qz-a .qz-atx {
+        flex: 1;
+        min-width: 0;
+        position: relative;
+        z-index: 2
+      }
+
+      .qz .qz-a .qz-go {
+        width: 22px;
+        height: 22px;
+        flex: none;
+        border-radius: 50%;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--surf-3);
+        color: var(--txt-3);
+        opacity: 0;
+        transform: translateX(-6px);
+        transition: all .22s ease;
+      }
+
+      .qz .qz-a .qz-go svg {
+        width: 11px;
+        height: 11px
+      }
+
+      .qz .qz-a:hover .qz-go {
+        opacity: 1;
+        transform: translateX(0)
+      }
+
+      .qz .qz-a.qz-picked {
+        border-color: var(--lime);
+        background: var(--surf-2)
+      }
+
+      .qz .qz-a.qz-picked::after {
+        transform: scaleX(1)
+      }
+
+      .qz .qz-a.qz-picked .qz-key {
+        background: var(--lime);
+        border-color: var(--lime);
+        color: var(--lime-ink)
+      }
+
+      .qz .qz-a.qz-picked .qz-go {
+        opacity: 1;
+        transform: translateX(0);
+        background: var(--lime);
+        color: var(--lime-ink)
+      }
+
+      .qz .qz-helper {
+        margin: 18px 0 0;
+        font-size: 13.5px;
+        color: var(--txt-3);
+        line-height: 1.55;
+        text-align: center;
+      }
+
+      /* ======================= BUTTON ======================= */
+      .qz .qz-cta {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 400px;
+        padding: 18px 30px;
+        overflow: hidden;
+        isolation: isolate;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -.01em;
+        color: var(--lime-ink);
+        text-decoration: none;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #D8FA68 0%, var(--lime) 46%, var(--lime-2) 100%);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, .5),
+          inset 0 -2px 0 rgba(60, 90, 0, .22),
+          0 4px 14px rgba(201, 242, 77, .22),
+          0 16px 40px rgba(201, 242, 77, .18);
+        transition: transform .22s cubic-bezier(.2, .8, .3, 1), box-shadow .22s ease;
+      }
+
+      .qz .qz-cta::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(104deg, transparent 40%, rgba(255, 255, 255, .55) 50%, transparent 60%);
+        transform: translateX(-120%);
+        animation: qz-sheen 5s ease-in-out infinite;
+      }
+
+      @keyframes qz-sheen {
+
+        0%,
+        64% {
+          transform: translateX(-120%)
+        }
+
+        88%,
+        100% {
+          transform: translateX(120%)
+        }
+      }
+
+      .qz .qz-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), inset 0 -2px 0 rgba(60, 90, 0, .22),
+          0 6px 18px rgba(201, 242, 77, .3), 0 22px 50px rgba(201, 242, 77, .24)
+      }
+
+      .qz .qz-cta .qz-arw {
+        display: inline-block;
+        animation: qz-nudge 2.6s ease-in-out infinite
+      }
+
+      @keyframes qz-nudge {
+
+        0%,
+        100% {
+          transform: translateX(0)
+        }
+
+        50% {
+          transform: translateX(5px)
+        }
+      }
+
+      .qz .qz-ctawrap {
+        text-align: center;
+        margin-top: 28px
+      }
+
+      /* ======================= TRUST STRIP ======================= */
+      .qz .qz-trust {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 30px auto 0;
+        padding-top: 24px;
+        border-top: 1px solid var(--hair);
+      }
+
+      .qz .qz-trust li {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 11.5px;
+        font-weight: 600;
+        color: var(--txt-3);
+      }
+
+      .qz .qz-trust li+li::before {
+        content: "";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--txt-3);
+        opacity: .5;
+        margin-right: 8px
+      }
+
+      .qz .qz-trust svg {
+        width: 12px;
+        height: 12px;
+        flex: none;
+        color: var(--lime)
+      }
+    </style>
+    <style>
+      /* ============ START: LIVE ORDER FEED (floating card stack) ============ */
+      .qz .qz-feed {
+        position: relative;
+        height: 208px;
+        margin: 34px auto 0;
+        max-width: 410px;
+        perspective: 900px;
+      }
+
+      .qz .qz-feed::before {
+        /* lime pool */
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 38%;
+        transform: translateX(-50%);
+        width: 120%;
+        height: 70%;
+        border-radius: 50%;
+        pointer-events: none;
+        background: radial-gradient(closest-side, rgba(201, 242, 77, .20), transparent 72%);
+        filter: blur(30px);
+        animation: qz-breathe 9s ease-in-out infinite;
+      }
+
+      .qz .qz-ncard {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 6px;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        background: linear-gradient(180deg, #212630, #14171C);
+        border: 1px solid var(--hair-2);
+        border-radius: var(--r-md);
+        padding: 15px 16px;
+        opacity: 0;
+        box-shadow: 0 18px 44px rgba(0, 0, 0, .55);
+        animation: qz-nstack 9s cubic-bezier(.25, .9, .3, 1) infinite;
+      }
+
+      .qz .qz-ncard:nth-child(2) {
+        animation-delay: 3s
+      }
+
+      .qz .qz-ncard:nth-child(3) {
+        animation-delay: 6s
+      }
+
+      @keyframes qz-nstack {
+        0% {
+          transform: translateY(-30px) scale(.90);
+          opacity: 0;
+          z-index: 3
+        }
+
+        7% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+          z-index: 3
+        }
+
+        31% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+          z-index: 3
+        }
+
+        38% {
+          transform: translateY(70px) scale(.95);
+          opacity: .72;
+          z-index: 2
+        }
+
+        64% {
+          transform: translateY(70px) scale(.95);
+          opacity: .72;
+          z-index: 2
+        }
+
+        71% {
+          transform: translateY(138px) scale(.90);
+          opacity: .34;
+          z-index: 1
+        }
+
+        97% {
+          transform: translateY(138px) scale(.90);
+          opacity: 0;
+          z-index: 1
+        }
+
+        100% {
+          transform: translateY(-30px) scale(.90);
+          opacity: 0;
+          z-index: 1
+        }
+      }
+
+      .qz .qz-nic {
+        width: 36px;
+        height: 36px;
+        border-radius: 11px;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(160deg, #95BF47, #5E8E3E);
+        box-shadow: 0 3px 10px rgba(94, 142, 62, .4);
+      }
+
+      .qz .qz-nic svg {
+        width: 20px;
+        height: 20px
+      }
+
+      .qz .qz-ntx {
+        flex: 1;
+        min-width: 0
+      }
+
+      .qz .qz-ntop {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px
+      }
+
+      .qz .qz-napp {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--txt)
+      }
+
+      .qz .qz-ntime {
+        font-size: 11px;
+        color: var(--txt-3);
+        font-weight: 600;
+        flex: none
+      }
+
+      .qz .qz-nbody {
+        font-size: 13.5px;
+        color: var(--txt-2);
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 1px
+      }
+
+      .qz .qz-nbody b {
+        color: var(--lime);
+        font-weight: 700
+      }
+
+      /* ============ PROOF SCREENS ============ */
+      .qz .qz-proof-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: var(--sky);
+        background: rgba(111, 215, 245, .10);
+        border: 1px solid rgba(111, 215, 245, .22);
+        padding: 7px 14px;
+        border-radius: 999px;
+        margin-bottom: 18px;
+      }
+
+      .qz .qz-card {
+        background: linear-gradient(180deg, var(--surf), var(--ink));
+        border: 1px solid var(--hair);
+        border-radius: var(--r-lg);
+        padding: 22px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, .42);
+      }
+
+      /* proof 1 — customer */
+      .qz .qz-cust {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 16px
+      }
+
+      .qz .qz-face {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        flex: none;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: #2A1F00;
+        background: linear-gradient(155deg, #FFD873, #E8A020);
+        box-shadow: 0 0 0 2px rgba(201, 242, 77, .30), 0 6px 18px rgba(0, 0, 0, .4);
+      }
+
+      .qz .qz-face img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none
+      }
+
+      .qz .qz-face.qz-has-img img {
+        display: block
+      }
+
+      .qz .qz-face.qz-has-img .qz-face-tx {
+        display: none
+      }
+
+      .qz .qz-cname {
+        font-size: 15.5px;
+        font-weight: 700;
+        color: var(--txt);
+        line-height: 1.3
+      }
+
+      .qz .qz-cmeta {
+        font-size: 12.5px;
+        color: var(--txt-3);
+        font-weight: 500
+      }
+
+      .qz .qz-stars {
+        display: flex;
+        gap: 2px;
+        margin-top: 5px
+      }
+
+      .qz .qz-stars svg {
+        width: 13px;
+        height: 13px;
+        color: var(--amber)
+      }
+
+      .qz .qz-quote {
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--txt);
+        margin: 0 0 18px;
+        padding-left: 15px;
+        border-left: 2px solid var(--lime);
+      }
+
+      /* dashboard crop */
+      .qz .qz-crop {
+        background: var(--surf-2);
+        border: 1px solid var(--hair);
+        border-radius: var(--r-sm);
+        padding: 15px 16px;
+      }
+
+      .qz .qz-crop-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px
+      }
+
+      .qz .qz-crop-k {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--txt-3)
+      }
+
+      .qz .qz-crop-v {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--txt);
+        letter-spacing: -.02em;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.2;
+        margin-top: 3px;
+      }
+
+      .qz .qz-crop-up {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--lime);
+        background: var(--lime-dim);
+        padding: 4px 9px;
+        border-radius: 7px;
+        white-space: nowrap;
+        flex: none;
+      }
+
+      .qz .qz-spark {
+        width: 100%;
+        height: 46px;
+        display: block;
+        margin-top: 10px;
+        overflow: visible
+      }
+
+      .qz .qz-spark .qz-line {
+        fill: none;
+        stroke: var(--lime);
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 360;
+        stroke-dashoffset: 360;
+        animation: qz-draw 5.6s cubic-bezier(.45, .05, .35, 1) infinite;
+        filter: drop-shadow(0 0 6px rgba(201, 242, 77, .5));
+      }
+
+      @keyframes qz-draw {
+        0% {
+          stroke-dashoffset: 360
+        }
+
+        44%,
+        78% {
+          stroke-dashoffset: 0
+        }
+
+        100% {
+          stroke-dashoffset: 0;
+          opacity: 0
+        }
+      }
+
+      .qz .qz-spark .qz-farea {
+        opacity: 0;
+        animation: qz-fade 5.6s ease-in-out infinite
+      }
+
+      @keyframes qz-fade {
+
+        0%,
+        22% {
+          opacity: 0
+        }
+
+        54%,
+        78% {
+          opacity: .9
+        }
+
+        100% {
+          opacity: 0
+        }
+      }
+
+      .qz .qz-stat-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--hair);
+      }
+
+      .qz .qz-stat {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--txt-2);
+      }
+
+      .qz .qz-stat b {
+        color: var(--lime);
+        font-weight: 700
+      }
+
+      /* proof 2 — the money flow */
+      .qz .qz-flow {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        align-items: center;
+        gap: 8px
+      }
+
+      @media(max-width:560px) {
+
+        /* stacked, reads top to bottom:  £39.99  /  − £9.99  /  = £30.00 */
+        .qz .qz-flow {
+          grid-template-columns: 1fr;
+          gap: 0
+        }
+
+        .qz .qz-node {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          text-align: left;
+          padding: 14px 16px
+        }
+
+        .qz .qz-node .qz-nk {
+          margin: 0;
+          font-size: 11px
+        }
+
+        .qz .qz-node .qz-nv {
+          font-size: 22px
+        }
+
+        .qz .qz-op {
+          width: auto;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          color: var(--txt-3)
+        }
+
+        .qz .qz-op::after {
+          display: none
+        }
+      }
+
+      .qz .qz-node {
+        text-align: center;
+        border-radius: var(--r-sm);
+        padding: 16px 10px;
+        background: var(--surf-2);
+        border: 1px solid var(--hair);
+      }
+
+      .qz .qz-node .qz-nk {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--txt-3);
+        margin-bottom: 6px
+      }
+
+      .qz .qz-node .qz-nv {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(19px, 4.6vw, 24px);
+        font-weight: 700;
+        letter-spacing: -.02em;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .qz .qz-n-in .qz-nv {
+        color: var(--txt)
+      }
+
+      .qz .qz-n-out .qz-nv {
+        color: #FF9C8A
+      }
+
+      .qz .qz-n-keep {
+        background: linear-gradient(170deg, rgba(201, 242, 77, .16), rgba(201, 242, 77, .05));
+        border-color: rgba(201, 242, 77, .36)
+      }
+
+      .qz .qz-n-keep .qz-nv {
+        color: var(--lime);
+        animation: qz-thump 4.6s ease-in-out infinite
+      }
+
+      @keyframes qz-thump {
+
+        0%,
+        84%,
+        100% {
+          transform: scale(1)
+        }
+
+        90% {
+          transform: scale(1.09)
+        }
+      }
+
+      .qz .qz-op {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--txt-3);
+        position: relative;
+        width: 26px;
+        text-align: center;
+      }
+
+      .qz .qz-op::after {
+        /* travelling pulse */
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--lime);
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        box-shadow: 0 0 10px rgba(201, 242, 77, .9);
+        animation: qz-travel 4.4s ease-in-out infinite;
+      }
+
+      .qz .qz-op:nth-of-type(2)::after {
+        animation-delay: .5s
+      }
+
+      @keyframes qz-travel {
+
+        0%,
+        58% {
+          opacity: 0;
+          transform: translate(-190%, -50%)
+        }
+
+        68% {
+          opacity: 1
+        }
+
+        78% {
+          opacity: 1;
+          transform: translate(90%, -50%)
+        }
+
+        86%,
+        100% {
+          opacity: 0;
+          transform: translate(190%, -50%)
+        }
+      }
+
+      .qz .qz-flow-note {
+        display: grid;
+        gap: 10px;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--hair);
+      }
+
+      .qz .qz-flow-note li {
+        display: flex;
+        gap: 11px;
+        align-items: flex-start;
+        font-size: 15px;
+        color: var(--txt-2)
+      }
+
+      .qz .qz-flow-note svg {
+        width: 17px;
+        height: 17px;
+        flex: none;
+        margin-top: 2px;
+        color: var(--lime)
+      }
+
+      .qz .qz-flow-note b {
+        color: var(--txt)
+      }
+
+      /* ============ LOADING SCREEN ============ */
+      .qz .qz-load {
+        text-align: center;
+        max-width: 430px;
+        margin: 0 auto
+      }
+
+      .qz .qz-ring {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 26px;
+        display: block;
+        transform: rotate(-90deg)
+      }
+
+      .qz .qz-ring .qz-r-bg {
+        fill: none;
+        stroke: rgba(255, 255, 255, .09);
+        stroke-width: 5
+      }
+
+      .qz .qz-ring .qz-r-fg {
+        fill: none;
+        stroke: var(--lime);
+        stroke-width: 5;
+        stroke-linecap: round;
+        stroke-dasharray: 264;
+        stroke-dashoffset: 264;
+        filter: drop-shadow(0 0 8px rgba(201, 242, 77, .6));
+        animation: qz-ring 2.1s cubic-bezier(.4, .05, .25, 1) forwards;
+      }
+
+      @keyframes qz-ring {
+        to {
+          stroke-dashoffset: 10
+        }
+      }
+
+      .qz .qz-lsteps {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        margin-top: 28px;
+        text-align: left
+      }
+
+      .qz .qz-lstep {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        font-size: 15.5px;
+        color: var(--txt-3);
+        background: var(--surf);
+        border: 1px solid var(--hair);
+        border-radius: var(--r-sm);
+        padding: 14px 16px;
+        opacity: .45;
+        transition: opacity .4s ease, color .4s ease, border-color .4s ease;
+      }
+
+      .qz .qz-lstep.qz-done {
+        opacity: 1;
+        color: var(--txt);
+        border-color: rgba(201, 242, 77, .28)
+      }
+
+      .qz .qz-lbox {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        flex: none;
+        position: relative;
+        border: 2px solid var(--hair-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .35s ease;
+      }
+
+      .qz .qz-lstep.qz-done .qz-lbox {
+        background: var(--lime);
+        border-color: var(--lime)
+      }
+
+      .qz .qz-lbox svg {
+        width: 12px;
+        height: 12px;
+        color: var(--lime-ink);
+        opacity: 0;
+        transform: scale(.4);
+        transition: all .3s cubic-bezier(.2, .9, .3, 1)
+      }
+
+      .qz .qz-lstep.qz-done .qz-lbox svg {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      /* ============ REDUCED MOTION ============ */
+      @media(prefers-reduced-motion:reduce) {
+
+        .qz *,
+        .qz *::before,
+        .qz *::after {
+          animation-duration: .001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: .001ms !important;
+        }
+
+        .qz .qz-ncard {
+          opacity: 1;
+          position: relative;
+          top: auto;
+          margin-bottom: 10px;
+          transform: none
+        }
+
+        .qz .qz-feed {
+          height: auto;
+          perspective: none
+        }
+
+        .qz .qz-spark .qz-line {
+          stroke-dashoffset: 0
+        }
+
+        .qz .qz-spark .qz-farea {
+          opacity: .9
+        }
+
+        .qz .qz-ring .qz-r-fg {
+          stroke-dashoffset: 10
+        }
+      }
+    </style>
+
+    <div class="qz-bg"></div>
+
+    <!-- ================= PROGRESS RAIL ================= -->
+    <div class="qz-rail">
+      <div class="qz-rail-in">
+        <div class="qz-rail-top">
+          <span class="qz-step" id="qz-step">Question <b>1</b> of 6</span>
+          <span class="qz-mark"><i></i>30 seconds</span>
+        </div>
+        <div class="qz-track"><span class="qz-fill" id="qz-fill"></span></div>
+      </div>
+    </div>
+
+    <div class="qz-wrap">
+      <div class="qz-stage" id="qz-stage">
+        <section class="qz-screen" data-screen="q1" data-q="1">
+          <div class="qz-hero">
+            <span class="qz-eyebrow">Answer 6 quick questions</span>
+            <h1 class="qz-d1">Answer 6 quick questions.</h1>
+            <p class="qz-hero-sub">We&rsquo;ll show you the <span class="qz-lime">fastest entry point to &pound;3,000 to
+                &pound;5,000 a month</span>.</p>
+            <p class="qz-lede qz-hero-micro">Takes 30 seconds &middot; No email needed &middot; 20,000+ stores already
+              built</p>
+          </div>
+          <div class="qz-qhead">
+            <span class="qz-qnum">Question 1 of 6</span>
+            <h2 class="qz-q qz-d3">How much extra do you want to make every month?</h2>
+          </div>
+          <div class="qz-answers">
+            <button class="qz-a" type="button" data-q="q1" data-v="500-1000"><span class="qz-key">A</span><span
+                class="qz-atx">&pound;500 to &pound;1,000</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q1" data-v="1000-3000"><span class="qz-key">B</span><span
+                class="qz-atx">&pound;1,000 to &pound;3,000</span><span class="qz-go"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q1" data-v="3000-5000"><span class="qz-key">C</span><span
+                class="qz-atx">&pound;3,000 to &pound;5,000</span><span class="qz-go"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q1" data-v="10000+"><span class="qz-key">D</span><span
+                class="qz-atx">&pound;10,000+</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+          </div>
+          <div class="qz-feed" aria-hidden="true">
+            <div class="qz-ncard">
+              <span class="qz-nic" data-qz-mark></span>
+              <span class="qz-ntx">
+                <span class="qz-ntop"><span class="qz-napp">Shopify</span><span class="qz-ntime">06:12</span></span>
+                <span class="qz-nbody">New order &middot; <b>&pound;34.49</b> &middot; #1043</span>
+              </span>
+            </div>
+            <div class="qz-ncard">
+              <span class="qz-nic" data-qz-mark></span>
+              <span class="qz-ntx">
+                <span class="qz-ntop"><span class="qz-napp">Shopify</span><span class="qz-ntime">06:38</span></span>
+                <span class="qz-nbody">New order &middot; <b>&pound;39.99</b> &middot; #1044</span>
+              </span>
+            </div>
+            <div class="qz-ncard">
+              <span class="qz-nic" data-qz-mark></span>
+              <span class="qz-ntx">
+                <span class="qz-ntop"><span class="qz-napp">Shopify</span><span class="qz-ntime">06:51</span></span>
+                <span class="qz-nbody">New order &middot; <b>&pound;39.99</b> &middot; #1045</span>
+              </span>
+            </div>
+          </div>
+          <ul class="qz-trust">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>Official Shopify Partners</li>
+            <li>20,000+ customers</li>
+            <li>Store ready in 24 hours</li>
+            <li>90-day refund guarantee</li>
+          </ul>
+        </section>
+
+        <section class="qz-screen" data-screen="q2" data-q="2">
+          <div class="qz-qhead">
+            <span class="qz-qnum">Question 2 of 6</span>
+            <h2 class="qz-q qz-d3">How many hours do you have to spare a week?</h2>
+          </div>
+          <div class="qz-answers">
+            <button class="qz-a" type="button" data-q="q2" data-v="under-5"><span class="qz-key">A</span><span
+                class="qz-atx">Under 5 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q2" data-v="5-10"><span class="qz-key">B</span><span
+                class="qz-atx">5 to 10 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q2" data-v="10-plus"><span class="qz-key">C</span><span
+                class="qz-atx">More than 10 hours</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q2" data-v="unsure"><span class="qz-key">D</span><span
+                class="qz-atx">Honestly, I don&rsquo;t know yet</span><span class="qz-go"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+          </div>
+          <p class="qz-helper">Most people run their store in about 5 hours a week. Whatever you picked, it&rsquo;s
+            enough.</p>
+        </section>
+
+        <section class="qz-screen" data-screen="q3" data-q="3">
+          <div class="qz-qhead">
+            <span class="qz-qnum">Question 3 of 6</span>
+            <h2 class="qz-q qz-d3">Have you ever sold anything online before?</h2>
+          </div>
+          <div class="qz-answers">
+            <button class="qz-a" type="button" data-q="q3" data-v="never"><span class="qz-key">A</span><span
+                class="qz-atx">Never</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q3" data-v="looked"><span class="qz-key">B</span><span
+                class="qz-atx">I&rsquo;ve had a look into it</span><span class="qz-go"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q3" data-v="a-bit"><span class="qz-key">C</span><span
+                class="qz-atx">Yes, a bit</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q3" data-v="other-sites"><span class="qz-key">D</span><span
+                class="qz-atx">I&rsquo;ve sold on eBay, Vinted or Depop</span><span class="qz-go"><svg
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+          </div>
+          <p class="qz-helper">&ldquo;Never&rdquo; is the most common answer on this page.</p>
+        </section>
+
+        <section class="qz-screen" data-screen="proof1">
+          <span class="qz-proof-tag">You&rsquo;re in good company</span>
+          <div class="qz-card">
+            <div class="qz-cust">
+              <span class="qz-face" id="qz-liam">
+                <i class="qz-face-tx" style="font-style:normal">LB</i>
+                <img alt="Liam B.">
+              </span>
+              <span>
+                <span class="qz-cname">Liam B.</span>
+                <span class="qz-cmeta">19 &middot; brickie, Manchester</span>
+                <span class="qz-stars"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" />
+                  </svg><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" />
+                  </svg><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" />
+                  </svg><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" />
+                  </svg><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" />
+                  </svg></span>
+              </span>
+            </div>
+            <p class="qz-quote">&ldquo;made &pound;239 my first week and i was on site the whole time lol lads didnt
+              believe me till i showed them&rdquo;</p>
+            <div class="qz-crop">
+              <div class="qz-crop-top">
+                <div>
+                  <div class="qz-crop-k">Liam&rsquo;s first week</div>
+                  <div class="qz-crop-v" id="qz-liam-total">&pound;239.40</div>
+                </div>
+                <span class="qz-crop-up">6 orders</span>
+              </div>
+              <svg class="qz-spark" viewBox="0 0 220 46" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="qzG" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#C9F24D" stop-opacity=".34" />
+                    <stop offset="100%" stop-color="#C9F24D" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <path class="qz-farea" fill="url(#qzG)"
+                  d="M2,40 L2,36 L38,33 L74,34 L110,22 L146,18 L182,10 L218,4 L218,46 L2,46 Z" />
+                <path class="qz-line" d="M2,36 L38,33 L74,34 L110,22 L146,18 L182,10 L218,4" />
+              </svg>
+            </div>
+            <div class="qz-stat-row">
+              <span class="qz-stat"><b>20,000+</b> stores built</span>
+              <span class="qz-stat"><b>&pound;2.5 million+</b> generated</span>
+            </div>
+          </div>
+          <div class="qz-ctawrap">
+            <button class="qz-cta" type="button" data-qz-next>Continue <span class="qz-arw">&rarr;</span></button>
+          </div>
+        </section>
+
+        <section class="qz-screen" data-screen="q4" data-q="4">
+          <div class="qz-qhead">
+            <span class="qz-qnum">Question 4 of 6</span>
+            <h2 class="qz-q qz-d3">What&rsquo;s stopped you from starting something online before?</h2>
+          </div>
+          <div class="qz-answers">
+            <button class="qz-a" type="button" data-q="q4" data-v="time"><span class="qz-key">A</span><span
+                class="qz-atx">I don&rsquo;t have the time</span><span class="qz-go"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q4" data-v="what-to-sell"><span class="qz-key">B</span><span
+                class="qz-atx">I don&rsquo;t know what to sell</span><span class="qz-go"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q4" data-v="not-techy"><span class="qz-key">C</span><span
+                class="qz-atx">I&rsquo;m not techy</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q4" data-v="tried-before"><span class="qz-key">D</span><span
+                class="qz-atx">I&rsquo;ve tried before and got nowhere</span><span class="qz-go"><svg
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q4" data-v="all-of-the-above"><span class="qz-key">E</span><span
+                class="qz-atx">All of the above</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+          </div>
+          <p class="qz-helper">Whatever you picked, that&rsquo;s the part we do for you.</p>
+        </section>
+
+        <section class="qz-screen" data-screen="proof2">
+          <span class="qz-proof-tag">The maths</span>
+          <h2 class="qz-d3 qz-proof-h">Here&rsquo;s how the money actually works.</h2>
+          <div class="qz-card">
+            <div class="qz-flow">
+              <div class="qz-node qz-n-in">
+                <div class="qz-nk">Customer pays</div>
+                <div class="qz-nv">&pound;39.99</div>
+              </div>
+              <div class="qz-op">&minus;</div>
+              <div class="qz-node qz-n-out">
+                <div class="qz-nk">Supplier</div>
+                <div class="qz-nv">&pound;9.99</div>
+              </div>
+              <div class="qz-op">=</div>
+              <div class="qz-node qz-n-keep">
+                <div class="qz-nk">You keep</div>
+                <div class="qz-nv">&pound;30.00</div>
+              </div>
+            </div>
+            <ul class="qz-flow-note">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span><b>1 sale a day</b> is about &pound;900 a month.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span><b>3 sales a day</b> is about &pound;2,700 a month.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span>You never pack, post or touch a parcel. <b>The supplier ships every order
+                    automatically.</b></span></li>
+            </ul>
+          </div>
+          <div class="qz-ctawrap">
+            <button class="qz-cta" type="button" data-qz-next>Continue <span class="qz-arw">&rarr;</span></button>
+          </div>
+        </section>
+
+        <section class="qz-screen" data-screen="q5" data-q="5">
+          <div class="qz-qhead">
+            <span class="qz-qnum">Question 5 of 6</span>
+            <h2 class="qz-q qz-d3">When the money starts coming in, what&rsquo;s the first thing it goes on?</h2>
+          </div>
+          <div class="qz-answers">
+            <button class="qz-a" type="button" data-q="q5" data-v="hours"><span class="qz-key">A</span><span
+                class="qz-atx">Dropping to fewer hours at work</span><span class="qz-go"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q5" data-v="travel"><span class="qz-key">B</span><span
+                class="qz-atx">A holiday somewhere warm</span><span class="qz-go"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q5" data-v="spend"><span class="qz-key">C</span><span
+                class="qz-atx">The things I&rsquo;d never normally buy myself</span><span class="qz-go"><svg
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q5" data-v="family"><span class="qz-key">D</span><span
+                class="qz-atx">Looking after the people I love</span><span class="qz-go"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+          </div>
+        </section>
+
+        <section class="qz-screen" data-screen="q6" data-q="6">
+          <div class="qz-qhead">
+            <span class="qz-qnum">Question 6 of 6</span>
+            <h2 class="qz-q qz-d3">Two months from now, will you be glad you started, or will you still be thinking
+              about it?</h2>
+          </div>
+          <div class="qz-answers">
+            <button class="qz-a" type="button" data-q="q6" data-v="glad-i-started"><span class="qz-key">A</span><span
+                class="qz-atx">I&rsquo;ll be glad I started making &pound;3,000 to &pound;5,000 a month</span><span
+                class="qz-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+            <button class="qz-a" type="button" data-q="q6" data-v="still-thinking"><span class="qz-key">B</span><span
+                class="qz-atx">I&rsquo;d probably still be thinking about it</span><span class="qz-go"><svg
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg></span></button>
+          </div>
+        </section>
+
+        <section class="qz-screen" data-screen="loading">
+          <div class="qz-load">
+            <svg class="qz-ring" viewBox="0 0 96 96" aria-hidden="true">
+              <circle class="qz-r-bg" cx="48" cy="48" r="42" />
+              <circle class="qz-r-fg" cx="48" cy="48" r="42" />
+            </svg>
+            <h2 class="qz-d3">Building your recommendation</h2>
+            <ul class="qz-lsteps">
+              <li class="qz-lstep"><span class="qz-lbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg></span>Matching winning products to your answers</li>
+              <li class="qz-lstep"><span class="qz-lbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg></span>Checking supplier availability</li>
+              <li class="qz-lstep"><span class="qz-lbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg></span>Locking in your store type</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <style>
+      .qz .qz-hero {
+        text-align: center;
+        margin-bottom: 30px
+      }
+
+      .qz .qz-hero h1 {
+        margin-bottom: 14px
+      }
+
+      .qz .qz-hero-sub {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        letter-spacing: -.02em;
+        font-size: clamp(17px, 3.2vw, 23px);
+        line-height: 1.3;
+        color: var(--txt);
+        max-width: 560px;
+        margin: 0 auto 14px;
+        text-wrap: balance;
+      }
+
+      .qz .qz-hero-micro {
+        font-size: 13.5px;
+        color: var(--txt-3);
+        margin: 0
+      }
+
+      .qz .qz-proof-h {
+        margin-bottom: 22px
+      }
+
+      @media(max-width:560px) {
+
+        /* mobile: the question and every Continue button sit on the first screen */
+        .qz .qz-stage {
+          padding-top: 18px
+        }
+
+        .qz .qz-hero {
+          margin-bottom: 24px
+        }
+
+        .qz .qz-hero h1 {
+          margin-bottom: 10px
+        }
+
+        .qz .qz-hero-sub {
+          margin-bottom: 10px
+        }
+
+        .qz .qz-qhead {
+          margin-bottom: 18px
+        }
+
+        .qz .qz-qnum {
+          margin-bottom: 10px
+        }
+
+        .qz .qz-proof-tag {
+          margin-bottom: 12px;
+          padding: 6px 12px
+        }
+
+        .qz .qz-proof-h {
+          margin-bottom: 14px
+        }
+
+        .qz .qz-card {
+          padding: 16px
+        }
+
+        .qz .qz-ctawrap {
+          margin-top: 16px
+        }
+
+        .qz .qz-cust {
+          margin-bottom: 12px
+        }
+
+        /* the maths, compact */
+        .qz [data-screen="proof2"] .qz-card {
+          padding: 14px
+        }
+
+        .qz .qz-node {
+          padding: 9px 14px
+        }
+
+        .qz .qz-node .qz-nv {
+          font-size: 19px
+        }
+
+        .qz .qz-op {
+          height: 16px;
+          font-size: 13px
+        }
+
+        .qz .qz-flow-note {
+          gap: 6px;
+          margin-top: 12px;
+          padding-top: 12px
+        }
+
+        .qz .qz-flow-note li {
+          font-size: 14px;
+          line-height: 1.4
+        }
+
+        .qz .qz-flow-note svg {
+          width: 15px;
+          height: 15px
+        }
+      }
+
+      @media(min-width:760px) {
+        .qz .qz-feed {
+          margin-top: 40px
+        }
+      }
+    </style>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ==========================================================
+           QZ_CONFIG — the only things you normally change.
+           ========================================================== */
+        var QZ_CONFIG = {
+          // (single-file version: the result section is in this same file,
+          //  so no result URL is needed — kept here only for reference)
+          resultUrlShopify: "",
+          resultUrlPreview: "",
+
+          // How long the selected answer is shown before advancing (ms)
+          advanceDelay: 330,
+
+          // Loading screen: each line ticks off, then it redirects
+          stepEvery: 620,
+          redirectAfter: 2200,
+
+          // Optional photo for the customer on proof screen 1 ("" = initials)
+          liamPhotoUrl: ""
+        };
+
+        var QZ_MARK =
+          '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+          '<path d="M5.6 7.3h12.8a.95.95 0 0 1 .95 1.04l-1.16 11.7a1.5 1.5 0 0 1-1.5 1.36H7.31' +
+          'a1.5 1.5 0 0 1-1.5-1.36L4.65 8.34A.95.95 0 0 1 5.6 7.3Z" fill="#fff" fill-opacity=".95"/>' +
+          '<path d="M8.85 8.4V6.75a3.15 3.15 0 0 1 6.3 0V8.4" stroke="#fff" stroke-width="1.5" ' +
+          'stroke-linecap="round" fill="none" opacity=".95"/>' +
+          '<text x="12" y="17.6" text-anchor="middle" font-family="Plus Jakarta Sans,Helvetica,Arial,sans-serif" ' +
+          'font-size="9.2" font-weight="700" fill="#5E8E3E">S</text>' +
+          '</svg>';
+
+        var root = document.querySelector(".qz");
+        if (!root) return;
+        var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* Shopify storefronts expose window.Shopify, so the same file picks the
+           right destination on the live store and in a local / GitHub preview. */
+        function resultUrl() {
+          return (window.Shopify && window.Shopify.shop) ? QZ_CONFIG.resultUrlShopify
+            : QZ_CONFIG.resultUrlPreview;
+        }
+
+        /* Answers are only kept in this browser tab (sessionStorage) so the result
+           page can echo them. To actually SEE what people answer, each tap is also
+           sent to the Meta Pixel / Google Tag if the store has them installed.
+           If neither is installed these calls do nothing. */
+        function track(name, data) {
+          try { if (typeof window.fbq === "function") window.fbq("trackCustom", name, data); } catch (e) { }
+          try {
+            if (window.dataLayer && window.dataLayer.push)
+              window.dataLayer.push(Object.assign({ event: name }, data));
+          } catch (e) { }
+        }
+
+        /* ---------- safe storage ---------- */
+        function save(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { } }
+
+        /* ---------- Shopify mark ---------- */
+        root.querySelectorAll("[data-qz-mark]").forEach(function (el) { el.innerHTML = QZ_MARK; });
+
+        /* ---------- optional customer photo ---------- */
+        var face = document.getElementById("qz-liam");
+        if (face && QZ_CONFIG.liamPhotoUrl) {
+          var img = face.querySelector("img");
+          img.onload = function () { face.classList.add("qz-has-img"); };
+          img.onerror = function () { face.classList.remove("qz-has-img"); };
+          img.src = QZ_CONFIG.liamPhotoUrl;
+        }
+
+        /* ---------- screens ---------- */
+        var stage = document.getElementById("qz-stage");
+        var screens = Array.prototype.slice.call(stage.querySelectorAll(".qz-screen"));
+        var fill = document.getElementById("qz-fill");
+        var stepEl = document.getElementById("qz-step");
+        var rail = root.querySelector(".qz-rail");
+        var idx = 0, busy = false;
+
+        function label(sc) {
+          var q = sc.getAttribute("data-q");
+          if (q) return "Question <b>" + q + "</b> of 6";
+          if (sc.getAttribute("data-screen") === "loading") return "Building your result";
+          return "Quick look";
+        }
+
+        function paint() {
+          var sc = screens[idx];
+          fill.style.width = Math.round(((idx + 1) / screens.length) * 100) + "%";
+          stepEl.innerHTML = label(sc);
+        }
+
+        function nudgeScroll() {
+          if (!rail) return;
+          var r = stage.getBoundingClientRect();
+          if (r.top < 0) {
+            var y = window.pageYOffset + r.top - rail.offsetHeight - 10;
+            window.scrollTo({ top: Math.max(0, y), behavior: reduced ? "auto" : "smooth" });
+          }
+        }
+
+        function go(next) {
+          if (busy || next < 0 || next >= screens.length) return;
+          busy = true;
+          var from = screens[idx], to = screens[next];
+
+          var swap = function () {
+            from.classList.remove("qz-on", "qz-out");
+            to.classList.add("qz-on");
+            idx = next;
+            paint();
+            nudgeScroll();
+            busy = false;
+            if (to.getAttribute("data-screen") === "loading") runLoading();
+          };
+
+          if (reduced) { swap(); return; }
+          from.classList.add("qz-out");
+          setTimeout(swap, 250);
+        }
+
+        /* ---------- answers ---------- */
+        root.querySelectorAll(".qz-a").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            if (busy) return;
+            var sc = btn.closest(".qz-screen");
+            sc.querySelectorAll(".qz-a").forEach(function (b) { b.classList.remove("qz-picked"); });
+            btn.classList.add("qz-picked");
+            save("bk_" + btn.dataset.q, btn.dataset.v);
+            track("QuizAnswer", { quiz_question: btn.dataset.q, quiz_answer: btn.dataset.v });
+            setTimeout(function () { go(idx + 1); }, QZ_CONFIG.advanceDelay);
+          });
+        });
+
+        /* ---------- proof-screen continue ---------- */
+        root.querySelectorAll("[data-qz-next]").forEach(function (btn) {
+          btn.addEventListener("click", function () { go(idx + 1); });
+        });
+
+        /* ---------- loading -> redirect ---------- */
+        var loadingRan = false;
+        function runLoading() {
+          if (loadingRan) return;
+          loadingRan = true;
+          var steps = root.querySelectorAll(".qz-lstep");
+          steps.forEach(function (s, i) {
+            setTimeout(function () { s.classList.add("qz-done"); }, QZ_CONFIG.stepEvery * (i + 1));
+          });
+          save("bk_done", "1");
+          track("QuizComplete", {});
+          setTimeout(function () {
+            /* single-file version: reveal the result section in place of a redirect */
+            var rz = document.querySelector(".rz");
+            root.style.display = "none";
+            if (rz) { rz.style.display = ""; }
+            window.scrollTo(0, 0);
+            try { history.replaceState(null, "", "#result"); } catch (e) { }
+            if (typeof window.__rzInit === "function") window.__rzInit();
+          }, QZ_CONFIG.redirectAfter);
+        }
+
+        /* ---------- count-up on proof 1 ---------- */
+        var total = document.getElementById("qz-liam-total");
+        if (total && !reduced && "IntersectionObserver" in window) {
+          var io = new IntersectionObserver(function (en) {
+            en.forEach(function (e) {
+              if (!e.isIntersecting) return;
+              io.unobserve(e.target);
+              var start = null;
+              function step(ts) {
+                if (start === null) start = ts;
+                var p = Math.min((ts - start) / 1400, 1);
+                var k = 1 - Math.pow(1 - p, 3);
+                total.textContent = "£" + (239.40 * k).toLocaleString("en-GB",
+                  { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                if (p < 1) requestAnimationFrame(step);
+              }
+              requestAnimationFrame(step);
+            });
+          }, { threshold: .5 });
+          io.observe(total);
+        }
+
+        /* ---------- start ---------- */
+        screens[0].classList.add("qz-on");
+        paint();
+
+      })();
+    </script>
+
+  </div><!-- /.qz -->
+
+  <div class="rz" style="display:none">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+    <style>
+      /* ======================= TOKENS ======================= */
+      .rz {
+        --void: #08090B;
+        --ink: #0D0F13;
+        --surf: #14171C;
+        --surf-2: #1A1E25;
+        --surf-3: #222730;
+        --hair: rgba(255, 255, 255, .08);
+        --hair-2: rgba(255, 255, 255, .15);
+        --lime: #C9F24D;
+        --lime-2: #ADDC2C;
+        --lime-dim: rgba(201, 242, 77, .13);
+        --lime-ink: #0B1103;
+        --gold: #FFC368;
+        --gold-2: #E9A33C;
+        --gold-dim: rgba(255, 195, 104, .13);
+        --sky: #6FD7F5;
+        --txt: #F4F6F8;
+        --txt-2: #98A2AF;
+        --txt-3: #626C78;
+        --r-sm: 12px;
+        --r-md: 18px;
+        --r-lg: 24px;
+        --r-xl: 32px;
+        --wrap: 1060px;
+        position: relative;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: var(--void);
+        color: var(--txt);
+        font-size: 16px;
+        line-height: 1.58;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+
+      .rz::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 40;
+        pointer-events: none;
+        opacity: .04;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        background-size: 180px 180px
+      }
+
+      .rz *,
+      .rz *::before,
+      .rz *::after {
+        box-sizing: border-box
+      }
+
+      .rz img {
+        max-width: 100%;
+        display: block
+      }
+
+      .rz p {
+        margin: 0 0 1em
+      }
+
+      .rz h1,
+      .rz h2,
+      .rz h3 {
+        margin: 0 0 .5em;
+        font-weight: 400
+      }
+
+      .rz ul {
+        margin: 0;
+        padding: 0;
+        list-style: none
+      }
+
+      .rz b,
+      .rz strong {
+        font-weight: 700;
+        color: var(--txt)
+      }
+
+      .rz .rz-d1,
+      .rz .rz-d2,
+      .rz .rz-d3 {
+        font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        line-height: 1.07;
+        letter-spacing: -.03em;
+        text-wrap: balance;
+      }
+
+      .rz .rz-d1 {
+        font-size: clamp(31px, 6vw, 54px)
+      }
+
+      .rz .rz-d2 {
+        font-size: clamp(25px, 4.6vw, 38px)
+      }
+
+      .rz .rz-d3 {
+        font-size: clamp(19px, 3.2vw, 25px);
+        letter-spacing: -.02em
+      }
+
+      .rz .rz-lime {
+        color: var(--lime)
+      }
+
+      .rz .rz-gold {
+        color: var(--gold)
+      }
+
+      .rz .rz-lede {
+        font-size: clamp(15.5px, 2.4vw, 18px);
+        color: var(--txt-2);
+        line-height: 1.62
+      }
+
+      .rz .rz-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        padding: 8px 15px;
+        border-radius: 999px;
+        margin: 0 0 20px;
+        color: var(--gold);
+        background: var(--gold-dim);
+        border: 1px solid rgba(255, 195, 104, .26);
+      }
+
+      .rz .rz-eyebrow i {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex: none;
+        box-shadow: 0 0 0 0 rgba(255, 195, 104, .7);
+        animation: rz-pulse 2.4s ease-out infinite
+      }
+
+      @keyframes rz-pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 195, 104, .55)
+        }
+
+        70% {
+          box-shadow: 0 0 0 9px rgba(255, 195, 104, 0)
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 195, 104, 0)
+        }
+      }
+
+      .rz .rz-wrap {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: var(--wrap);
+        margin: 0 auto;
+        padding: 0 22px
+      }
+
+      .rz .rz-sec {
+        padding: 62px 0
+      }
+
+      @media(min-width:900px) {
+        .rz .rz-sec {
+          padding: 92px 0
+        }
+      }
+
+      .rz .rz-head {
+        max-width: 720px;
+        margin: 0 auto 40px;
+        text-align: center
+      }
+
+      .rz .rz-head .rz-lede {
+        margin-top: 15px
+      }
+
+      /* ======================= BUTTON ======================= */
+      .rz .rz-cta {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 410px;
+        padding: 19px 30px;
+        overflow: hidden;
+        isolation: isolate;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16.5px;
+        font-weight: 700;
+        letter-spacing: -.01em;
+        color: var(--lime-ink);
+        text-decoration: none;
+        border: 0;
+        border-radius: 999px;
+        cursor: pointer;
+        background: linear-gradient(180deg, #D8FA68 0%, var(--lime) 46%, var(--lime-2) 100%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -2px 0 rgba(60, 90, 0, .22),
+          0 4px 14px rgba(201, 242, 77, .22), 0 16px 40px rgba(201, 242, 77, .18);
+        transition: transform .22s cubic-bezier(.2, .8, .3, 1), box-shadow .22s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .rz .rz-cta::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(104deg, transparent 40%, rgba(255, 255, 255, .55) 50%, transparent 60%);
+        transform: translateX(-120%);
+        animation: rz-sheen 5s ease-in-out infinite
+      }
+
+      @keyframes rz-sheen {
+
+        0%,
+        64% {
+          transform: translateX(-120%)
+        }
+
+        88%,
+        100% {
+          transform: translateX(120%)
+        }
+      }
+
+      .rz .rz-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), inset 0 -2px 0 rgba(60, 90, 0, .22),
+          0 6px 18px rgba(201, 242, 77, .3), 0 22px 50px rgba(201, 242, 77, .24)
+      }
+
+      .rz .rz-cta .rz-arw {
+        display: inline-block;
+        animation: rz-nudge 2.6s ease-in-out infinite
+      }
+
+      @keyframes rz-nudge {
+
+        0%,
+        100% {
+          transform: translateX(0)
+        }
+
+        50% {
+          transform: translateX(5px)
+        }
+      }
+
+      .rz .rz-ctablock {
+        text-align: center;
+        margin-top: 34px
+      }
+
+      .rz .rz-join {
+        margin: 14px 0 0;
+        font-size: 13.5px;
+        color: var(--txt-3);
+        font-weight: 500
+      }
+
+      /* ======================= RESULT HERO ======================= */
+      .rz .rz-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 46px 0 58px;
+        background:
+          radial-gradient(60% 40% at 50% -4%, rgba(255, 195, 104, .20) 0%, transparent 62%),
+          radial-gradient(48% 34% at 88% 30%, rgba(201, 242, 77, .10) 0%, transparent 60%),
+          linear-gradient(180deg, #141109 0%, var(--void) 58%);
+      }
+
+      .rz .rz-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: .32;
+        background-image: linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
+        background-size: 60px 60px;
+        -webkit-mask-image: radial-gradient(64% 54% at 50% 26%, #000, transparent 78%);
+        mask-image: radial-gradient(64% 54% at 50% 26%, #000, transparent 78%);
+      }
+
+      .rz .rz-hero-in {
+        position: relative;
+        z-index: 2;
+        text-align: center
+      }
+
+      .rz .rz-hero h1 {
+        margin-bottom: 16px
+      }
+
+      .rz .rz-hero .rz-lede {
+        max-width: 540px;
+        margin: 0 auto
+      }
+
+      @media(min-width:900px) {
+        .rz .rz-hero {
+          padding: 58px 0 60px
+        }
+      }
+    </style>
+    <style>
+      /* ============ STORE REEL (real stores, crossfading) ============ */
+      .rz .rz-stage {
+        position: relative;
+        max-width: 820px;
+        margin: 52px auto 0
+      }
+
+      .rz .rz-stage::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+        width: 118%;
+        height: 84%;
+        border-radius: 50%;
+        pointer-events: none;
+        background: radial-gradient(closest-side, rgba(255, 195, 104, .20), rgba(201, 242, 77, .06) 55%, transparent 74%);
+        filter: blur(44px);
+        animation: rz-breathe 10s ease-in-out infinite;
+      }
+
+      @keyframes rz-breathe {
+
+        0%,
+        100% {
+          opacity: .7;
+          transform: translateX(-50%) scale(1)
+        }
+
+        50% {
+          opacity: 1;
+          transform: translateX(-50%) scale(1.06)
+        }
+      }
+
+      .rz .rz-deck {
+        position: relative;
+        z-index: 2
+      }
+
+      /* the two stores fanned out behind */
+      .rz .rz-ghost {
+        position: absolute;
+        inset: 0;
+        border-radius: 28px;
+        overflow: hidden;
+        background: #1A1D22;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
+        filter: brightness(.5) saturate(.75);
+        transition: transform .9s cubic-bezier(.3, .9, .3, 1);
+      }
+
+      .rz .rz-ghost img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 58%;
+        display: block
+      }
+
+      .rz .rz-ghost-l {
+        transform: translate(-10%, 2%) rotate(-6deg) scale(.9)
+      }
+
+      .rz .rz-ghost-r {
+        transform: translate(10%, 2%) rotate(6deg) scale(.9)
+      }
+
+      /* the live store */
+      .rz .rz-reel {
+        position: relative;
+        aspect-ratio: 3/2;
+        border-radius: 28px;
+        overflow: hidden;
+        background: #F2F2F0;
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, .18),
+          0 34px 90px rgba(0, 0, 0, .62),
+          0 0 70px rgba(255, 195, 104, .10);
+      }
+
+      .rz .rz-reel img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center 58%;
+        opacity: 0;
+        transform: scale(1.07);
+        transition: opacity .55s ease, transform 4.5s cubic-bezier(.2, .6, .3, 1);
+      }
+
+      .rz .rz-reel img.rz-on {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      .rz .rz-reel::after {
+        /* soft vignette so the glass UI sits well */
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(180deg, rgba(0, 0, 0, .10) 0%, transparent 22%, transparent 62%, rgba(0, 0, 0, .30) 100%);
+      }
+
+      /* story-style progress */
+      /* caption */
+      .rz .rz-cap {
+        position: absolute;
+        z-index: 4;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 15px;
+        border-radius: 17px;
+        background: rgba(14, 16, 20, .74);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, .13);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07);
+      }
+
+      .rz .rz-cap-l {
+        min-width: 0
+      }
+
+      .rz .rz-cap-k {
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--txt-3)
+      }
+
+      .rz .rz-cap b {
+        display: block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -.015em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+      }
+
+      .rz .rz-cap-r {
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: var(--lime);
+        background: var(--lime-dim);
+        border: 1px solid rgba(201, 242, 77, .26);
+        padding: 7px 11px;
+        border-radius: 99px;
+        flex: none;
+      }
+
+      /* frosted stat cards */
+      .rz .rz-glass {
+        position: absolute;
+        z-index: 6;
+        background: rgba(17, 20, 25, .80);
+        -webkit-backdrop-filter: blur(18px) saturate(1.3);
+        backdrop-filter: blur(18px) saturate(1.3);
+        border: 1px solid rgba(255, 255, 255, .14);
+        border-radius: 19px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 22px 54px rgba(0, 0, 0, .55);
+        padding: 15px 17px;
+      }
+
+      .rz .rz-gk {
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        color: var(--txt-3)
+      }
+
+      .rz .rz-gv {
+        display: flex;
+        align-items: baseline;
+        gap: 9px;
+        margin-top: 4px
+      }
+
+      .rz .rz-gv b {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -.03em;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.1
+      }
+
+      .rz .rz-gv em {
+        font-style: normal;
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--lime);
+        background: var(--lime-dim);
+        padding: 3px 8px;
+        border-radius: 7px
+      }
+
+      .rz .rz-g-rev {
+        top: -30px;
+        right: -26px;
+        width: 236px;
+        animation: rz-drift 8.2s ease-in-out infinite
+      }
+
+      .rz .rz-g-ord {
+        top: 36%;
+        left: -34px;
+        animation: rz-drift 9.6s ease-in-out infinite 1.2s
+      }
+
+      @keyframes rz-drift {
+
+        0%,
+        100% {
+          transform: translateY(0)
+        }
+
+        50% {
+          transform: translateY(-9px)
+        }
+      }
+
+      .rz .rz-gspark {
+        width: 100%;
+        height: 34px;
+        display: block;
+        margin-top: 9px;
+        overflow: visible
+      }
+
+      .rz .rz-gspark path {
+        fill: none;
+        stroke: var(--lime);
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 260;
+        stroke-dashoffset: 260;
+        filter: drop-shadow(0 0 6px rgba(201, 242, 77, .55))
+      }
+
+      .rz .rz-gspark.rz-draw path {
+        animation: rz-sdraw 1.6s cubic-bezier(.45, .05, .35, 1) forwards
+      }
+
+      @keyframes rz-sdraw {
+        to {
+          stroke-dashoffset: 0
+        }
+      }
+
+      /* new-order toast, re-fires on every store change */
+      .rz .rz-toast {
+        position: absolute;
+        z-index: 7;
+        right: -30px;
+        bottom: 84px;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 12px 15px;
+        border-radius: 17px;
+        background: rgba(250, 251, 252, .97);
+        border: 1px solid rgba(255, 255, 255, .7);
+        box-shadow: 0 22px 54px rgba(0, 0, 0, .5);
+        opacity: 0;
+        transform: translateY(12px) scale(.96);
+      }
+
+      .rz .rz-toast.rz-pop {
+        animation: rz-toast 4.6s cubic-bezier(.2, .9, .3, 1) forwards
+      }
+
+      @keyframes rz-toast {
+        0% {
+          opacity: 0;
+          transform: translateY(12px) scale(.96)
+        }
+
+        9%,
+        78% {
+          opacity: 1;
+          transform: none
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(-8px) scale(.98)
+        }
+      }
+
+      .rz .rz-tic {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(160deg, #95BF47, #5E8E3E)
+      }
+
+      .rz .rz-tic svg {
+        width: 19px;
+        height: 19px
+      }
+
+      .rz .rz-ttx {
+        display: block;
+        min-width: 0
+      }
+
+      .rz .rz-ttx b {
+        display: block;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #14171C;
+        white-space: nowrap
+      }
+
+      .rz .rz-ttx i {
+        display: block;
+        font-style: normal;
+        font-size: 11px;
+        color: #7A828D;
+        white-space: nowrap
+      }
+
+      .rz .rz-reel {
+        touch-action: pan-y
+      }
+
+      @media(max-width:760px) {
+        .rz .rz-stage {
+          margin-top: 44px
+        }
+
+        .rz .rz-reel,
+        .rz .rz-ghost {
+          border-radius: 20px
+        }
+
+        .rz .rz-ghost-l {
+          transform: translate(-5%, 3%) rotate(-4deg) scale(.92)
+        }
+
+        .rz .rz-ghost-r {
+          transform: translate(5%, 3%) rotate(4deg) scale(.92)
+        }
+
+        /* caption: one slim line tucked in the corner instead of a full-width bar */
+        .rz .rz-cap {
+          left: 8px;
+          right: auto;
+          bottom: 8px;
+          padding: 5px 9px;
+          border-radius: 9px;
+          gap: 7px
+        }
+
+        .rz .rz-cap-k {
+          display: none
+        }
+
+        .rz .rz-cap b {
+          font-size: 10.5px
+        }
+
+        .rz .rz-cap-r {
+          display: none
+        }
+
+        /* revenue: small chip that sits mostly ABOVE the image, not on it */
+        .rz .rz-glass {
+          padding: 6px 9px;
+          border-radius: 10px
+        }
+
+        .rz .rz-g-rev {
+          top: -34px;
+          right: 0;
+          width: auto
+        }
+
+        .rz .rz-gk {
+          font-size: 7.5px;
+          letter-spacing: .12em
+        }
+
+        .rz .rz-gv {
+          margin-top: 1px;
+          gap: 6px
+        }
+
+        .rz .rz-gv b {
+          font-size: 14px
+        }
+
+        .rz .rz-gv em {
+          font-size: 8.5px;
+          padding: 1px 5px;
+          border-radius: 5px
+        }
+
+        .rz .rz-gspark {
+          display: none
+        }
+
+        .rz .rz-g-ord {
+          display: none
+        }
+
+        /* order toast: compact, single line */
+        .rz .rz-toast {
+          right: 6px;
+          bottom: 8px;
+          padding: 5px 8px 5px 5px;
+          gap: 6px;
+          border-radius: 9px
+        }
+
+        .rz .rz-tic {
+          width: 20px;
+          height: 20px;
+          border-radius: 6px
+        }
+
+        .rz .rz-tic svg {
+          width: 12px;
+          height: 12px
+        }
+
+        .rz .rz-ttx b {
+          font-size: 10px
+        }
+
+        .rz .rz-ttx i {
+          display: none
+        }
+      }
+
+      /* ============ WHAT YOUR STORE DOES ============ */
+      .rz .rz-feats {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 1fr;
+        max-width: 980px;
+        margin: 0 auto
+      }
+
+      @media(min-width:820px) {
+        .rz .rz-feats {
+          grid-template-columns: 1fr 1fr;
+          gap: 16px
+        }
+      }
+
+      .rz .rz-feat {
+        position: relative;
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        background: linear-gradient(180deg, var(--surf), var(--ink));
+        border: 1px solid var(--hair);
+        border-radius: var(--r-lg);
+        padding: 20px 20px 21px;
+        overflow: hidden;
+        transition: border-color .25s ease, transform .25s cubic-bezier(.2, .8, .3, 1);
+      }
+
+      .rz .rz-feat::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--lime), transparent);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: rz-rule 7s ease-in-out infinite;
+      }
+
+      @keyframes rz-rule {
+        0% {
+          transform: scaleX(0)
+        }
+
+        34%,
+        72% {
+          transform: scaleX(1)
+        }
+
+        100% {
+          transform: scaleX(1);
+          opacity: 0
+        }
+      }
+
+      .rz .rz-feat:nth-child(2)::before {
+        animation-delay: .4s
+      }
+
+      .rz .rz-feat:nth-child(3)::before {
+        animation-delay: .8s
+      }
+
+      .rz .rz-feat:nth-child(4)::before {
+        animation-delay: 1.2s
+      }
+
+      .rz .rz-feat:nth-child(5)::before {
+        animation-delay: 1.6s
+      }
+
+      .rz .rz-feat:nth-child(6)::before {
+        animation-delay: 2s
+      }
+
+      .rz .rz-feat:nth-child(7)::before {
+        animation-delay: 2.4s
+      }
+
+      .rz .rz-feat:nth-child(8)::before {
+        animation-delay: 2.8s
+      }
+
+      .rz .rz-feat:hover {
+        border-color: var(--hair-2);
+        transform: translateY(-2px)
+      }
+
+      .rz .rz-fic {
+        width: 42px;
+        height: 42px;
+        border-radius: 13px;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--surf-3);
+        border: 1px solid var(--hair);
+        color: var(--lime);
+      }
+
+      .rz .rz-fic svg {
+        width: 20px;
+        height: 20px
+      }
+
+      .rz .rz-ftx {
+        flex: 1;
+        min-width: 0;
+        font-size: 15.5px;
+        line-height: 1.55;
+        color: var(--txt-2)
+      }
+
+      .rz .rz-ftx b {
+        display: block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16.5px;
+        font-weight: 700;
+        color: var(--txt);
+        letter-spacing: -.01em;
+        margin-bottom: 5px
+      }
+
+      /* ============ HOW IT WORKS ============ */
+      .rz .rz-steps {
+        position: relative;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+        max-width: 980px;
+        margin: 0 auto
+      }
+
+      @media(min-width:860px) {
+        .rz .rz-steps {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 18px
+        }
+
+        /* connector through the three step nodes, with a pulse running along it */
+        .rz .rz-steps::before {
+          content: "";
+          position: absolute;
+          z-index: 3;
+          top: 44px;
+          height: 2px;
+          border-radius: 2px;
+          left: 41px;
+          right: calc((100% - 36px) / 3 - 41px);
+          background: linear-gradient(90deg, rgba(201, 242, 77, .45), rgba(201, 242, 77, .12));
+        }
+
+        .rz .rz-steps::after {
+          content: "";
+          position: absolute;
+          z-index: 3;
+          top: 41px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--lime);
+          box-shadow: 0 0 14px rgba(201, 242, 77, .9);
+          animation: rz-run 4.8s cubic-bezier(.5, .05, .5, .95) infinite;
+        }
+
+        @keyframes rz-run {
+          0% {
+            left: 37px;
+            opacity: 0
+          }
+
+          8% {
+            opacity: 1
+          }
+
+          86% {
+            opacity: 1
+          }
+
+          100% {
+            left: calc(100% - (100% - 36px) / 3 + 37px);
+            opacity: 0
+          }
+        }
+      }
+
+      .rz .rz-step {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(180deg, var(--surf), var(--ink));
+        border: 1px solid var(--hair);
+        border-radius: var(--r-lg);
+        padding: 26px 22px 22px;
+      }
+
+      .rz .rz-stop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 18px
+      }
+
+      .rz .rz-node {
+        position: relative;
+        z-index: 4;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--lime);
+        background: #12151A;
+        border: 1.5px solid rgba(201, 242, 77, .5);
+        box-shadow: 0 0 0 5px var(--surf), 0 0 22px rgba(201, 242, 77, .18);
+      }
+
+      .rz .rz-stag {
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 4;
+        color: var(--txt-3);
+        background: #191C22;
+        border: 1px solid var(--hair);
+        padding: 5px 10px;
+        border-radius: 99px;
+        white-space: nowrap;
+        box-shadow: 0 0 0 5px var(--surf);
+      }
+
+      .rz .rz-stitle {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--txt);
+        letter-spacing: -.015em;
+        margin-bottom: 8px;
+        line-height: 1.25
+      }
+
+      .rz .rz-stepbody {
+        font-size: 15px;
+        color: var(--txt-2);
+        line-height: 1.56;
+        margin: 0 0 18px
+      }
+
+      /* mini mockup at the foot of each step */
+      .rz .rz-mk {
+        margin-top: auto;
+        background: #0F1216;
+        border: 1px solid var(--hair);
+        border-radius: 14px;
+        padding: 14px 15px;
+      }
+
+      .rz .rz-mkh {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 10px
+      }
+
+      .rz .rz-mkh span {
+        font-size: 9.5px;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--txt-3)
+      }
+
+      .rz .rz-mrow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        font-size: 12.5px;
+        color: var(--txt-2);
+        padding: 7px 0;
+        border-top: 1px dashed rgba(255, 255, 255, .08)
+      }
+
+      .rz .rz-mrow:first-of-type {
+        border-top: 0;
+        padding-top: 0
+      }
+
+      .rz .rz-mrow b {
+        color: var(--txt);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap
+      }
+
+      .rz .rz-mrow .rz-lime {
+        color: var(--lime)
+      }
+
+      .rz .rz-card4 {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px
+      }
+
+      .rz .rz-card4 i {
+        width: 22px;
+        height: 14px;
+        border-radius: 3px;
+        flex: none;
+        background: linear-gradient(135deg, #3B4252, #1E232B);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12)
+      }
+
+      .rz .rz-paid {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 10.5px;
+        font-weight: 800;
+        color: var(--lime-ink);
+        background: var(--lime);
+        padding: 4px 9px;
+        border-radius: 99px;
+        animation: rz-thump 4.6s ease-in-out infinite;
+      }
+
+      .rz .rz-paid svg {
+        width: 10px;
+        height: 10px
+      }
+
+      @keyframes rz-thump {
+
+        0%,
+        84%,
+        100% {
+          transform: scale(1)
+        }
+
+        90% {
+          transform: scale(1.1)
+        }
+      }
+
+      /* build checklist ticking off */
+      .rz .rz-tk {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12.5px;
+        color: var(--txt-2);
+        padding: 5px 0
+      }
+
+      .rz .rz-tk b {
+        margin-left: auto;
+        color: var(--txt);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums
+      }
+
+      .rz .rz-tk i {
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid rgba(255, 255, 255, .18);
+        animation: rz-tick 6s ease-in-out infinite;
+      }
+
+      .rz .rz-tk i svg {
+        width: 9px;
+        height: 9px;
+        color: var(--lime-ink);
+        opacity: 0;
+        animation: rz-tickc 6s ease-in-out infinite
+      }
+
+      .rz .rz-tk:nth-child(3) i,
+      .rz .rz-tk:nth-child(3) i svg {
+        animation-delay: .7s
+      }
+
+      .rz .rz-tk:nth-child(4) i,
+      .rz .rz-tk:nth-child(4) i svg {
+        animation-delay: 1.4s
+      }
+
+      @keyframes rz-tick {
+
+        0%,
+        10% {
+          background: transparent;
+          border-color: rgba(255, 255, 255, .18)
+        }
+
+        18%,
+        84% {
+          background: var(--lime);
+          border-color: var(--lime)
+        }
+
+        100% {
+          background: transparent;
+          border-color: rgba(255, 255, 255, .18)
+        }
+      }
+
+      @keyframes rz-tickc {
+
+        0%,
+        12% {
+          opacity: 0
+        }
+
+        20%,
+        84% {
+          opacity: 1
+        }
+
+        100% {
+          opacity: 0
+        }
+      }
+
+      /* order notification */
+      .rz .rz-nt {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding-bottom: 11px;
+        margin-bottom: 4px;
+        border-bottom: 1px dashed rgba(255, 255, 255, .08)
+      }
+
+      .rz .rz-nic {
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(160deg, #95BF47, #5E8E3E)
+      }
+
+      .rz .rz-nic svg {
+        width: 18px;
+        height: 18px
+      }
+
+      .rz .rz-nt b {
+        display: block;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--txt);
+        line-height: 1.3
+      }
+
+      .rz .rz-nt em {
+        display: block;
+        font-style: normal;
+        font-size: 11.5px;
+        color: var(--txt-3)
+      }
+
+      .rz .rz-auto {
+        font-size: 9.5px !important;
+        font-weight: 800 !important;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--lime) !important;
+        background: var(--lime-dim);
+        padding: 3px 8px;
+        border-radius: 6px
+      }
+
+      .rz .rz-bar {
+        height: 6px;
+        border-radius: 99px;
+        background: rgba(255, 255, 255, .09);
+        overflow: hidden;
+        margin-top: 9px
+      }
+
+      .rz .rz-bar i {
+        display: block;
+        height: 100%;
+        width: 0;
+        border-radius: 99px;
+        background: linear-gradient(90deg, var(--lime-2), var(--lime));
+        animation: rz-grow 5.4s cubic-bezier(.35, .1, .25, 1) infinite
+      }
+
+      @keyframes rz-grow {
+        0% {
+          width: 0
+        }
+
+        46%,
+        80% {
+          width: 74%
+        }
+
+        100% {
+          width: 74%;
+          opacity: .4
+        }
+      }
+    </style>
+    <style>
+      /* ============ CLAIM / GUARANTEE ============ */
+      .rz .rz-claim {
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(60% 44% at 50% 0%, rgba(201, 242, 77, .11), transparent 64%),
+          linear-gradient(180deg, #0B0D10, var(--void));
+      }
+
+      .rz .rz-price {
+        max-width: 560px;
+        margin: 0 auto;
+        text-align: center;
+        background: linear-gradient(180deg, var(--surf), var(--ink));
+        border: 1px solid var(--hair-2);
+        border-radius: var(--r-xl);
+        padding: 34px 24px 32px;
+        box-shadow: 0 28px 70px rgba(0, 0, 0, .5);
+      }
+
+      .rz .rz-pnum {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(52px, 12vw, 82px);
+        font-weight: 700;
+        line-height: .95;
+        letter-spacing: -.045em;
+        color: var(--lime);
+        text-shadow: 0 0 44px rgba(201, 242, 77, .32);
+      }
+
+      .rz .rz-pmeta {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--txt-3);
+        margin-top: 12px
+      }
+
+      .rz .rz-guarantee {
+        max-width: 560px;
+        margin: 20px auto 0;
+        border-radius: var(--r-lg);
+        padding: 24px 22px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(170deg, rgba(255, 195, 104, .13), rgba(255, 195, 104, .03));
+        border: 1px solid rgba(255, 195, 104, .3);
+      }
+
+      .rz .rz-gtitle {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(17px, 3.2vw, 21px);
+        font-weight: 700;
+        color: var(--gold);
+        letter-spacing: -.01em;
+        margin-bottom: 10px;
+      }
+
+      .rz .rz-guarantee p {
+        font-size: 15.5px;
+        color: var(--txt-2);
+        margin: 0;
+        line-height: 1.56
+      }
+
+      .rz .rz-meter {
+        height: 7px;
+        border-radius: 99px;
+        background: rgba(255, 255, 255, .1);
+        overflow: hidden;
+        margin: 16px auto 10px;
+        max-width: 280px
+      }
+
+      .rz .rz-meter i {
+        display: block;
+        height: 100%;
+        width: 0;
+        border-radius: 99px;
+        background: linear-gradient(90deg, var(--gold-2), var(--gold));
+        animation: rz-grow 5.8s cubic-bezier(.35, .1, .25, 1) infinite
+      }
+
+      .rz .rz-mlbl {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--txt-3)
+      }
+
+      .rz .rz-scarce {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        white-space: nowrap;
+        font-size: clamp(10.5px, 2.8vw, 13px);
+        font-weight: 600;
+        color: var(--gold);
+        background: var(--gold-dim);
+        border: 1px solid rgba(255, 195, 104, .28);
+        border-radius: 999px;
+        padding: 11px 19px;
+        margin: 26px auto 0;
+        width: -moz-fit-content;
+        width: fit-content;
+        max-width: 100%;
+      }
+
+      .rz .rz-scarce i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex: none;
+        animation: rz-pulse 2.4s ease-out infinite
+      }
+
+      /* ============ FAQ ============ */
+      .rz .rz-faq {
+        background: var(--void)
+      }
+
+      .rz .rz-qlist {
+        max-width: 760px;
+        margin: 0 auto
+      }
+
+      .rz .rz-q {
+        background: var(--surf);
+        border: 1px solid var(--hair);
+        border-radius: var(--r-md);
+        margin-bottom: 12px;
+        overflow: hidden
+      }
+
+      .rz .rz-q summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 19px 54px 19px 20px;
+        position: relative;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16.5px;
+        font-weight: 600;
+        color: var(--txt);
+        letter-spacing: -.01em;
+        line-height: 1.38;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .rz .rz-q summary::-webkit-details-marker {
+        display: none
+      }
+
+      .rz .rz-q summary::after {
+        content: "";
+        position: absolute;
+        right: 22px;
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        border-right: 2.4px solid var(--lime);
+        border-bottom: 2.4px solid var(--lime);
+        transform: translateY(-70%) rotate(45deg);
+        transition: transform .26s ease;
+      }
+
+      .rz .rz-q[open] summary::after {
+        transform: translateY(-20%) rotate(-135deg)
+      }
+
+      .rz .rz-a {
+        padding: 0 20px 20px;
+        font-size: 15.5px;
+        line-height: 1.62;
+        color: var(--txt-2)
+      }
+
+      /* ============ STICKY ============ */
+      .rz .rz-legal {
+        max-width: 600px;
+        margin: 18px auto 0;
+        font-size: 11px;
+        line-height: 1.6;
+        color: var(--txt-3);
+        text-align: center
+      }
+
+      .rz .rz-footer {
+        background: #060708;
+        color: var(--txt-3);
+        padding: 30px 0 84px;
+        border-top: 1px solid var(--hair)
+      }
+
+      .rz .rz-footer .rz-wrap {
+        max-width: 840px
+      }
+
+      .rz .rz-footer p {
+        font-size: 11px;
+        line-height: 1.62;
+        margin: 0 0 9px
+      }
+
+      .rz .rz-fc {
+        font-size: 11.5px;
+        font-weight: 600;
+        color: var(--txt-2);
+        text-align: center;
+        margin-bottom: 14px
+      }
+
+      .rz .rz-footer a {
+        color: var(--txt-2);
+        text-decoration: none
+      }
+
+      .rz .rz-flinks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        margin-top: 18px;
+        padding-top: 15px;
+        border-top: 1px solid var(--hair);
+        font-size: 11.5px
+      }
+
+      @media(min-width:900px) {
+        .rz .rz-footer {
+          padding: 38px 0 38px
+        }
+      }
+
+      .rz .rz-sticky {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 70;
+        padding: 8px 13px calc(8px + env(safe-area-inset-bottom));
+        background: rgba(8, 9, 11, .94);
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+        border-top: 1px solid var(--hair-2);
+        transform: translateY(112%);
+        transition: transform .42s cubic-bezier(.2, .8, .3, 1);
+      }
+
+      .rz .rz-sticky.rz-show {
+        transform: translateY(0)
+      }
+
+      .rz .rz-sticky .rz-cta {
+        padding: 13px 20px;
+        font-size: 15px;
+        max-width: 520px;
+        display: flex
+      }
+
+      .rz .rz-stx {
+        text-align: center;
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--txt-3);
+        margin-bottom: 5px;
+        letter-spacing: .06em
+      }
+
+      @media(min-width:900px) {
+        .rz .rz-sticky {
+          display: none
+        }
+      }
+
+      @media(prefers-reduced-motion:reduce) {
+
+        .rz *,
+        .rz *::before,
+        .rz *::after {
+          animation-duration: .001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: .001ms !important;
+        }
+
+        .rz .rz-p {
+          opacity: 1
+        }
+
+        .rz .rz-bar i,
+        .rz .rz-meter i {
+          width: 74%
+        }
+      }
+    </style>
+
+    <!-- ================= RESULT HERO ================= -->
+    <section class="rz-hero">
+      <div class="rz-wrap rz-hero-in">
+        <span class="rz-eyebrow"><i></i>Your store type we recommend</span>
+        <h1 class="rz-d1">The General<br>Dropshipping Store</h1>
+        <p class="rz-lede">A complete store, <b>built by official Shopify Partners</b>, in your inbox within 24 hours.
+        </p>
+        <div class="rz-ctablock">
+          <a class="rz-cta" href="#" data-rz-cta>Get My Store Built for &pound;20 <span class="rz-arw">&rarr;</span></a>
+          <p class="rz-join">Join 20,000+ people who stopped waiting for a pay rise.</p>
+        </div>
+
+        <div class="rz-stage" id="rz-stage">
+          <div class="rz-deck">
+            <div class="rz-ghost rz-ghost-l"><img id="rz-gl"
+                src="https://storesbybeckett.com/cdn/shop/files/electronicsv4.jpg?v=1754000260&amp;width=1000" alt="">
+            </div>
+            <div class="rz-ghost rz-ghost-r"><img id="rz-gr"
+                src="https://storesbybeckett.com/cdn/shop/files/HandB.jpg?v=1754000260&amp;width=1000" alt=""></div>
+
+            <div class="rz-reel" id="rz-reel">
+              <!-- the store shots are built here from RZ_CONFIG.storeImages -->
+              <div class="rz-cap">
+                <span class="rz-cap-l"><span class="rz-cap-k">Built by our team</span><b
+                    id="rz-cap-nm">Multi-Product</b></span>
+                <span class="rz-cap-r">Live in 24h</span>
+              </div>
+            </div>
+
+            <div class="rz-glass rz-g-rev">
+              <span class="rz-gk">Monthly revenue</span>
+              <span class="rz-gv"><b id="rz-rev">&pound;8,320</b><em id="rz-revd">+19%</em></span>
+              <svg class="rz-gspark rz-draw" id="rz-spark" viewBox="0 0 200 34" preserveAspectRatio="none"
+                aria-hidden="true">
+                <path d="M2,30 L30,27 L58,28 L86,19 L114,16 L142,10 L170,7 L198,3" />
+              </svg>
+            </div>
+            <div class="rz-glass rz-g-ord">
+              <span class="rz-gk">Orders today</span>
+              <span class="rz-gv"><b id="rz-ord">24</b><em id="rz-ordd">+23%</em></span>
+            </div>
+            <div class="rz-toast" id="rz-toast">
+              <span class="rz-tic" data-rz-mark></span>
+              <span class="rz-ttx"><b id="rz-sale">New order &middot; &pound;34.99</b><i>Just now &middot; sent to
+                  supplier</i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHAT YOUR STORE DOES ================= -->
+    <section class="rz-sec">
+      <div class="rz-wrap">
+        <div class="rz-head">
+          <h2 class="rz-d2">What your store does for you</h2>
+        </div>
+        <div class="rz-feats">
+          <div class="rz-feat">
+            <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7.5" height="7.5" rx="2" />
+                <rect x="13.5" y="3" width="7.5" height="7.5" rx="2" />
+                <rect x="3" y="13.5" width="7.5" height="7.5" rx="2" />
+                <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2" />
+              </svg></span>
+            <span class="rz-ftx"><b>45+ winning products</b>Hand-picked by our product research team. You never guess
+              what to sell &mdash; it&rsquo;s chosen before you even see it.</span>
+          </div>
+          <div class="rz-feat">
+            <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M12 2.6l2.6 1.9 3.2-.1 1 3 2.6 1.8-1.2 3 1.2 3-2.6 1.8-1 3-3.2-.1L12 21.4l-2.6-1.9-3.2.1-1-3L2.6 14.8l1.2-3-1.2-3 2.6-1.8 1-3 3.2.1z" />
+                <path d="M9 12l2.2 2.2L15.5 10" />
+              </svg></span>
+            <span class="rz-ftx"><b>Built by Shopify Partners</b>Delivered in 24 hours. Live before your next shift, and
+              you don&rsquo;t lose a single evening.</span>
+          </div>
+          <div class="rz-feat">
+            <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 6.5h11v10h-11z" />
+                <path d="M13.5 10h4l3 3v3.5h-7z" />
+                <circle cx="6.5" cy="18.5" r="1.9" />
+                <circle cx="17" cy="18.5" r="1.9" />
+              </svg></span>
+            <span class="rz-ftx"><b>Suppliers linked for automated fulfilment</b>It sells while you&rsquo;re at work.
+              You never pack, post or touch a parcel.</span>
+          </div>
+          <div class="rz-feat">
+            <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="6" rx="8" ry="3.2" />
+                <path d="M4 6v5c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2V6" />
+                <path d="M4 11v5c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2v-5" />
+              </svg></span>
+            <span class="rz-ftx"><b>About &pound;30 profit on every sale</b>3 sales a day is about &pound;2,700 a month,
+              on top of your wage.</span>
+          </div>
+          <div class="rz-feat">
+            <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="4.5" width="19" height="14" rx="2.6" />
+                <path d="M10.5 9.2l4.4 2.6-4.4 2.6z" />
+              </svg></span>
+            <span class="rz-ftx"><b>A 1-to-1 call with the success team</b>You always know what to do next, with no
+              YouTube rabbit holes.</span>
+          </div>
+          <div class="rz-feat">
+            <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8" />
+                <path d="M21 3.4V8h-4.6" />
+                <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16" />
+                <path d="M3 20.6V16h4.6" />
+              </svg></span>
+            <span class="rz-ftx"><b>New winning products every week</b>When one slows down the next one&rsquo;s already
+              loaded, so the money keeps coming in.</span>
+          </div>
+          <div class="rz-feat">
+            <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.6l8 3v6.2c0 4.6-3.3 8.4-8 9.6-4.7-1.2-8-5-8-9.6V5.6z" />
+                <path d="M8.6 12l2.4 2.4 4.4-4.6" />
+              </svg></span>
+            <span class="rz-ftx"><b>50 sales in 90 days, or your &pound;20 back</b>You risk less than a Friday
+              takeaway.</span>
+          </div>
+          <div class="rz-feat">
+            <span class="rz-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="8" cy="12" r="4.4" />
+                <path d="M12.4 12H21" />
+                <path d="M17.6 12v3.4" />
+                <path d="M20.4 12v2.4" />
+              </svg></span>
+            <span class="rz-ftx"><b>100% yours, no recurring fees</b>It&rsquo;s your business, not a
+              subscription.</span>
+          </div>
+        </div>
+        <div class="rz-ctablock">
+          <a class="rz-cta" href="#" data-rz-cta>Get My Store Built for &pound;20 <span class="rz-arw">&rarr;</span></a>
+          <p class="rz-join">Join 20,000+ people who stopped waiting for a pay rise.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="rz-sec" style="background:linear-gradient(180deg,#0B0D10,var(--void))">
+      <div class="rz-wrap">
+        <div class="rz-head">
+          <h2 class="rz-d2">How it works from here</h2>
+        </div>
+        <div class="rz-steps">
+          <div class="rz-step">
+            <div class="rz-stop"><span class="rz-node">1</span><span class="rz-stag">20 seconds</span></div>
+            <div class="rz-stitle">You claim your store for &pound;20.</div>
+            <p class="rz-stepbody">Takes 20 seconds, from your sofa.</p>
+            <div class="rz-mk">
+              <div class="rz-mkh"><span>Order summary</span><span class="rz-paid"><svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>Paid</span></div>
+              <div class="rz-mrow"><span>General Dropshipping Store</span><b>&pound;20.00</b></div>
+              <div class="rz-mrow"><span class="rz-card4"><i></i>Visa &middot;&middot;&middot;&middot; 4417</span><b>One
+                  payment</b></div>
+              <div class="rz-mrow"><span>Recurring fees</span><b class="rz-lime">&pound;0.00</b></div>
+            </div>
+          </div>
+          <div class="rz-step">
+            <div class="rz-stop"><span class="rz-node">2</span><span class="rz-stag">Within 24 hours</span></div>
+            <div class="rz-stitle">Our team builds it and loads your products.</div>
+            <p class="rz-stepbody">It lands in your inbox within 24 hours, ready to take orders.</p>
+            <div class="rz-mk">
+              <div class="rz-mkh"><span>Building your store</span><span>74%</span></div>
+              <div class="rz-tk"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg></i>Winning products loaded<b>45+</b></div>
+              <div class="rz-tk"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg></i>Suppliers linked<b>Auto</b></div>
+              <div class="rz-tk"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg></i>Store ready to sell<b>24h</b></div>
+              <div class="rz-bar"><i></i></div>
+            </div>
+          </div>
+          <div class="rz-step">
+            <div class="rz-stop"><span class="rz-node">3</span><span class="rz-stag">While you&rsquo;re at work</span>
+            </div>
+            <div class="rz-stitle">You get your first sale while you&rsquo;re at work.</div>
+            <p class="rz-stepbody">The supplier ships it. You keep the profit.</p>
+            <div class="rz-mk">
+              <div class="rz-nt"><span class="rz-nic" data-rz-mark></span><span><b>New order &middot;
+                    &pound;39.99</b><em>#1001 &middot; 11:42 &middot; you were on shift</em></span></div>
+              <div class="rz-mrow"><span>Sent to supplier</span><b class="rz-auto">Automatic</b></div>
+              <div class="rz-mrow"><span>Your profit</span><b class="rz-lime">+&pound;30.00</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="rz-ctablock">
+          <a class="rz-cta" href="#" data-rz-cta>Get My Store Built for &pound;20 <span class="rz-arw">&rarr;</span></a>
+          <p class="rz-join">Join 20,000+ people who stopped waiting for a pay rise.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLAIM ================= -->
+    <section class="rz-sec rz-claim" id="rz-claim">
+      <div class="rz-wrap">
+        <div class="rz-head">
+          <h2 class="rz-d2">Claim your store</h2>
+        </div>
+        <div class="rz-price">
+          <div class="rz-pnum">&pound;20</div>
+          <div class="rz-pmeta">One payment &middot; no recurring fees</div>
+        </div>
+        <div class="rz-guarantee">
+          <div class="rz-gtitle">The 50-sale guarantee</div>
+          <div class="rz-meter"><i></i></div>
+          <div class="rz-mlbl">50 sales &middot; first 90 days</div>
+          <p>If you don&rsquo;t make at least 50 sales in your first 90 days, we give you your &pound;20 back. <b>Every
+              last penny.</b></p>
+        </div>
+        <div class="rz-scarce"><i></i>We only build a limited number of stores each day.</div>
+        <div class="rz-ctablock">
+          <a class="rz-cta" href="#" data-rz-cta>Get My Store Built for &pound;20 <span class="rz-arw">&rarr;</span></a>
+          <p class="rz-join">Join 20,000+ people who stopped waiting for a pay rise.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="rz-sec rz-faq">
+      <div class="rz-wrap">
+        <div class="rz-head">
+          <h2 class="rz-d2">Three quick questions</h2>
+        </div>
+        <div class="rz-qlist">
+          <details class="rz-q" open>
+            <summary>&ldquo;How is it only &pound;20?&rdquo;</summary>
+            <div class="rz-a">We&rsquo;re official Shopify Partners, and Shopify pays us when your store makes real
+              sales. That&rsquo;s why we can build it for &pound;20 instead of &pound;1,000. <b>We only win if you
+                win.</b></div>
+          </details>
+          <details class="rz-q">
+            <summary>&ldquo;Do I need any experience?&rdquo;</summary>
+            <div class="rz-a">No. There&rsquo;s nothing to build and nothing to design. Your store arrives finished,
+              with the products chosen and the suppliers linked. <b>If you can use a phone, you can run it.</b></div>
+          </details>
+          <details class="rz-q">
+            <summary>&ldquo;What if I don&rsquo;t make any sales?&rdquo;</summary>
+            <div class="rz-a">Then you don&rsquo;t pay. 50 sales in your first 90 days or your &pound;20 back. <b>You
+                take zero risk.</b></div>
+          </details>
+        </div>
+        <div class="rz-ctablock">
+          <a class="rz-cta" href="#" data-rz-cta>Get My Store Built for &pound;20 <span class="rz-arw">&rarr;</span></a>
+          <p class="rz-join">Join 20,000+ people who stopped waiting for a pay rise.</p>
+          <p class="rz-legal">Results are illustrative and not typical or guaranteed. Your results depend on your own
+            effort.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="rz-sticky" id="rz-sticky">
+      <div class="rz-stx">&pound;20 one payment &middot; delivered in 24 hours</div>
+      <a class="rz-cta" href="#" data-rz-cta>Get My Store Built for &pound;20 <span class="rz-arw">&rarr;</span></a>
+    </div>
+
+    <script>
+      /* Runs when the quiz finishes and the result section is revealed,
+         so the count-ups / reel / toast all start on screen. */
+      window.__rzInit = function () {
+        "use strict";
+        if (window.__rzRan) return;
+        window.__rzRan = true;
+
+        /* ==========================================================
+           RZ_CONFIG — the only things you normally change.
+           ========================================================== */
+        var RZ_CONFIG = {
+          // The product page.
+          productUrl: "https://storesbybeckett.com/products/dropshipping-store",
+
+          // Result hero: the store screenshots that cycle in the mockup.
+          // These are the live product-page shots. Add or reorder freely.
+          storeImages: [
+            { src: "https://storesbybeckett.com/cdn/shop/files/blender.jpg?v=1754000260&width=1000", name: "Multi-Product" },
+            { src: "https://storesbybeckett.com/cdn/shop/files/HandB.jpg?v=1754000260&width=1000", name: "Health & Beauty" },
+            { src: "https://storesbybeckett.com/cdn/shop/files/electronics3.jpg?v=1754000260&width=1000", name: "Electronics" },
+            { src: "https://storesbybeckett.com/cdn/shop/files/pet2.jpg?v=1754000260&width=1000", name: "Pet Accessories" },
+            { src: "https://storesbybeckett.com/cdn/shop/files/mousematt.jpg?v=1754000260&width=1000", name: "Home & Office" },
+            { src: "https://storesbybeckett.com/cdn/shop/files/electronicsv4.jpg?v=1754000260&width=1000", name: "Tech & Gadgets" }
+          ],
+
+          // How long each store stays on screen (ms)
+          storeEvery: 1600,
+
+          // How often the "new order" toast pops again (ms)
+          toastEvery: 6200,
+
+          stickyAfter: 640
+        };
+
+        var RZ_MARK =
+          '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+          '<path d="M5.6 7.3h12.8a.95.95 0 0 1 .95 1.04l-1.16 11.7a1.5 1.5 0 0 1-1.5 1.36H7.31' +
+          'a1.5 1.5 0 0 1-1.5-1.36L4.65 8.34A.95.95 0 0 1 5.6 7.3Z" fill="#fff" fill-opacity=".95"/>' +
+          '<path d="M8.85 8.4V6.75a3.15 3.15 0 0 1 6.3 0V8.4" stroke="#fff" stroke-width="1.5" ' +
+          'stroke-linecap="round" fill="none" opacity=".95"/>' +
+          '<text x="12" y="17.6" text-anchor="middle" font-family="Plus Jakarta Sans,Helvetica,Arial,sans-serif" ' +
+          'font-size="9.2" font-weight="700" fill="#5E8E3E">S</text>' +
+          '</svg>';
+
+        var root = document.querySelector(".rz");
+        if (!root) return;
+        var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* ---------- CTAs ---------- */
+        root.querySelectorAll("[data-rz-cta]").forEach(function (a) {
+          a.setAttribute("href", RZ_CONFIG.productUrl);
+        });
+
+        /* ---------- Shopify mark ---------- */
+        root.querySelectorAll("[data-rz-mark]").forEach(function (el) { el.innerHTML = RZ_MARK; });
+
+        /* ---------- the store mockup: one general store, stats count up, order toast ---------- */
+        (function () {
+          var reel = document.getElementById("rz-reel");
+          if (!reel) return;
+          var gl = document.getElementById("rz-gl"), gr = document.getElementById("rz-gr");
+          var capNm = document.getElementById("rz-cap-nm");
+          var rev = document.getElementById("rz-rev"), ord = document.getElementById("rz-ord");
+          var sale = document.getElementById("rz-sale"), toast = document.getElementById("rz-toast");
+          var spark = document.getElementById("rz-spark");
+
+          // one set of figures for the store shown
+          var STORE = { rev: 8320, ord: 24, sale: "34.99" };
+
+          /* ---- the store types cycle, so the shot always matches the result ---- */
+          var shots = (RZ_CONFIG.storeImages || []).slice(), shotEls = [], shot = 0, shotTimer = null;
+          if (shots.length) {
+            shots.forEach(function (st, i) {
+              var el = document.createElement("img");
+              el.src = st.src;
+              el.alt = st.name + " store built by the Beckett team";
+              if (i === 0) el.className = "rz-on";
+              reel.insertBefore(el, reel.firstChild);
+              shotEls.push(el);
+            });
+            if (capNm) capNm.textContent = shots[0].name;
+
+            var paint = function () {
+              shotEls.forEach(function (el, i) { el.classList.toggle("rz-on", i === shot); });
+              if (capNm) capNm.textContent = shots[shot].name;
+              if (gl) gl.src = shots[(shot - 1 + shots.length) % shots.length].src;
+              if (gr) gr.src = shots[(shot + 1) % shots.length].src;
+            };
+            paint();
+
+            var spin = function () {
+              if (reduced || shotTimer || shots.length < 2) return;
+              shotTimer = setInterval(function () { shot = (shot + 1) % shots.length; paint(); }, RZ_CONFIG.storeEvery);
+            };
+            var halt = function () { if (shotTimer) { clearInterval(shotTimer); shotTimer = null; } };
+            spin();
+            document.addEventListener("visibilitychange", function () { document.hidden ? halt() : spin(); });
+          }
+
+          function tween(from, to, ms, draw) {
+            if (reduced) { draw(to); return; }
+            var t0 = null;
+            function step(ts) {
+              if (t0 === null) t0 = ts;
+              var p = Math.min((ts - t0) / ms, 1), k = 1 - Math.pow(1 - p, 3);
+              draw(from + (to - from) * k);
+              if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+          function restart(el, cls) { if (!el) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+
+          if (rev) tween(0, STORE.rev, 1200, function (v) { rev.textContent = "\u00A3" + Math.round(v).toLocaleString("en-GB"); });
+          if (ord) tween(0, STORE.ord, 1200, function (v) { ord.textContent = Math.round(v); });
+          if (sale) sale.textContent = "New order \u00B7 \u00A3" + STORE.sale;
+          restart(spark, "rz-draw");
+          restart(toast, "rz-pop");
+
+          // the order toast pops again every so often so the mockup stays alive
+          var timer = null;
+          function start() { if (reduced || timer) return; timer = setInterval(function () { restart(toast, "rz-pop"); }, RZ_CONFIG.toastEvery); }
+          function stop() { if (timer) { clearInterval(timer); timer = null; } }
+          start();
+          document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+        })();
+
+        /* ---------- sticky CTA ---------- */
+        var sticky = document.getElementById("rz-sticky");
+        if (sticky) {
+          var claim = document.getElementById("rz-claim");
+          var onScroll = function () {
+            var past = window.pageYOffset > RZ_CONFIG.stickyAfter;
+            var atClaim = claim && claim.getBoundingClientRect().top < window.innerHeight * 0.85;
+            sticky.classList.toggle("rz-show", past && !atClaim);
+          };
+          window.addEventListener("scroll", onScroll, { passive: true });
+          onScroll();
+        }
+
+      };
+    </script>
+
+  </div><!-- /.rz -->
+  <!-- <BK-END> -->
 
 </body>
+
 </html>
